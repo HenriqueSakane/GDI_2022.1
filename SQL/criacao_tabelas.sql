@@ -29,6 +29,12 @@ CREATE TABLE Pessoa(
 );
 
 -- Telefone
+CREATE TABLE Telefone(
+	cpf_pessoa VARCHAR2(15) NOT NULL,
+	numero_telefone NUMBER NOT NULL,
+	CONSTRAINT telefone_pkey PRIMARY KEY (cpf_pessoa, numero_telefone),
+	CONSTRAINT telefone_fkey FOREIGN KEY (cpf_pessoa) REFERENCES Pessoa (cpf)
+);
 
 -- Endereco
 CREATE TABLE Endereco(
@@ -60,6 +66,12 @@ CREATE TABLE Atendente(
 );
 
 -- Zelador
+CREATE TABLE Zelador(
+	cpf_zelador VARCHAR2(15) NOT NULL,
+	cod_zelador VARCHAR2(10) NOT NULL,
+	CONSTRAINT zelador_pkey PRIMARY KEY (cpf_zelador, cod_zelador),
+	CONSTRAINT zelador_fkey FOREIGN KEY (cpf_zelador) REFERENCES Funcionario (cpf_funcionario)
+);
 
 -- Visitante
 CREATE TABLE Visitante(
@@ -93,6 +105,21 @@ CREATE TABLE Limpa(
 );
 
 -- Ticket
+
+CREATE TABLE Ticket(
+	numero_ticket INTEGER NOT NULL,
+	cod_visitante VARCHAR2(10) NOT NULL,
+	cod_atendente VARCHAR2(10) NOT NULL,
+	valor NUMBER(3,2) NOT NULL,
+	data_ticket DATE NOT NULL,
+	CONSTRAINT ticket_pkey PRIMARY KEY (numero_ticket),
+	CONSTRAINT ticket_fkey1 FOREIGN KEY (cod_visitante) REFERENCES Visitante (cod_visitante),
+	CONSTRAINT ticket_fkey2 FOREIGN KEY (cod_atendente) REFERENCES Atendente (cod_atendente)
+);
+
+CREATE SEQUENCE numero_ticket
+INCREMENT BY 1
+START WITH 1;
 
 -- Compra_visitante_ticket
 CREATE TABLE Compra_visitante_ticket(
