@@ -1,30 +1,30 @@
 -- Povoamento das tabelas
 
--- Pessoa
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('444.555.666-77', 'Daniel Victor', to_date('03/03/1993', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('777.888.999-99', 'Felipe Muniz', to_date('04/04/1994', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('123.456.789-00', 'Gustavo Gonçalves', to_date('05/05/1995', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('248.369.124-22', 'Igor Domingos', to_date('06/06/1996', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('111.111.111-11', 'Lukas Asael', to_date('07/07/1997', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('222.222.222-22', 'Matheus Marinho', to_date('08/08/1998', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('666.666.666-66', 'Bruno Lima', to_date('04/07/1997', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('777.777.777-77', 'Gilberto Diniz', to_date('05/12/1979', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('888.888.888-88', 'Vanessa Lorrany', to_date('06/11/1966', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('999.999.999-99', 'Letícia Araujo', to_date('30/10/1995', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('101.101.101-10', 'Elena Macedo', to_date('15/05/1998', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('303.303.303-30', 'Luana Silva', to_date('29/09/1999', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('404.404.404-40', 'Renata Matos', to_date('17/09/1980', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('505.505.505-55', 'Marta Guerra', to_date('24/01/1952', 'dd/mm/yy'));
-INSERT INTO Pessoa (cpf, nome, data_nascimento) VALUES ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy'));
+-- Pessoa (1)
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('444.555.666-77', 'Daniel Victor', to_date('03/03/1993', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('777.888.999-99', 'Felipe Muniz', to_date('04/04/1994', 'dd/mm/yy')); -- Atendente
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('123.456.789-00', 'Gustavo Gonçalves', to_date('05/05/1995', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('248.369.124-22', 'Igor Domingos', to_date('06/06/1996', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('111.111.111-11', 'Lukas Asael', to_date('07/07/1997', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('222.222.222-22', 'Matheus Marinho', to_date('08/08/1998', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy')); -- Atendente
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy')); -- Visitante
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('666.666.666-66', 'Bruno Lima', to_date('04/07/1997', 'dd/mm/yy')); -- Atendente
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('777.777.777-77', 'Gilberto Diniz', to_date('05/12/1979', 'dd/mm/yy')); -- Zelador
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('888.888.888-88', 'Vanessa Lorrany', to_date('06/11/1966', 'dd/mm/yy')); -- Biologo
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('999.999.999-99', 'Letícia Araujo', to_date('30/10/1995', 'dd/mm/yy')); -- Biologo
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('101.101.101-10', 'Elena Macedo', to_date('15/05/1998', 'dd/mm/yy')); -- Biologo
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy')); -- Atendente
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('303.303.303-30', 'Luana Silva', to_date('29/09/1999', 'dd/mm/yy')); -- Biologo
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('404.404.404-40', 'Renata Matos', to_date('17/09/1980', 'dd/mm/yy')); -- Zelador
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('505.505.505-55', 'Marta Guerra', to_date('24/01/1952', 'dd/mm/yy')); -- Zelador
+INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy')); -- Zelador
 
--- Telefone
+-- Telefone (2)
 
--- Endereco
+-- Endereco (3)
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('111.222.333-44', '10000-100', 'Rua Anacleto de Souza', '80', 'Casa Forte');
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('444.555.666-77', '20000-200', 'Avenida dos Engenhos', '56', 'Parnamirim');
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('777.888.999-99', '30000-300', 'Rua das Monocotiledoneas', '335', 'Coqueiral');
@@ -46,18 +46,19 @@ INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('404.404.404
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('505.505.505-55', '19872-008', 'Avenida Luiz Gonzaga', '35', 'Cordeiro');
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('606.606.606-60', '20081-987', 'Avenida da Paz', '22', 'Várzea');
 
--- Funcionario
-
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('777.888.999-99', 'A832247', 'Atendente_1', 'A832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('666.666.666-66', 'A328373', 'Atendente_2', 'A832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('333.333.333-33', 'A012639', 'Atendente_3', 'A832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('202.202.202-20', 'A435542', 'Atendente_4', 'A832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('999.999.999-99', 'B645483', 'Biologo_1', 'B645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('101.101.101-10', 'B757642', 'Biologo_2', 'B645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('303.303.303-30', 'B856874', 'Biologo_3', 'B645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('404.404.404-40', 'Z901623', 'Zelador_1', 'Z901623');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('505.505.505-55', 'Z128934', 'Zelador_2', 'Z901623');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('606.606.606-60', 'Z230671', 'Zelador_3', 'Z901623');
+-- Funcionario (4)
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('777.888.999-99', 'F832247', 'Atendente_1', 'F832247');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('666.666.666-66', 'F987521', 'Atendente_2', 'F832247');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('333.333.333-33', 'F888632', 'Atendente_3', 'F832247');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('202.202.202-20', 'F462825', 'Atendente_4', 'F832247');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('999.999.999-99', 'F645483', 'Biologo_1', 'F645483');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('101.101.101-10', 'F376208', 'Biologo_2', 'F645483');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('303.303.303-30', 'F094631', 'Biologo_3', 'F645483');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('888.888.888-88', 'F847504', 'Biologo_4', 'F645483');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('404.404.404-40', 'F901623', 'Zelador_1', 'F901623');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('505.505.505-55', 'F674202', 'Zelador_2', 'F901623');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('606.606.606-60', 'F094321', 'Zelador_3', 'F901623');
+INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('777.777.777-77', 'F784232', 'Zelador_4', 'F901623');
 
 -- Cargo
 
@@ -67,14 +68,22 @@ INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor
 
 -- Atendente
 
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('777.888.999-99', 01183);
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('666.666.666-66', 17345);
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('333.333.333-33', 13346);
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('202.202.202-20', 02701);
+INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('777.888.999-99', 'A734658');
+INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('666.666.666-66', 'A328373');
+INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('333.333.333-33', 'A012639');
+INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('202.202.202-20', 'A435542');
 
 -- Zelador
 
 -- Visitante
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.222.333-44', 'V773432', to_date('29/08/2021', 'dd/mm/yy'), '11122233344');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.555.666-77', 'V940324', to_date('01/04/2019', 'dd/mm/yy'), '4455566677');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('123.456.789-00', 'V231932', to_date('12/02/2020', 'dd/mm/yy'), '12345678900');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('248.369.124-22', 'V803215', to_date('20/01/2022', 'dd/mm/yy'), '24836912422');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.111.111-11', 'V563232', to_date('29/06/2020', 'dd/mm/yy'), '11111111111');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('222.222.222-22', 'V198723', to_date('22/07/2022', 'dd/mm/yy'), '22222222222');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.444.444-44', 'V200811', to_date('25/03/2021', 'dd/mm/yy'), '44444444444');
+INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('555.555.555-55', 'V445890', to_date('12/10/2021', 'dd/mm/yy'), '55555555555');
 
 -- Jaula
 
@@ -100,6 +109,9 @@ INSERT INTO Compra_visitante_ticket ('4444444444');
 INSERT INTO Compra_visitante_ticket ('5555555555');
 
 -- Promocao
+INSERT INTO Promocao (cod_promocao, desconto, data_termino) VALUES (48957, 50, to_date('30/11/2021', 'dd/mm/yy'));
+INSERT INTO Promocao (cod_promocao, desconto, data_termino) VALUES (72841, 25, to_date('31/08/2022', 'dd/mm/yy'));
+INSERT INTO Promocao (cod_promocao, desconto, data_termino) VALUES (65037, 20, to_date('30/03/2022', 'dd/mm/yy'));
 
 -- Participa
 
