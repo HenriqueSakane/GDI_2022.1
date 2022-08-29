@@ -28,6 +28,17 @@ INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('606.606.606-60', 'Juliana
 
 -- Funcionario
 
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('777.888.999-99', 'A832247', 'Atendente_1', 'A832247');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('666.666.666-66', 'A328373', 'Atendente_2', 'A832247');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('333.333.333-33', 'A012639', 'Atendente_3', 'A832247');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('202.202.202-20', 'A435542', 'Atendente_4', 'A832247');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('999.999.999-99', 'B645483', 'Biologo_1', 'B645483');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('101.101.101-10', 'B757642', 'Biologo_2', 'B645483');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('303.303.303-30', 'B856874', 'Biologo_3', 'B645483');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('404.404.404-40', 'Z901623', 'Zelador_1', 'Z901623');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('505.505.505-55', 'Z128934', 'Zelador_2', 'Z901623');
+INSERT INTO Funcionario (cpf_funcionario,cod_funcionario,cargo,cod_supervisor) VALUES ('606.606.606-60', 'Z230671', 'Zelador_3', 'Z901623');
+
 -- Cargo
 
 -- Dependente
@@ -47,12 +58,14 @@ INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('202.202.202-20', 0
 
 -- Jaula
 
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (1, 5);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (2, 10);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (3, 6);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (4, 20);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (5, 15);
 -- Departamento
-
 -- Animais
-
 -- Cuida
-
 -- Limpa
 
 INSERT INTO Limpa (cod_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_date('25/08/2022', 'dd/mm/yy'))

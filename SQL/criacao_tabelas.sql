@@ -43,6 +43,15 @@ CREATE TABLE Endereco(
 
 -- Funcionario
 
+CREATE TABLE Funcionario(
+	cpf_funcionario VARCHAR2(15) NOT NULL,
+	cod_funcionario VARCHAR2(8) NOT NULL,
+	cargo VARCHAR2(25) NOT NULL,
+    cod_supervisor VARCHAR2(8) NOT NULL,
+	CONSTRAINT funcionario_pkey PRIMARY KEY (cpf_funcionario),
+	CONSTRAINT funcionario_fkey1 FOREIGN KEY (cpf_funcionario) REFERENCES Pessoa (cpf),
+    CONSTRAINT funcionario_fkey2 FOREIGN KEY (cod_supervisor) REFERENCES Funcionario (cod_funcionario) 
+);
 -- Cargo
 
 -- Dependente
@@ -73,6 +82,11 @@ CREATE TABLE Visitante(
 
 -- Jaula
 
+CREATE TABLE Jaula(
+    cod_jaula INTEGER NOT NULL,
+    capacidade NUMBER (2),
+    CONSTRAINT jaula_pkey PRIMARY KEY (cod_jaula),
+);
 -- Departamento
 
 -- Animais
