@@ -142,6 +142,12 @@ CREATE TABLE Compra_visitante_ticket(
 );
 
 -- Promocao
+CREATE TABLE Promocao (
+	cod_promocao NUMBER NOT NULL,
+	desconto NUMBER NOT NULL,
+	data_termino DATE NOT NULL,
+	CONSTRAINT promocao_pkey PRIMARY KEY (cod_promocao)
+);
 
 -- Participa
 
