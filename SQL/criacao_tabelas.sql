@@ -19,8 +19,7 @@ DROP TABLE Promocao;
 DROP TABLE Participa;
 DROP TABLE Pertence;
 
--- Pessoa (cpf, nome, data_nascimento)
-
+-- Pessoa
 CREATE TABLE Pessoa(
     cpf VARCHAR2(15) NOT NULL,
     nome VARCHAR2(50) NOT NULL,
@@ -48,21 +47,39 @@ CREATE TABLE Endereco(
 );
 
 -- Funcionario
-
-CREATE TABLE Funcionario(
+CREATE TABLE Funcionario ( 
 	cpf_funcionario VARCHAR2(15) NOT NULL,
-	cod_funcionario VARCHAR2(8) NOT NULL,
-	cargo VARCHAR2(25) NOT NULL,
-    cod_supervisor VARCHAR2(8) NOT NULL,
+	cargo VARCHAR2(15) NOT NULL,
+	cpf_supervisor VARCHAR2(15) NOT NULL,
 	CONSTRAINT funcionario_pkey PRIMARY KEY (cpf_funcionario),
 	CONSTRAINT funcionario_fkey1 FOREIGN KEY (cpf_funcionario) REFERENCES Pessoa (cpf),
-    CONSTRAINT funcionario_fkey2 FOREIGN KEY (cod_supervisor) REFERENCES Funcionario (cod_funcionario) 
+	CONSTRAINT funcionario_fkey2 FOREIGN KEY (cod_supervisor) REFERENCES Funcionario (cod_funcionario)
 );
+
 -- Cargo
+CREATE TABLE Cargo ( 
+	cargo_funcionario VARCHAR2(15) NOT NULL,
+	salario NUMBER NOT NULL CHECK (salario >= 1210.00), -- CLÁUSULA CHECK
+	CONSTRAINT cargo_pkey PRIMARY KEY (cargo_funcionario),
+	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cargo)
+);
 
 -- Dependente
+CREATE TABLE Dependente ( 
+	cpf_funcionario VARCHAR2(15) NOT NULL,
+	nome_dependente VARCHAR2(20) NOT NULL,
+	grau_de_parentesco VARCHAR2(10) NOT NULL,
+	data_nasc DATE NOT NULL,
+	CONSTRAINT dependente_pkey PRIMARY KEY (cpf_funcionario, nome_dependente),
+	CONSTRAINT dependente_fkey FOREIGN KEY (cpf_funcionario) REFERENCES Pessoa (cpf)
+);
 
 -- Biologo
+CREATE TABLE Biologo ( 
+	cpf_biologo VARCHAR2(15) NOT NULL,
+	CONSTRAINT biologo_pkey PRIMARY KEY (cpf_biologo, cod_biologo),
+	CONSTRAINT biologo_fkey FOREIGN KEY (cpf_biologo) REFERENCES Funcionario (cpf_funcionario)
+);
 
 -- Atendente (cpf_atendente*, cod_atendente)
 --  	cpf_atendente referencia Funcionário (cpf_funcionario)
@@ -99,22 +116,38 @@ CREATE TABLE Jaula(
     CONSTRAINT jaula_pkey PRIMARY KEY (cod_jaula),
 );
 -- Departamento
+CREATE TABLE Departamento ( 
+	cod_departamento VARCHAR2(4),
+	nome_departamento VARCHAR2(20) NOT NULL,
+	quantidade_de_jaulas NUMBER NOT NULL,
+	CONSTRAINT departamento_pkey PRIMARY KEY (cod_departamento)
+);
 
 -- Animais
+CREATE TABLE Animais ( 
+	cod_animal VARCHAR2(10) NOT NULL,
+	especie VARCHAR2(20) NOT NULL,
+	CONSTRAINT animal_pkey PRIMARY KEY (cod_animal)
+);
 
 -- Cuida
+CREATE TABLE Cuida ( 
+	cod_animal VARCHAR2(10) NOT NULL,
+	cpf_biologo VARCHAR2(10) NOT NULL,
+	CONSTRAINT cuida_pkey PRIMARY KEY (cod_animal, cpf_biologo),
+	CONSTRAINT cuida_fkey1 FOREIGN KEY (cod_animal) REFERENCES Animais (cod_animal),
+	CONSTRAINT cuida_fkey2 FOREIGN KEY (cpf_biologo) REFERENCES Biologo (cpf_biologo)
+);
 
---Limpa (cod_zelador*, cod_jaula*, data_limpeza)
---	cod_zelador referencia Zelador (cod_zelador)
---	cod_jaula referencia Jaula (cod_jaula)
+--Limpa
 
-CREATE TABLE Limpa(
-    cod_zelador NUMBER NOT NULL,
-    cod_jaula NUMBER NOT NULL,
-    data_limpeza DATE NOT NULL,
-    CONSTRAINT limpa_pkey PRIMARY KEY (cod_zelador, cod_jaula),
-    CONSTRAINT limpa_fkey1 FOREIGN KEY (cod_zelador) REFERENCES zelador(cod_zelador),
-    CONSTRAINT limpa_fkey2 FOREIGN KEY (cod_jaula) REFERENCES jaula(cod_jaula)
+CREATE TABLE Limpa ( 
+	cpf_zelador VARCHAR2(10) NOT NULL,
+	cod_jaula VARCHAR2(10) NOT NULL,
+	data_limpeza DATE NOT NULL,
+	CONSTRAINT limpa_pkey PRIMARY KEY (cpf_zelador, cod_jaula),
+	CONSTRAINT limpa_fkey1 FOREIGN KEY (cpf_zelador) REFERENCES Zelador (cpf_zelador),
+	CONSTRAINT limpa_fkey2 FOREIGN KEY (cod_jaula) REFERENCES Jaula (cod_jaula)
 );
 
 -- Ticket
@@ -135,10 +168,6 @@ INCREMENT BY 1
 START WITH 1;
 
 -- Compra_visitante_ticket
-CREATE TABLE Compra_visitante_ticket(
-	cod_compra VARCHAR2(10) NOT NULL,
-	CONSTRAINT compra_visitante_ticket_pkey PRIMARY KEY (cod_compra)
-);
 
 -- Promocao
 CREATE TABLE Promocao (
@@ -149,5 +178,21 @@ CREATE TABLE Promocao (
 );
 
 -- Participa
+CREATE TABLE Participa ( 
+	cod_promocao NUMBER NOT NULL,
+	CONSTRAINT participa_pkey PRIMARY KEY (cod_promocao),
+	CONSTRAINT participa_fkey2 FOREIGN KEY (cod_promocao) REFERENCES Promocao (cod_promocao)
+);
 
 -- Pertence
+CREATE TABLE Pertence ( 
+	animais VARCHAR2(10) NOT NULL, 
+	jaula VARCHAR2(10) NOT NULL,
+	data_entrada DATE NOT NULL,
+	departamento VARCHAR2(10) NOT NULL,
+	data_saida DATE NOT NULL,
+	CONSTRAINT pertence_pkey PRIMARY KEY (animais, jaula, data_entrada)
+	CONSTRAINT pertence_fkey1 FOREIGN KEY (animais) REFERENCES Animais (cod_animal),
+	CONSTRAINT pertence_fkey2 FOREIGN KEY (jaula) REFERENCES Jaula (cod_jaula),
+	CONSTRAINT pertence_fkey3 FOREIGN KEY (departamento) REFERENCES Departamento (cod_departamento)
+);
