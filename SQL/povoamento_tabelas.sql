@@ -23,6 +23,55 @@ INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('505.505.505-55', 'Marta G
 INSERT INTO Pessoa (cpf,nome,data_nascimento) VALUES ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy')); -- Zelador
 
 -- Telefone (2)
+-- 1
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('111.222.333-44', '987776666');
+-- 2
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('444.555.666-77', '978886666');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('444.555.666-77', '32221111');
+-- 3
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('777.888.999-99', '998887777');
+-- 4
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('123.456.789-00', '994445555');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('123.456.789-00', '34440000');
+-- 5
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('248.369.124-22', '989995555');
+-- 6
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('111.111.111-11', '987773333');
+-- 7
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('222.222.222-22', '997774444');
+-- 8
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('333.333.333-33', '996662222');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('333.333.333-33', '987550101');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('333.333.333-33', '34110000');
+-- 9
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('444.444.444-44', '993338888');
+-- 10
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('555.555.555-55', '981110000');
+-- 11
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('666.666.666-66', '988885555');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('666.666.666-66', '34444444');
+-- 12
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('777.777.777-77', '999990000');
+-- 13
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('888.888.888-88', '991911919');
+-- 14
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('999.999.999-99', '991919191');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('999.999.999-99', '32322323');
+-- 15
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('101.101.101-10', '999009900');
+-- 16
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('202.202.202-20', '997777777');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('202.202.202-20', '32323232');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('202.202.202-20', '998988989');
+-- 17
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('303.303.303-30', '998989898');
+-- 18
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('404.404.404-40', '997977979');
+-- 19
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('505.505.505-55', '997979797');
+-- 20
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('606.606.606-60', '993336666');
+INSERT INTO Telefone (cpf_pessoa,numero_telefone) VALUES ('606.606.606-60', '32326464');
 
 -- Endereco (3)
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('111.222.333-44', '10000-100', 'Rua Anacleto de Souza', '80', 'Casa Forte');
@@ -74,6 +123,11 @@ INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('333.333.333-33', '
 INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('202.202.202-20', 'A435542');
 
 -- Zelador
+INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('101.101.101-10', 'Z000001');
+INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('606.606.606-60', 'Z000002');
+INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('111.222.333-44', 'Z000003');
+INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('777.777.777-77', 'Z000004');
+INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('248.369.124-22', 'Z000005');
 
 -- Visitante
 INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.222.333-44', 'V773432', to_date('29/08/2021', 'dd/mm/yy'), '11122233344');
@@ -100,6 +154,30 @@ INSERT INTO Jaula (cod_jaula, capacidade) VALUES (5, 15);
 INSERT INTO Limpa (cod_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_date('25/08/2022', 'dd/mm/yy'))
 
 -- Ticket
+-- 1
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V773432', 'A734658', 25.00, to_date('29/08/2021', 'dd/mm/yy'));
+-- 2
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V940324', 'A734658', 25.00, to_date('01/04/2019', 'dd/mm/yy'));
+-- 3
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V231932', 'A328373', 25.00, to_date('12/02/2020', 'dd/mm/yy'));
+-- 4
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V803215', 'A328373', 25.00, to_date('20/01/2022', 'dd/mm/yy'));
+-- 5
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V563232', 'A012639', 25.00, to_date('29/06/2020', 'dd/mm/yy'));
+-- 6
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V198723', 'A012639', 25.00, to_date('22/07/2022', 'dd/mm/yy'));
+-- 7
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V200811', 'A435542', 25.00, to_date('25/03/2021', 'dd/mm/yy'));
+-- 8
+INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, 'V445890', 'A435542', 25.00, to_date('12/10/2021', 'dd/mm/yy'));
 
 -- Compra_visitante_ticket
 INSERT INTO Compra_visitante_ticket ('1111111111');
