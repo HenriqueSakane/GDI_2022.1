@@ -121,11 +121,11 @@ INSERT INTO Atendente (cpf_atendente) VALUES ('333.333.333-33');
 INSERT INTO Atendente (cpf_atendente) VALUES ('202.202.202-20');
 
 -- Zelador
-INSERT INTO Zelador (cpf_zelador) VALUES ('101.101.101-10');
+INSERT INTO Zelador (cpf_zelador) VALUES ('404.404.404-40');
 INSERT INTO Zelador (cpf_zelador) VALUES ('606.606.606-60');
-INSERT INTO Zelador (cpf_zelador) VALUES ('111.222.333-44');
+INSERT INTO Zelador (cpf_zelador) VALUES ('505.505.505-55');
 INSERT INTO Zelador (cpf_zelador) VALUES ('777.777.777-77');
-INSERT INTO Zelador (cpf_zelador) VALUES ('248.369.124-22');
+
 
 -- Visitante
 INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.222.333-44', to_date('29/08/2021', 'dd/mm/yy'), '11122233344');
@@ -138,11 +138,11 @@ INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALU
 INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('555.555.555-55', to_date('12/10/2021', 'dd/mm/yy'), '55555555555');
 
 -- Jaula
-INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (1, 5);
-INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (2, 10);
-INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (3, 6);
-INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (4, 20);
-INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (5, 15);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (1, 5);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (2, 10);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (3, 6);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (4, 20);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES (5, 15);
 
 -- Departamento
 
@@ -151,7 +151,12 @@ INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (5, 15);
 -- Cuida
 
 -- Limpa
-INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_date('25/08/2022', 'dd/mm/yy'))
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES ('404.404.404-40', 1, to_date('25/08/2022', 'dd/mm/yy'))
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES ('404.404.404-40', 2, to_date('23/08/2022', 'dd/mm/yy'))
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES ('606.606.606-60', 3, to_date('20/08/2022', 'dd/mm/yy'))
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES ('505.505.505-55', 4, to_date('11/08/2022', 'dd/mm/yy'))
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES ('777.777.777-77', 5, to_date('31/07/2022', 'dd/mm/yy'))
+
 
 -- Ticket
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
