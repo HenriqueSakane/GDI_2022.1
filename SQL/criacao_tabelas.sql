@@ -77,8 +77,7 @@ CREATE TABLE Atendente(
 -- Zelador
 CREATE TABLE Zelador(
 	cpf_zelador VARCHAR2(15) NOT NULL,
-	cod_zelador VARCHAR2(10) NOT NULL,
-	CONSTRAINT zelador_pkey PRIMARY KEY (cpf_zelador, cod_zelador),
+	CONSTRAINT zelador_pkey PRIMARY KEY (cpf_zelador),
 	CONSTRAINT zelador_fkey FOREIGN KEY (cpf_zelador) REFERENCES Funcionario (cpf_funcionario)
 );
 
@@ -122,13 +121,13 @@ CREATE TABLE Limpa(
 
 CREATE TABLE Ticket(
 	numero_ticket INTEGER NOT NULL,
-	cod_visitante VARCHAR2(10) NOT NULL,
-	cod_atendente VARCHAR2(10) NOT NULL,
+	cpf_visitante VARCHAR2(10) NOT NULL,
+	cpf_atendente VARCHAR2(10) NOT NULL,
 	valor NUMBER(3,2) NOT NULL,
 	data_ticket DATE NOT NULL,
 	CONSTRAINT ticket_pkey PRIMARY KEY (numero_ticket),
-	CONSTRAINT ticket_fkey1 FOREIGN KEY (cod_visitante) REFERENCES Visitante (cod_visitante),
-	CONSTRAINT ticket_fkey2 FOREIGN KEY (cod_atendente) REFERENCES Atendente (cod_atendente)
+	CONSTRAINT ticket_fkey1 FOREIGN KEY (cpf_visitante) REFERENCES Visitante (cpf_visitante),
+	CONSTRAINT ticket_fkey2 FOREIGN KEY (cpf_atendente) REFERENCES Atendente (cpf_atendente)
 );
 
 CREATE SEQUENCE numero_ticket
