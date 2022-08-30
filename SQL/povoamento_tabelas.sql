@@ -96,20 +96,18 @@ INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('505.505.505
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('606.606.606-60', '20081-987', 'Avenida da Paz', '22', 'Várzea');
 
 -- Funcionario (4)
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('777.888.999-99', 'F832247', 'Atendente_1', 'F832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('666.666.666-66', 'F987521', 'Atendente_2', 'F832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('333.333.333-33', 'F888632', 'Atendente_3', 'F832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('202.202.202-20', 'F462825', 'Atendente_4', 'F832247');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('999.999.999-99', 'F645483', 'Biologo_1', 'F645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('101.101.101-10', 'F376208', 'Biologo_2', 'F645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('303.303.303-30', 'F094631', 'Biologo_3', 'F645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('888.888.888-88', 'F847504', 'Biologo_4', 'F645483');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('404.404.404-40', 'F901623', 'Zelador_1', 'F901623');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('505.505.505-55', 'F674202', 'Zelador_2', 'F901623');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('606.606.606-60', 'F094321', 'Zelador_3', 'F901623');
-INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor) VALUES ('777.777.777-77', 'F784232', 'Zelador_4', 'F901623');
-
--- Cargo
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('777.888.999-99', 'Atendente_1', '777.888.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('666.666.666-66', 'Atendente_2', '777.888.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('333.333.333-33', 'Atendente_3', '777.888.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('202.202.202-20', 'Atendente_4', '777.888.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('999.999.999-99', 'Biologo_1', '999.999.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('101.101.101-10', 'Biologo_2', '999.999.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('303.303.303-30', 'Biologo_3', '999.999.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('888.888.888-88', 'Biologo_4', '999.999.999-99');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('404.404.404-40', 'Zelador_1', '404.404.404-40');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('505.505.505-55', 'Zelador_2', '404.404.404-40');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('606.606.606-60', 'Zelador_3', '404.404.404-40');
+INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('777.777.777-77', 'Zelador_4', '404.404.404-40')
 
 -- Dependente
 
@@ -117,65 +115,59 @@ INSERT INTO Funcionario (cpf_funcionario, cod_funcionario, cargo, cod_supervisor
 
 -- Atendente
 
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('777.888.999-99', 'A734658');
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('666.666.666-66', 'A328373');
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('333.333.333-33', 'A012639');
-INSERT INTO Atendente (cpf_atendente, cod_atendente) VALUES ('202.202.202-20', 'A435542');
+INSERT INTO Atendente (cpf_atendente) VALUES ('777.888.999-99');
+INSERT INTO Atendente (cpf_atendente) VALUES ('666.666.666-66');
+INSERT INTO Atendente (cpf_atendente) VALUES ('333.333.333-33');
+INSERT INTO Atendente (cpf_atendente) VALUES ('202.202.202-20');
 
 -- Zelador
-INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('101.101.101-10', 'Z000001');
-INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('606.606.606-60', 'Z000002');
-INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('111.222.333-44', 'Z000003');
-INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('777.777.777-77', 'Z000004');
-INSERT INTO Zelador (cpf_zelador, cod_zelador) VALUES ('248.369.124-22', 'Z000005');
+INSERT INTO Zelador (cpf_zelador) VALUES ('101.101.101-10');
+INSERT INTO Zelador (cpf_zelador) VALUES ('606.606.606-60');
+INSERT INTO Zelador (cpf_zelador) VALUES ('111.222.333-44');
+INSERT INTO Zelador (cpf_zelador) VALUES ('777.777.777-77');
+INSERT INTO Zelador (cpf_zelador) VALUES ('248.369.124-22');
 
 -- Visitante
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.222.333-44', 'V773432', to_date('29/08/2021', 'dd/mm/yy'), '11122233344');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.555.666-77', 'V940324', to_date('01/04/2019', 'dd/mm/yy'), '4455566677');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('123.456.789-00', 'V231932', to_date('12/02/2020', 'dd/mm/yy'), '12345678900');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('248.369.124-22', 'V803215', to_date('20/01/2022', 'dd/mm/yy'), '24836912422');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.111.111-11', 'V563232', to_date('29/06/2020', 'dd/mm/yy'), '11111111111');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('222.222.222-22', 'V198723', to_date('22/07/2022', 'dd/mm/yy'), '22222222222');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.444.444-44', 'V200811', to_date('25/03/2021', 'dd/mm/yy'), '44444444444');
-INSERT INTO Visitante (cpf_pessoa, cod_visitante, data_cadastro, carteira_de_estudante) VALUES ('555.555.555-55', 'V445890', to_date('12/10/2021', 'dd/mm/yy'), '55555555555');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.222.333-44', to_date('29/08/2021', 'dd/mm/yy'), '11122233344');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.555.666-77', to_date('01/04/2019', 'dd/mm/yy'), '4455566677');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('123.456.789-00', to_date('12/02/2020', 'dd/mm/yy'), '12345678900');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('248.369.124-22', to_date('20/01/2022', 'dd/mm/yy'), '24836912422');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('111.111.111-11', to_date('29/06/2020', 'dd/mm/yy'), '11111111111');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('222.222.222-22', to_date('22/07/2022', 'dd/mm/yy'), '22222222222');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('444.444.444-44', to_date('25/03/2021', 'dd/mm/yy'), '44444444444');
+INSERT INTO Visitante (cpf_visitante, data_cadastro, carteira_de_estudante) VALUES ('555.555.555-55', to_date('12/10/2021', 'dd/mm/yy'), '55555555555');
 
 -- Jaula
+INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (1, 5);
+INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (2, 10);
+INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (3, 6);
+INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (4, 20);
+INSERT INTO Jaula (cpf_jaula, capacidade) VALUES (5, 15);
 
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES (1, 5);
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES (2, 10);
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES (3, 6);
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES (4, 20);
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES (5, 15);
 -- Departamento
--- Animais
--- Cuida
--- Limpa
 
-INSERT INTO Limpa (cod_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_date('25/08/2022', 'dd/mm/yy'))
+-- Animais
+
+-- Cuida
+
+-- Limpa
+INSERT INTO Limpa (cpf_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_date('25/08/2022', 'dd/mm/yy'))
 
 -- Ticket
--- 1
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '111.222.333-44', '777.888.999-99', 25.00, to_date('29/08/2021', 'dd/mm/yy'));
--- 2
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '444.555.666-77', '777.888.999-99', 25.00, to_date('01/04/2019', 'dd/mm/yy'));
--- 3
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '123.456.789-00', '666.666.666-66', 25.00, to_date('12/02/2020', 'dd/mm/yy'));
--- 4
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '248.369.124-22', '666.666.666-66', 25.00, to_date('20/01/2022', 'dd/mm/yy'));
--- 5
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '111.111.111-11', '333.333.333-33', 25.00, to_date('29/06/2020', 'dd/mm/yy'));
--- 6
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '222.222.222-22', '333.333.333-33', 25.00, to_date('22/07/2022', 'dd/mm/yy'));
--- 7
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '444.444.444-44', '202.202.202-20', 25.00, to_date('25/03/2021', 'dd/mm/yy'));
--- 8
 INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
 VALUES (numero_ticket.NEXTVAL, '555.555.555-55', '202.202.202-20', 25.00, to_date('12/10/2021', 'dd/mm/yy'));
 

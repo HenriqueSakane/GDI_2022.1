@@ -101,7 +101,6 @@ CREATE TABLE Zelador(
 -- Visitante
 CREATE TABLE Visitante(
 	cpf_visitante VARCHAR2(15) NOT NULL,
-	cod_visitante VARCHAR2(10) NOT NULL,
 	data_cadastro DATE NOT NULL,
 	carteira_de_estudante VARCHAR2(15) NOT NULL,
 	CONSTRAINT visitante_pkey PRIMARY KEY (cpf_visitante, cod_visitante),
