@@ -155,29 +155,29 @@ INSERT INTO Limpa (cod_zelador, cod_jaula, data_limpeza) VALUES (00000, 000, to_
 
 -- Ticket
 -- 1
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V773432', 'A734658', 25.00, to_date('29/08/2021', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '111.222.333-44', '777.888.999-99', 25.00, to_date('29/08/2021', 'dd/mm/yy'));
 -- 2
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V940324', 'A734658', 25.00, to_date('01/04/2019', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '444.555.666-77', '777.888.999-99', 25.00, to_date('01/04/2019', 'dd/mm/yy'));
 -- 3
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V231932', 'A328373', 25.00, to_date('12/02/2020', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '123.456.789-00', '666.666.666-66', 25.00, to_date('12/02/2020', 'dd/mm/yy'));
 -- 4
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V803215', 'A328373', 25.00, to_date('20/01/2022', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '248.369.124-22', '666.666.666-66', 25.00, to_date('20/01/2022', 'dd/mm/yy'));
 -- 5
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V563232', 'A012639', 25.00, to_date('29/06/2020', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '111.111.111-11', '333.333.333-33', 25.00, to_date('29/06/2020', 'dd/mm/yy'));
 -- 6
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V198723', 'A012639', 25.00, to_date('22/07/2022', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '222.222.222-22', '333.333.333-33', 25.00, to_date('22/07/2022', 'dd/mm/yy'));
 -- 7
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V200811', 'A435542', 25.00, to_date('25/03/2021', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '444.444.444-44', '202.202.202-20', 25.00, to_date('25/03/2021', 'dd/mm/yy'));
 -- 8
-INSERT INTO Ticket (numero_ticket, cod_visitante, cod_atendente, valor, data_ticket)
-VALUES (numero_ticket.NEXTVAL, 'V445890', 'A435542', 25.00, to_date('12/10/2021', 'dd/mm/yy'));
+INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_ticket)
+VALUES (numero_ticket.NEXTVAL, '555.555.555-55', '202.202.202-20', 25.00, to_date('12/10/2021', 'dd/mm/yy'));
 
 -- Compra_visitante_ticket
 INSERT INTO Compra_visitante_ticket ('1111111111');
