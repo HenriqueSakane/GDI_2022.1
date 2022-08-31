@@ -177,11 +177,12 @@ INSERT INTO Ticket (numero_ticket, cpf_visitante, cpf_atendente, valor, data_tic
 VALUES (numero_ticket.NEXTVAL, '555.555.555-55', '202.202.202-20', 25.00, to_date('12/10/2021', 'dd/mm/yy'));
 
 -- Compra_visitante_ticket
-INSERT INTO Compra_visitante_ticket ('1111111111');
-INSERT INTO Compra_visitante_ticket ('2222222222');
-INSERT INTO Compra_visitante_ticket ('3333333333');
-INSERT INTO Compra_visitante_ticket ('4444444444');
-INSERT INTO Compra_visitante_ticket ('5555555555');
+
+--INSERT INTO Compra_visitante_ticket ('1111111111');
+--INSERT INTO Compra_visitante_ticket ('2222222222');
+--INSERT INTO Compra_visitante_ticket ('3333333333');
+--INSERT INTO Compra_visitante_ticket ('4444444444');
+--INSERT INTO Compra_visitante_ticket ('5555555555');
 
 -- Promocao
 INSERT INTO Promocao (cod_promocao, desconto, data_termino) VALUES (48957, 50, to_date('30/11/2021', 'dd/mm/yy'));
