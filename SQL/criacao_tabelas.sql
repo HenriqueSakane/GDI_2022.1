@@ -81,9 +81,7 @@ CREATE TABLE Biologo (
 	CONSTRAINT biologo_fkey FOREIGN KEY (cpf_biologo) REFERENCES Funcionario (cpf_funcionario)
 );
 
--- Atendente (cpf_atendente*, cod_atendente)
---  	cpf_atendente referencia Funcionário (cpf_funcionario)
-
+-- Atendente
 CREATE TABLE Atendente(
     cpf_atendente VARCHAR2(15) NOT NULL,
     cod_atendente NUMBER NOT NULL,
@@ -108,12 +106,12 @@ CREATE TABLE Visitante(
 );
 
 -- Jaula
-
 CREATE TABLE Jaula(
     cod_jaula INTEGER NOT NULL,
     capacidade NUMBER (2),
     CONSTRAINT jaula_pkey PRIMARY KEY (cod_jaula),
 );
+
 -- Departamento
 CREATE TABLE Departamento ( 
 	cod_departamento VARCHAR2(4),
@@ -139,7 +137,6 @@ CREATE TABLE Cuida (
 );
 
 --Limpa
-
 CREATE TABLE Limpa ( 
 	cpf_zelador VARCHAR2(10) NOT NULL,
 	cod_jaula VARCHAR2(10) NOT NULL,
@@ -150,7 +147,6 @@ CREATE TABLE Limpa (
 );
 
 -- Ticket
-
 CREATE TABLE Ticket(
 	numero_ticket INTEGER NOT NULL,
 	cpf_visitante VARCHAR2(10) NOT NULL,
