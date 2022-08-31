@@ -171,7 +171,7 @@ START WITH 1;
 --CREATE TABLE Compra_visitante_ticket (
 --	cod_compra INTEGER NOT NULL,
 --	CONSTRAINT compra_vt_pkey PRIMARY KEY (cod_compra)
-)
+--)
 
 
 -- Promocao
