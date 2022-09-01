@@ -186,8 +186,8 @@ CREATE TABLE Participa (
 	cpf_visitante VARCHAR2(15) NOT NULL,
 	CONSTRAINT participa_pkey PRIMARY KEY (cod_promocao, numero_ticket, cpf_visitante),
 	CONSTRAINT participa_fkey1 FOREIGN KEY (cod_promocao) REFERENCES Promocao (cod_promocao),
-	CONSTRAINT participa_fkey2 FOREIGN KEY (numero_ticket) REFERENCES Compra (numero_ticket),
-	CONSTRAINT participa_fkey3 FOREIGN KEY (cpf_visitante) REFERENCES Compra (cpf_visitante)
+	CONSTRAINT participa_fkey2 FOREIGN KEY (numero_ticket) REFERENCES Ticket (numero_ticket),
+	CONSTRAINT participa_fkey3 FOREIGN KEY (cpf_visitante) REFERENCES Visitante (cpf_visitante)
 );
 
 -- Pertence
