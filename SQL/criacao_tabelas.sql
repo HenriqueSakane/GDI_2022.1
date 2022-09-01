@@ -95,7 +95,7 @@ CREATE TABLE Zelador (
 	cpf_zelador VARCHAR2(15) NOT NULL,
 	numero_de_jaulas_a_limpar NUMBER NOT NULL,
 	CONSTRAINT zelador_pkey PRIMARY KEY (cpf_zelador),
-	CONSTRAINT zelador_fkey PRIMARY KEY (cpf_zelador) REFERENCES Funcionario (cpf_funcionario)
+	CONSTRAINT zelador_fkey FOREIGN KEY (cpf_zelador) REFERENCES Funcionario (cpf_funcionario)
 );
 
 -- Visitante
