@@ -59,9 +59,10 @@ CREATE TABLE Funcionario (
 -- Cargo
 CREATE TABLE Cargo ( 
 	cargo_funcionario VARCHAR2(15) NOT NULL,
-	salario NUMBER(5,2) NOT NULL CHECK (salario >= 1210.00), -- CLÁUSULA CHECK
+	salario NUMBER(5,2) NOT NULL,
 	CONSTRAINT cargo_pkey PRIMARY KEY (cargo_funcionario),
-	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cargo)
+	CONSTRAINT cargo_check CHECK (salario >= 1210.00), -- CLÁUSULA CHECK
+	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cpf_funcionario)
 );
 
 -- Dependente
