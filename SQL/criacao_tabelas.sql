@@ -59,10 +59,10 @@ CREATE TABLE Funcionario (
 -- Cargo
 CREATE TABLE Cargo ( 
 	cargo_funcionario VARCHAR2(15) NOT NULL,
-	salario NUMBER(5,2) NOT NULL,
+	salario NUMBER NOT NULL,
 	CONSTRAINT cargo_pkey PRIMARY KEY (cargo_funcionario),
 	CONSTRAINT cargo_check CHECK (salario >= 1210.00), -- CLÁUSULA CHECK
-	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cpf_funcionario)
+	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cargo)
 );
 
 -- Dependente
@@ -153,7 +153,7 @@ CREATE TABLE Limpa (
 CREATE TABLE Ticket ( 
 	numero_ticket NUMBER NOT NULL,
 	cpf_atendente VARCHAR2(15) NOT NULL,
-	valor NUMBER (3,2) NOT NULL,
+	valor NUMBER NOT NULL,
 	data_ticket DATE NOT NULL,
 	CONSTRAINT ticket_pkey PRIMARY KEY (numero_ticket),
 	CONSTRAINT ticket_fkey1 FOREIGN KEY (cpf_atendente) REFERENCES Atendente (cpf_atendente) 
