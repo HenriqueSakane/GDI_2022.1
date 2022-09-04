@@ -48,9 +48,9 @@ CREATE TABLE Endereco (
 
 -- Funcionario
 CREATE TABLE Funcionario ( 
-	cpf_funcionario VARCHAR2(15) NOT NULL,
+	cpf_funcionario VARCHAR2(15),
 	cargo VARCHAR2(15) NOT NULL,
-	cpf_supervisor VARCHAR2(15) NOT NULL,
+	cpf_supervisor VARCHAR2(15),
 	CONSTRAINT funcionario_pkey PRIMARY KEY (cpf_funcionario),
 	CONSTRAINT funcionario_fkey1 FOREIGN KEY (cpf_funcionario) REFERENCES Pessoa (cpf),
 	CONSTRAINT funcionario_fkey2 FOREIGN KEY (cpf_supervisor) REFERENCES Funcionario (cpf_funcionario)
@@ -103,7 +103,7 @@ CREATE TABLE Zelador (
 CREATE TABLE Visitante ( 
 	cpf_visitante VARCHAR2(15) NOT NULL,
 	data_cadastro DATE NOT NULL,
-	carteira_de_estudante VARCHAR2(12) NOT NULL,
+	carteira_de_estudante VARCHAR2(12),
 	CONSTRAINT visitante_pkey PRIMARY KEY (cpf_visitante),
 	CONSTRAINT visitante_fkey FOREIGN KEY (cpf_visitante) REFERENCES Pessoa (cpf)
 );
@@ -192,7 +192,7 @@ CREATE TABLE Participa (
 
 -- Pertence
 CREATE TABLE Pertence ( 
-	animais VARCHAR2(15) NOT NULL, 
+	animais VARCHAR2(5) NOT NULL, 
 	jaula VARCHAR2(4) NOT NULL,
 	data_entrada DATE NOT NULL,
 	departamento VARCHAR2(4) NOT NULL,
