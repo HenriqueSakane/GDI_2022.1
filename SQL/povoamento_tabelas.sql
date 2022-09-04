@@ -159,7 +159,7 @@ INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Js03', 1);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Js04', 1);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Js05', 1);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Js06', 1);
-INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Jj00', 10);
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Jj01', 10);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Jl01', 2);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Jl02', 3);
 INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Jt01', 5);
@@ -399,10 +399,10 @@ INSERT INTO Compra (numero_ticket, cpf_visitante, nota_fiscal) VALUES (8, '555.5
 
 -- Participa 
 
-INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (65037, 1, '111.222.333-44',); 
-INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (48957, 3, '123.456.789-00',); 
-INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (65037, 6, '222.222.222-22',); 
-INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (72841, 8, '555.555.555-55',); 
+INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (65037, 1, '111.222.333-44'); 
+INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (48957, 3, '123.456.789-00'); 
+INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (65037, 6, '222.222.222-22'); 
+INSERT INTO Participa (cod_promocao, numero_ticket, cpf_visitante) VALUES (72841, 8, '555.555.555-55'); 
 
 -- Pertence 
 
