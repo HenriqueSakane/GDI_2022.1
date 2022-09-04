@@ -168,7 +168,7 @@ CREATE TABLE Compra (
 	CONSTRAINT compra_fkey1 FOREIGN KEY (numero_ticket) REFERENCES Ticket (numero_ticket),
 	CONSTRAINT compra_fkey2 FOREIGN KEY (cpf_visitante) REFERENCES Visitante (cpf_visitante)
 );
-CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1;
+
 
 -- Promocao
 CREATE TABLE Promocao ( 
