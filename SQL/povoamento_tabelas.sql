@@ -78,6 +78,12 @@ INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('404.404.404
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('505.505.505-55', '19872-008', 'Avenida Luiz Gonzaga', '35', 'Cordeiro');
 INSERT INTO Endereco (cpf_pessoa, cep, rua, numero, bairro) VALUES ('606.606.606-60', '20081-987', 'Avenida da Paz', '22', 'Várzea');
 
+-- Cargo 
+
+INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Atendente', 2000.00);
+INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Biologo', 3100.00);
+INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Zelador', 2100.00);
+
 -- Funcionario 
 
 INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('777.888.999-99', 'Atendente', NULL);
@@ -92,12 +98,6 @@ INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('404.40
 INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('505.505.505-55', 'Zelador', '404.404.404-40');
 INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('606.606.606-60', 'Zelador', '404.404.404-40');
 INSERT INTO Funcionario (cpf_funcionario, cargo, cpf_supervisor) VALUES ('777.777.777-77', 'Zelador', '404.404.404-40');
-
--- Cargo 
-
-INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Atendente', 2000.00);
-INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Biologo', 3100.00);
-INSERT INTO Cargo (cargo_funcionario, salario) VALUES ('Zelador', 2100.00);
 
 -- Dependente 
 
