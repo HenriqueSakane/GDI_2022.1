@@ -21,7 +21,7 @@ SELECT C.cpf_visitante
 FROM Compra C
 WHERE C.numero_ticket BETWEEN 3 AND 7;
 
--- Listar as espécies de serpentes presentes animais no Departamento de Serpentes
+-- Listar as espécies de serpentes presentes no Departamento de Serpentes
 -- IN (1) OK
 SELECT A.especie
 FROM Animais A, Pertence P
@@ -62,8 +62,8 @@ ORDER BY A.especie;
 
 -- GROUP BY (1) Contar a quantodade de animais presentes em cada departamento
 SELECT departamento, COUNT(*) FROM Pertence
-GROUP BY departamento;
-
+GROUP BY departamento
+ORDER BY departamento;
 -- HAVING (2)
 
 -- UNION ou INTERSECT ou MINUS (3)
