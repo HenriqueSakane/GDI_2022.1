@@ -46,6 +46,14 @@ CREATE TABLE Endereco (
 	CONSTRAINT endereco_fkey FOREIGN KEY (cpf_pessoa) REFERENCES Pessoa (cpf) 
 );
 
+-- Cargo
+CREATE TABLE Cargo ( 
+	cargo_funcionario VARCHAR2(15) NOT NULL,
+	salario NUMBER NOT NULL,
+	CONSTRAINT cargo_pkey PRIMARY KEY (cargo_funcionario),
+	CONSTRAINT cargo_check CHECK (salario >= 1210.00) -- CLÁUSULA CHECK
+);
+
 -- Funcionario
 CREATE TABLE Funcionario ( 
 	cpf_funcionario VARCHAR2(15),
@@ -53,16 +61,8 @@ CREATE TABLE Funcionario (
 	cpf_supervisor VARCHAR2(15),
 	CONSTRAINT funcionario_pkey PRIMARY KEY (cpf_funcionario),
 	CONSTRAINT funcionario_fkey1 FOREIGN KEY (cpf_funcionario) REFERENCES Pessoa (cpf),
-	CONSTRAINT funcionario_fkey2 FOREIGN KEY (cpf_supervisor) REFERENCES Funcionario (cpf_funcionario)
-);
-
--- Cargo
-CREATE TABLE Cargo ( 
-	cargo_funcionario VARCHAR2(15) NOT NULL,
-	salario NUMBER NOT NULL,
-	CONSTRAINT cargo_pkey PRIMARY KEY (cargo_funcionario),
-	CONSTRAINT cargo_check CHECK (salario >= 1210.00), -- CLÁUSULA CHECK
-	CONSTRAINT cargo_fkey FOREIGN KEY (cargo_funcionario) REFERENCES Funcionario (cargo)
+	CONSTRAINT funcionario_fkey2 FOREIGN KEY (cpf_supervisor) REFERENCES Funcionario (cpf_funcionario),
+	CONSTRAINT funcionario_fkey3 FOREIGN KEY (cargo) REFERENCES Cargo (cargo_funcionario)
 );
 
 -- Dependente
