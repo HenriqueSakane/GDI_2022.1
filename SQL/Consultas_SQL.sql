@@ -6,6 +6,7 @@ ALTER TABLE Funcionario
 	ADD CHECK (cpf_supervisor != cpf_funcionario);
 
 -- CREATE INDEX (2)
+CREATE INDEX indice_nome_departamento ON Departamento (nome_departamento);
 
 -- INSERT INTO (3)
 
@@ -27,7 +28,10 @@ SELECT A.especie
 FROM Animais A, Pertence P
 WHERE P.animais = A.cod_animal AND P.departamento IN ('D04');
 
+-- Seleciona os códigos das Capivaras
 -- LIKE (2)
+SELECT cod_animal FROM Animais
+WHERE especie LIKE 'Capivara';
 
 -- IS NULL ou IS NOT NULL (3)
 
@@ -64,7 +68,12 @@ ORDER BY A.especie;
 SELECT departamento, COUNT(*) FROM Pertence
 GROUP BY departamento
 ORDER BY departamento;
+
+-- Seleciona as espécies que possuem mais de 2 integrantes
 -- HAVING (2)
+SELECT especie, COUNT(*) FROM animais
+GROUP BY especie
+HAVING COUNT(*) > 2;
 
 -- UNION ou INTERSECT ou MINUS (3)
 
