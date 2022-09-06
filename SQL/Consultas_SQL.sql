@@ -41,12 +41,12 @@ WHERE especie LIKE 'Capivara';
 
 -- MIN (6)
 
--- AVG (7) Calcular a média salarial dos funcionários (ajeitar Funcionario e Cergo depois)
-SELECT AVG(salario) FROM Funcionario;
+-- AVG (7) Calcular a média salarial dos funcionários
+SELECT AVG(salario) FROM Cargo;
 
--- COUNT (1) Contar quantos funcionários ganham mais que 3000 reais (ajeitar Funcionario e Cergo depois)
+-- COUNT (1) Contar a quantidade de biologos
 SELECT COUNT(*)FROM Funcionario
-WHERE salario > 3000;
+WHERE cargo = 'Biologo';
 
 -- Cria tabela com codigo, nome, jaula e departamento do animal, ordenado pelo nome da espécie.
 -- LEFT ou RIGHT ou FULL OUTER JOIN (2) 
