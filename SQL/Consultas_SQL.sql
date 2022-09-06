@@ -48,7 +48,13 @@ SELECT AVG(salario) FROM Funcionario;
 SELECT COUNT(*)FROM Funcionario
 WHERE salario > 3000;
 
+-- Cria tabela com codigo, nome, jaula e departamento do animal, ordenado pelo nome da espécie.
 -- LEFT ou RIGHT ou FULL OUTER JOIN (2) 
+SELECT A.especie, P.animais, P.jaula, P.departamento
+FROM Pertence P
+FULL OUTER JOIN Animais A
+ON P.animais = A.cod_animal
+ORDER BY A.especie;
 
 -- SUBCONSULTA COM OPERADOR RELACIONAL (3)
 
