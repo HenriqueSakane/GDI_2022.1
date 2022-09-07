@@ -7,6 +7,23 @@
 -- BLOCO ANÔNIMO (1)
 
 -- CREATE PROCEDURE (2)
+-- DADO UM CPF, VERIFICA SE ESSA PESSOA POSSUI UMA CARTEIRA DE ESTUDANTE
+CREATE OR REPLACE PROCEDURE VERIFICA_CARTEIRA_VISITANTE (p_cpf_visitante Pessoa.cpf%TYPE) IS
+    V_CT_VISITANTE    Visitante.carteira_de_estudante%TYPE;
+BEGIN
+
+    SELECT V.carteira_de_estudante
+    INTO V_CT_VISITANTE
+    FROM Visitante V
+    WHERE p_cpf_visitante = V.cpf_visitante;
+
+    IF V_CT_VISITANTE IS NULL THEN
+        DBMS_OUTPUT.put_line('Esse visitante nao possui carteira de estudante registrada');
+    ELSE 
+        DBMS_OUTPUT.put_line(CONCAT('Esse visitante possui carteira de estudante de numero ', V_CT_VISITANTE));
+    END IF;
+    
+END VERIFICA_CARTEIRA_VISITANTE;
 
 -- CREATE FUNCTION (3)
 
