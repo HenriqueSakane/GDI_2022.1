@@ -38,6 +38,23 @@ WHERE especie LIKE 'Capivara';
 -- IS NULL ou IS NOT NULL (3)
 
 -- INNER JOIN (4)
+SELECT
+    P.nome,
+    P.data_nascimento,
+    T.numero_telefone,
+    F.cargo,
+    A.guiche
+FROM
+    Pessoa P
+INNER JOIN
+  Telefone T
+ON P.cpf = T.cpf_pessoa
+INNER JOIN
+  Funcionario F
+ON F.cpf_funcionario = P.cpf
+INNER JOIN
+    Atendente A
+ON A.cpf_atendente = P.cpf
 
 -- MAX (5)
 
