@@ -67,6 +67,14 @@ END VERIFICA_CARTEIRA_VISITANTE;
 
 
 -- CREATE FUNCTION (3)
+CREATE OR REPLACE FUNCTION num_supervisionados (funcionario_cpf_v Funcionario.cpf_funcionario%TYPE)
+    RETURN NUMBER IS
+        quantidade NUMBER;
+    BEGIN
+        SELECT COUNT(*) INTO quantidade
+        FROM Funcionario F
+        WHERE F.cpf_supervisor = funcionario_cpf_v;
+    END
 
 -- %TYPE (4)
 CREATE OR REPLACE PROCEDURE Zelado_det (
