@@ -106,6 +106,33 @@ END;
 -- LOOP EXIT WHEN (1)
 
 -- WHILE LOOP (2)
+DECLARE
+    V_COUNT INT := 1;
+    V_MAX_CAPACIDADE INT;
+    V_NUM_JAULAS INT;
+    
+BEGIN
+    
+    SELECT MAX(capacidade)
+    INTO  V_MAX_CAPACIDADE
+    FROM Jaula;
+    
+    WHILE V_COUNT <=  V_MAX_CAPACIDADE LOOP
+        SELECT COUNT(*)
+        INTO  V_NUM_JAULAS
+        FROM Jaula
+        WHERE capacidade = V_COUNT;
+        
+        IF V_NUM_JAULAS <> 0 THEN
+            DBMS_OUTPUT.put_line(CONCAT(CONCAT('Existem ', V_NUM_JAULAS), CONCAT(' jaulas de capacidade ', V_COUNT)));
+        ELSE
+            DBMS_OUTPUT.put_line(CONCAT('Não há nenhuma jaula de capacidade ', V_COUNT));
+        END IF;
+        
+        V_COUNT := V_COUNT + 1;
+    END LOOP;
+    
+END;
 
 -- FOR IN LOOP (3)
 
