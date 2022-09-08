@@ -59,6 +59,8 @@ ON A.cpf_atendente = P.cpf
 -- MAX (5)
 
 -- MIN (6)
+SELECT MIN(Salario) AS Menor_Salario
+FROM Cargo; 
 
 -- AVG (7) Calcular a média salarial dos funcionários
 SELECT AVG(salario) FROM Cargo;
