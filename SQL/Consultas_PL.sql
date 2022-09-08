@@ -89,6 +89,17 @@ WHERE cpf_funcionario=vFuncionario_cpf;
 DBMS_OUTPUT.PUT_LINE(funcionario_record.cargo);
 END;
 -- IF ELSIF (6)
+DECLARE 
+    salario_const NUMBER := 3200; 
+BEGIN 
+    IF(salario_const <= 2000) THEN 
+        dbms_output.put_line('Funcionario é um Zelador'); 
+    ELSIF ( salario_const > 2000 AND salario_const <= 2100) THEN
+        dbms_output.put_line('Ele é um Atendente');
+    ELSE 
+        dbms_output.put_line('Ele é um Biologo');
+    END IF;
+END;
 
 -- CASE WHEN (7)
 
@@ -99,6 +110,15 @@ END;
 -- FOR IN LOOP (3)
 
 -- SELECT … INTO (4)
+DECLARE
+  p_pessoa_nome Pessoa.nome%TYPE;
+BEGIN
+  SELECT nome INTO p_pessoa_nome
+  FROM Pessoa
+  WHERE cpf = '777.888.999-99';
+  -- mostrar o nome da pessoa
+  dbms_output.put_line( p_pessoa_nome );
+END;
 
 -- CURSOR (OPEN, FETCH e CLOSE) (5)
 
@@ -125,6 +145,22 @@ BEGIN
 
 END;
 -- EXCEPTION WHEN (6)
+DECLARE 
+   p_cpf Pessoa.cpf%type := '555.555.555-55'; 
+   p_nome Pessoa.nome%type; 
+BEGIN 
+   SELECT  nome, cpf INTO   p_nome, p_cpf 
+   FROM Pessoa 
+   WHERE cpf = p_cpf;  
+   DBMS_OUTPUT.PUT_LINE ('Nome: '||  p_nome); 
+   DBMS_OUTPUT.PUT_LINE ('Cpf: ' || p_cpf); 
+
+EXCEPTION 
+   WHEN no_data_found THEN 
+      dbms_output.put_line('Não existe essa pessoa'); 
+   WHEN others THEN 
+      dbms_output.put_line('Error!'); 
+END;
 
 -- USO DE PAR METROS (IN, OUT ou IN OUT) (7)
 
@@ -169,3 +205,12 @@ END pkg_procedural;
 -- CREATE OR REPLACE TRIGGER (COMANDO) (3)
 
 -- CREATE OR REPLACE TRIGGER (LINHA) (4)
+CREATE OR REPLACE TRIGGER alt_salario
+BEFORE UPDATE ON Cargo
+FOR EACH ROW
+BEGIN
+IF :NEW.salario < 0 THEN
+RAISE_APPLICATION_ERROR(-20101, 'Slario não pode ser
+menor que 0');
+END IF;
+END;
