@@ -1,6 +1,38 @@
 -- CONSULTAS PL
 
 -- USO DE RECORD (6)
+DECLARE 
+   type animal_detalhes is record 
+      (nome varchar(50), 
+      especie varchar(50), 
+      pesoKG Number, 
+      tamanho Number); 
+   animal1 animal_detalhes; 
+   animal2 animal_detalhes; 
+BEGIN 
+   --  animal1 animal_detalhes;  
+   animal1.nome  := 'Castor'; 
+   animal1.especie := 'Roedor';  
+   animal1.pesoKG := 20 ; 
+   animal1.tamanho := 74 ;  
+   -- animal2 animal_detalhes; 
+   animal2.nome := 'Ornitorrinco'; 
+   animal2.especie := 'Mamifero'; 
+   animal2.pesokG := 1; 
+   animal2.tamanho := 50;  
+  
+  -- Print animal1 record 
+   dbms_output.put_line('animal1 nome : '|| animal1.nome); 
+   dbms_output.put_line('animal1 especie : '|| animal1.especie); 
+   dbms_output.put_line('animal1 pesoKG : '|| animal1.pesoKG); 
+   dbms_output.put_line('animal1 tamanho : ' || animal1.tamanho); 
+   
+   -- Print animal2 record 
+   dbms_output.put_line('animal2 nome : '|| animal2.nome); 
+   dbms_output.put_line('animal2 especie : '|| animal2.especie); 
+   dbms_output.put_line('animal2 pesokG : '|| animal2.pesokG); 
+   dbms_output.put_line('animal2 tamanho : '|| animal2.tamanho); 
+END; 
 
 -- USO DE ESTRUTURA DE DADOS DO TIPO TABLE (7)
 
