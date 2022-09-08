@@ -101,6 +101,15 @@ END;
 -- FOR IN LOOP (3)
 
 -- SELECT … INTO (4)
+DECLARE
+  p_pessoa_nome Pessoa.nome%TYPE;
+BEGIN
+  SELECT nome INTO p_pessoa_nome
+  FROM Pessoa
+  WHERE cpf = '777.888.999-99';
+  -- mostrar o nome da pessoa
+  dbms_output.put_line( p_pessoa_nome );
+END;
 
 -- CURSOR (OPEN, FETCH e CLOSE) (5)
 
