@@ -9,6 +9,7 @@ ALTER TABLE Funcionario
 CREATE INDEX indice_nome_departamento ON Departamento (nome_departamento);
 
 -- INSERT INTO (3)
+INSERT INTO Jaula (cod_jaula, capacidade) VALUES ('Ju04', 5);
 
 -- UPDATE (4)
 UPDATE biologo SET especializacao = 'Pássaros' WHERE especializacao = 'Aves'
@@ -36,6 +37,15 @@ SELECT cod_animal FROM Animais
 WHERE especie LIKE 'Capivara';
 
 -- IS NULL ou IS NOT NULL (3)
+SELECT P.nome 
+FROM Pessoa P, Zelador Z 
+WHERE Z.cpf_zelador = P.cpf 
+  AND Z.numero_de_jaulas_a_limpar IS NULL
+
+SELECT P.nome 
+FROM Pessoa P, Zelador Z 
+WHERE Z.cpf_zelador = P.cpf 
+  AND Z.numero_de_jaulas_a_limpar IS NOT NULL
 
 -- INNER JOIN (4)
 SELECT
