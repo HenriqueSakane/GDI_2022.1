@@ -113,9 +113,46 @@ BEGIN
     END IF;
 END;
 
--- CASE WHEN (7)
+-- CASE WHEN (7) / LOOP EXIT WHEN (1)
+-- Bloco que calcula e imprime a quantidade de funcionários de acordo com cada cargo.
+DECLARE
+	count_Biologo BINARY_INTEGER;
+	count_Atendente BINARY_INTEGER;
+	count_Zelador BINARY_INTEGER;
+	c BINARY_INTEGER;
+	q BINARY_INTEGER;
+	cargo_func Funcionario.cargo%TYPE;
 
--- LOOP EXIT WHEN (1)
+CURSOR c_cargo IS
+	SELECT F.cargo
+	FROM Funcionario F; 
+
+BEGIN
+	OPEN c_cargo;
+	count_Biologo := 0;
+	count_Atendente := 0;
+	count_Zelador := 0;
+	c := 0;
+	SELECT COUNT(*) INTO q FROM Funcionario;
+	WHILE c < q LOOP 
+		FETCH c_cargo INTO cargo_func;
+		EXIT WHEN c_cargo%NOTFOUND;
+		CASE cargo_func
+			WHEN 'Atendente' THEN
+				count_Atendente := count_Atendente + 1;
+			WHEN 'Biologo' THEN
+				count_Biologo := count_Biologo + 1;
+			WHEN 'Zelador' THEN
+				count_Zelador := count_Zelador + 1;
+		END CASE;
+		c := c + 1;
+	END LOOP;
+
+	CLOSE c_cargo;
+	dbms_output.put_line('Quantidade de Atendentes: ' || count_Atendente);
+	dbms_output.put_line('Quantidade de Biologos: ' || count_Biologo);
+	dbms_output.put_line('Quantidade de Zeladores: ' || count_Zelador);
+END;
 
 -- WHILE LOOP (2)
 DECLARE
