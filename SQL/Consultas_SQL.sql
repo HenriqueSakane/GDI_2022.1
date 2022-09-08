@@ -16,6 +16,7 @@ UPDATE biologo SET especializacao = 'Pássaros' WHERE especializacao = 'Aves'
 -- DELETE (5)
 
 -- SELECT-FROM-WHERE (6)
+SELECT especializacao, cpf_biologo FROM biologo WHERE especializacao = 'Pássaros' 
 
 -- Listar os cpfs dos visitantes que compraram os tickets com números entre 3 e 7
 -- BETWEEN (7) OK
