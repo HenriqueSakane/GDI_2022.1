@@ -14,7 +14,7 @@ CREATE INDEX indice_nome_departamento ON Departamento (nome_departamento);
 UPDATE biologo SET especializacao = 'Pássaros' WHERE especializacao = 'Aves'
 
 -- DELETE (5)
-
+DELETE FROM Cuida WHERE cod_animal='An001';
 -- SELECT-FROM-WHERE (6)
 SELECT especializacao, cpf_biologo FROM biologo WHERE especializacao = 'Pássaros' 
 
@@ -90,6 +90,9 @@ ON P.cpf = T.cpf_pessoa
 WHERE nome IN ('Henrique Sakane');
 
 -- SUBCONSULTA COM ANY (5)
+SELECT p.nome 
+FROM Pessoa p
+WHERE p.data_nascimento < ANY (SELECT pe.data_nascimento FROM Pessoa pe) ;
 
 -- SUBCONSULTA COM ALL (6)
 SELECT ALL T.numero_telefone, P.nome
