@@ -78,7 +78,16 @@ BEGIN
 END;
 
 -- %ROWTYPE (5)
-
+SET SERVEROUTPUT ON
+DECLARE
+funcionario_record funcionario%rowtype;
+vFuncionario_cpf funcionario.cpf_funcionario%type :='404.404.404-40';
+BEGIN
+SELECT * INTO funcionario_record
+FROM funcionario
+WHERE cpf_funcionario=vFuncionario_cpf;
+DBMS_OUTPUT.PUT_LINE(funcionario_record.cargo);
+END;
 -- IF ELSIF (6)
 
 -- CASE WHEN (7)
@@ -93,6 +102,28 @@ END;
 
 -- CURSOR (OPEN, FETCH e CLOSE) (5)
 
+SET SERVEROUTPUT ON
+DECLARE
+    CURSOR funcionarios_cursor IS
+    SELECT * 
+    FROM funcionario;
+    
+    funcionario_record funcionarios_cursor%rowtype;
+BEGIN
+    OPEN funcionarios_cursor;
+    
+    LOOP
+        FETCH funcionarios_cursor
+        INTO funcionario_record;
+        
+        EXIT WHEN funcionarios_cursor%notfound;
+        DBMS_OUTPUT.PUT_LINE(funcionario_record.cpf_funcionario);
+    END LOOP;
+    
+    CLOSE funcionarios_cursor;
+
+
+END;
 -- EXCEPTION WHEN (6)
 
 -- USO DE PAR METROS (IN, OUT ou IN OUT) (7)
