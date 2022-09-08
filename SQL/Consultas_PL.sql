@@ -57,6 +57,40 @@ END VERIFICA_CARTEIRA_VISITANTE;
 -- CREATE OR REPLACE PACKAGE (1)
 
 -- CREATE OR REPLACE PACKAGE BODY (2)
+-- Pacote com a procedure feita anteriormente. O ideal é adicionar mais funcionalidades a esse pacote.
+CREATE OR REPLACE PACKAGE pkg_procedural AS
+    
+    PROCEDURE VERIFICA_CARTEIRA_VISITANTE (p_cpf_visitante Pessoa.cpf%TYPE);
+    -- adicionar mais funcionalidades
+END pkg_procedural;
+
+
+CREATE OR REPLACE PACKAGE BODY pkg_procedural AS
+
+ PROCEDURE VERIFICA_CARTEIRA_VISITANTE (p_cpf_visitante Pessoa.cpf%TYPE) IS
+    V_CT_VISITANTE    Visitante.carteira_de_estudante%TYPE;
+    BEGIN
+
+        SELECT V.carteira_de_estudante
+        INTO V_CT_VISITANTE
+        FROM Visitante V
+        WHERE p_cpf_visitante = V.cpf_visitante;
+
+        IF V_CT_VISITANTE IS NULL THEN
+            DBMS_OUTPUT.put_line('Esse visitante nao possui carteira de estudante registrada');
+        ELSE 
+            DBMS_OUTPUT.put_line(CONCAT('Esse visitante possui carteira de estudante de numero ', V_CT_VISITANTE));
+        END IF;
+    
+    END VERIFICA_CARTEIRA_VISITANTE;
+    -- adicionar implementações das novas funcionalidades que forem adicionadas.
+END pkg_procedural;
+
+-- CASO TESTE:
+-- BEGIN
+--     pkg_procedural.VERIFICA_CARTEIRA_VISITANTE (p_cpf_visitante => '111.222.333-44');
+-- END;
+
 
 -- CREATE OR REPLACE TRIGGER (COMANDO) (3)
 
