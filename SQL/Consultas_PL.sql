@@ -114,6 +114,22 @@ END;
 -- CURSOR (OPEN, FETCH e CLOSE) (5)
 
 -- EXCEPTION WHEN (6)
+DECLARE 
+   p_cpf Pessoa.cpf%type := '555.555.555-55'; 
+   p_nome Pessoa.nome%type; 
+BEGIN 
+   SELECT  nome, cpf INTO   p_nome, p_cpf 
+   FROM Pessoa 
+   WHERE cpf = p_cpf;  
+   DBMS_OUTPUT.PUT_LINE ('Nome: '||  p_nome); 
+   DBMS_OUTPUT.PUT_LINE ('Cpf: ' || p_cpf); 
+
+EXCEPTION 
+   WHEN no_data_found THEN 
+      dbms_output.put_line('Não existe essa pessoa'); 
+   WHEN others THEN 
+      dbms_output.put_line('Error!'); 
+END;
 
 -- USO DE PAR METROS (IN, OUT ou IN OUT) (7)
 
