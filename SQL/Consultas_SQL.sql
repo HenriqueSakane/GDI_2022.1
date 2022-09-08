@@ -11,6 +11,7 @@ CREATE INDEX indice_nome_departamento ON Departamento (nome_departamento);
 -- INSERT INTO (3)
 
 -- UPDATE (4)
+UPDATE biologo SET especializacao = 'Pássaros' WHERE especializacao = 'Aves'
 
 -- DELETE (5)
 
