@@ -65,6 +65,17 @@ END VERIFICA_CARTEIRA_VISITANTE;
 -- CREATE FUNCTION (3)
 
 -- %TYPE (4)
+CREATE OR REPLACE PROCEDURE Zelado_det (
+    det_cpf_zelador        IN Zelador.cpf_zelador%TYPE
+)
+IS
+    z_limpar         Zelador.numero_de_jaulas_a_limpar%TYPE;
+BEGIN
+    SELECT numero_de_jaulas_a_limpar
+        INTO z_limpar
+        FROM Zelador WHERE cpf_zelador = det_cpf_zelador ;
+    DBMS_OUTPUT.PUT_LINE('Limpar Quantas Celas : ' || z_limpar);
+END;
 
 -- %ROWTYPE (5)
 
