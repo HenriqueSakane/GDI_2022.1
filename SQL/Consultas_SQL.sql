@@ -57,6 +57,8 @@ INNER JOIN
 ON A.cpf_atendente = P.cpf
 
 -- MAX (5)
+SELECT MAX(Salario) AS Maior_salario
+FROM Cargo; 
 
 -- MIN (6)
 SELECT MIN(Salario) AS Menor_Salario
