@@ -92,6 +92,13 @@ WHERE nome IN ('Henrique Sakane');
 -- SUBCONSULTA COM ANY (5)
 
 -- SUBCONSULTA COM ALL (6)
+SELECT ALL T.numero_telefone, P.nome
+FROM Telefone T
+INNER JOIN
+Pessoa P
+ON
+P.cpf = T.cpf_pessoa
+WHERE cpf_pessoa = '333.333.333-33';
 
 -- ORDER BY (7) Ordenar alfabeticamente os animais presentes no departamento de Aves
 SELECT A.especie
