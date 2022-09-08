@@ -90,6 +90,21 @@ ON P.animais = A.cod_animal
 ORDER BY A.especie;
 
 -- SUBCONSULTA COM OPERADOR RELACIONAL (3)
+SELECT P.nome
+FROM Pessoa P
+WHERE P.cpf IN
+    (SELECT B.cpf_biologo
+    FROM Biologo B, Cuida C, Animais A
+    WHERE A.cod_animal = C.cod_animal
+      AND C.cpf_biologo = B.cpf_biologo
+      AND A.especie = 'Garça')
+    AND P.cpf IN
+    (SELECT B.cpf_biologo
+    FROM Biologo B, Cuida C, Animais A
+    WHERE A.cod_animal = C.cod_animal
+      AND C.cpf_biologo = B.cpf_biologo
+      AND A.especie = 'Arara')
+
 
 -- SUBCONSULTA COM IN (4)
 SELECT T.numero_telefone, P.nome
