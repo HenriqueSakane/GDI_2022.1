@@ -120,5 +120,14 @@ HAVING COUNT(*) > 2;
 -- UNION ou INTERSECT ou MINUS (3)
 
 -- CREATE VIEW (4)
+CREATE VIEW Biologo_details AS
+   SELECT P.cpf, P.nome, T.numero_telefone, B.especializacao
+   FROM Pessoa P
+   INNER JOIN
+   Telefone T
+   ON T.cpf_pessoa = P.cpf
+   INNER JOIN 
+   Biologo B
+   ON B.cpf_biologo = P.cpf;
 
 -- GRANT / REVOKE (5)
