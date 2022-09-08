@@ -82,6 +82,12 @@ ORDER BY A.especie;
 -- SUBCONSULTA COM OPERADOR RELACIONAL (3)
 
 -- SUBCONSULTA COM IN (4)
+SELECT T.numero_telefone, P.nome
+FROM Pessoa P
+INNER JOIN 
+Telefone T
+ON P.cpf = T.cpf_pessoa
+WHERE nome IN ('Henrique Sakane');
 
 -- SUBCONSULTA COM ANY (5)
 
