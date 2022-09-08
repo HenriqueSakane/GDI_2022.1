@@ -80,6 +80,17 @@ END;
 -- %ROWTYPE (5)
 
 -- IF ELSIF (6)
+DECLARE 
+    salario_const NUMBER := 3200; 
+BEGIN 
+    IF(salario_const <= 2000) THEN 
+        dbms_output.put_line('Funcionario é um Zelador'); 
+    ELSIF ( salario_const > 2000 AND salario_const <= 2100) THEN
+        dbms_output.put_line('Ele é um Atendente');
+    ELSE 
+        dbms_output.put_line('Ele é um Biologo');
+    END IF;
+END;
 
 -- CASE WHEN (7)
 
