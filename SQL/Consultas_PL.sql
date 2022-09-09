@@ -184,6 +184,25 @@ BEGIN
 END;
 
 -- FOR IN LOOP (3)
+CREATE OR REPLACE PROCEDURE tickets_gerados(p_cpf_atendente Pessoa.cpf%TYPE) IS 
+    V_TICKET_GERADO Ticket.numero_ticket%TYPE; 
+     
+BEGIN 
+ 
+    FOR ticket IN  
+            (SELECT T.numero_ticket INTO V_TICKET_GERADO
+            FROM Ticket T  
+            WHERE p_cpf_atendente = T.cpf_atendente) LOOP 
+         
+        DBMS_OUTPUT.put_line(CONCAT('Ticket gerado: ', V_TICKET_GERADO)); 
+     
+    END LOOP;    
+     
+    EXCEPTION  
+            WHEN no_data_found THEN  
+                dbms_output.put_line('Esse atendente não gerou nenhum ticket!'); 
+     
+END tickets_gerados;
 
 -- SELECT … INTO (4)
 DECLARE
