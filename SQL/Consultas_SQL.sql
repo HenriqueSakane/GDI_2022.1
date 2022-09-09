@@ -145,7 +145,11 @@ SELECT especie, COUNT(*) FROM animais
 GROUP BY especie
 HAVING COUNT(*) > 2;
 
--- UNION ou INTERSECT ou MINUS (3)
+-- UNION ou INTERSECT ou MINUS (3) 
+-- Printando o nome e cpf dos atendentes fazendo uso do comando INTERSECT
+SELECT nome, cpf FROM Pessoa
+WHERE cpf IN (SELECT cpf_funcionario FROM Funcionario INTERSECT SELECT cpf_atendente FROM Atendente)
+ORDER BY nome;
 
 -- CREATE VIEW (4)
 CREATE VIEW Biologo_details AS
