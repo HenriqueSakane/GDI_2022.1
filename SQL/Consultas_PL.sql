@@ -295,6 +295,20 @@ CREATE OR REPLACE PACKAGE BODY pkg_visitante AS
 END pkg_visitante;
 
 -- CREATE OR REPLACE TRIGGER (COMANDO) (3)
+CREATE OR REPLACE TRIGGER apagarJaula
+    BEFORE DELETE ON Jaula
+DECLARE
+    jaula NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO jaula
+    FROM Jaula;
+    IF jaula = 1 THEN
+
+        RAISE_APPLICATION_ERROR(-21000, 'Única jaula na base. Não é possível excluir a última jaula.');
+    
+    END IF;
+END apagarJaula;
+
 
 -- CREATE OR REPLACE TRIGGER (LINHA) (4)
 CREATE OR REPLACE TRIGGER alt_salario
