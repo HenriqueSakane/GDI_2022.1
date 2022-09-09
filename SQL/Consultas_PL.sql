@@ -34,9 +34,25 @@ BEGIN
    dbms_output.put_line('animal2 tamanho : '|| animal2.tamanho); 
 END; 
 
--- USO DE ESTRUTURA DE DADOS DO TIPO TABLE (7)
+-- BLOCO ANÔNIMO (1) // USO DE ESTRUTURA DE DADOS DO TIPO TABLE (7) // FOR IN LOOP (3)
+-- Lista os animais do Zoo
+DECLARE
+	TYPE especie_animal IS TABLE OF Animais.especie%TYPE
+	INDEX BY BINARY_INTEGER;
 
--- BLOCO ANÔNIMO (1)
+	t_especies especie_animal;
+	i BINARY_INTEGER;
+BEGIN   
+    i := 1;
+    FOR ani IN (SELECT especie FROM Animais) LOOP
+        t_especies(i) := ani.especie;
+        i := i + 1;
+    END LOOP;
+    FOR x IN 1..i-1 LOOP
+        dbms_output.put_line(t_especies(x));
+    END LOOP;
+END;
+
 
 -- CREATE PROCEDURE (2)
 -- DADO UM CPF, VERIFICA SE ESSA PESSOA POSSUI UMA CARTEIRA DE ESTUDANTE
@@ -183,26 +199,6 @@ BEGIN
     
 END;
 
--- FOR IN LOOP (3)
-CREATE OR REPLACE PROCEDURE tickets_gerados(p_cpf_atendente Pessoa.cpf%TYPE) IS 
-    V_TICKET_GERADO Ticket.numero_ticket%TYPE; 
-     
-BEGIN 
- 
-    FOR ticket IN  
-            (SELECT T.numero_ticket INTO V_TICKET_GERADO
-            FROM Ticket T  
-            WHERE p_cpf_atendente = T.cpf_atendente) LOOP 
-         
-        DBMS_OUTPUT.put_line(CONCAT('Ticket gerado: ', V_TICKET_GERADO)); 
-     
-    END LOOP;    
-     
-    EXCEPTION  
-            WHEN no_data_found THEN  
-                dbms_output.put_line('Esse atendente não gerou nenhum ticket!'); 
-     
-END tickets_gerados;
 
 -- SELECT … INTO (4)
 DECLARE
@@ -214,6 +210,7 @@ BEGIN
   -- mostrar o nome da pessoa
   dbms_output.put_line( p_pessoa_nome );
 END;
+
 
 -- CURSOR (OPEN, FETCH e CLOSE) (5)
 
@@ -237,8 +234,8 @@ BEGIN
     
     CLOSE funcionarios_cursor;
 
-
 END;
+
 -- EXCEPTION WHEN (6)
 DECLARE 
    p_cpf Pessoa.cpf%type := '555.555.555-55'; 
@@ -257,11 +254,15 @@ EXCEPTION
       dbms_output.put_line('Error!'); 
 END;
 
--- USO DE PAR METROS (IN, OUT ou IN OUT) (7)
 
--- CREATE OR REPLACE PACKAGE (1)
+-- USO DE PARÂMETROS (IN, OUT ou IN OUT) (7)
+CREATE OR REPLACE PROCEDURE CadastroAnimal (An IN Animais%ROWTYPE) IS
+BEGIN 
+	INSERT INTO Animais (cod_animal, especie) VALUES (An.cod_animal, An.especie);
+END;
 
--- CREATE OR REPLACE PACKAGE BODY (2)
+
+-- CREATE OR REPLACE PACKAGE (1) // CREATE OR REPLACE PACKAGE BODY (2)
 
 CREATE OR REPLACE PACKAGE pkg_visitante AS
     
@@ -312,6 +313,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_visitante AS
     END VERIFICA_DATA_CADASTRO;
     
 END pkg_visitante;
+
 
 -- CREATE OR REPLACE TRIGGER (COMANDO) (3)
 CREATE OR REPLACE TRIGGER apagarJaula
