@@ -5,7 +5,7 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 	cpf VARCHAR2(15),
 	nome VARCHAR(25),
 	data_nascimento DATE
-);
+) NOT FINAL NOT INSTANTIABLE;
 
 -- Endereço
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
@@ -19,10 +19,11 @@ CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 -- Telefone 
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
 	cpf_pessoa REF tp_pessoa,
-	numero_telefone NUMBER
+	numero_telefone VARCHAR2 (10)
 );
 
--- cargo
+
+-- Cargo
 CREATE OR REPLACE TYPE tp_cargo AS OBJECT (
 	cargo_funcionario VARCHAR2 (20),
 	salario NUMBER 
@@ -32,7 +33,7 @@ CREATE OR REPLACE TYPE tp_cargo AS OBJECT (
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	cargo REF tp_cargo,
 	cpf_supervisor REF tp_funcionario
-);
+) NOT FINAL NOT INSTANTIABLE;
 
 -- Dependente 
 CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
@@ -61,8 +62,9 @@ CREATE OR REPLACE TYPE tp_zelador UNDER tp_funcionario (
 );
 
 -- Visitante 
+-- herda de pessoa
 CREATE OR REPLACE TYPE tp_visitante UNDER tp_pessoa (
-	data_cadastro DATE,]
+	data_cadastro DATE,
 	carteira_de_estudante VARCHAR(12)
 );
 
@@ -75,7 +77,7 @@ CREATE OR REPLACE TYPE tp_jaula AS OBJECT (
 -- Departamento
 CREATE OR REPLACE TYPE tp_departamento AS OBJECT (
 	cod_departamento VARCHAR2(5),
-	nome_departamento VARCHAR2,
+	nome_departamento VARCHAR2(20),
 	quantidade_de_jaulas NUMBER
 );
 
@@ -102,15 +104,27 @@ CREATE OR REPLACE TYPE tp_ticket AS OBJECT (
 	numero_ticket NUMBER,
 	cpf_atendente REF tp_atendente,
 	valor NUMBER,
-	data_ticket DATE
+	data_ticket DATE,
+	ORDER MEMBER FUNCTION compara_valor 
 );
 
 -- Compra 
 CREATE OR REPLACE TYPE tp_compra AS OBJECT (
 	numero_ticket NUMBER,
 	cpf_visitante VARCHAR2(15),
-	nota_fiscal INTEGER
+	nota_fiscal INTEGER,
+	OVERRIDING MEMBER PROCEDURE print_compra
 );
+
+-- OVERRIDING MEMBER PROCEDURE que imprime as informções da compra
+CREATE OR REPLACE TYPE BODY tp_compra AS 
+OVERRIDING MEMBER PROCEDURE print_compra IS 
+	BEGIN 
+		dbms_out.put_line(nomero_ticket),
+		dbms_out.put_line(cpf_visitante),
+		dbms_out.put_line(nota_fiscal)
+	END;
+END;
 
 -- Promocao 
 CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
@@ -119,6 +133,7 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
 	data_inicio DATE,
 	data_termino DATE
 );
+
 
 -- Participa 
 CREATE OR REPLACE TYPE tp_participa AS OBJECT (
@@ -135,12 +150,3 @@ CREATE OR REPLACE TYPE tp_pertence AS OBJECT (
 	departamento REF tp_departamento,
 	data_saida DATE
 );
-
-
-
-
-
-
-
-
-
