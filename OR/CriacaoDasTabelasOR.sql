@@ -54,3 +54,8 @@ CREATE TABLE tb_pessoa OF tp_pessoa (
 );
 
 CREATE TABLE tb_funcionario OF tp_funcionario ()
+
+CREATE TABLE tb_biologo OF tp_biologo  (
+	cpf PRIMARY KEY,
+	especializacao NOT NULL
+);
