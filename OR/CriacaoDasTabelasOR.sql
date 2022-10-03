@@ -53,6 +53,11 @@ CREATE TABLE tb_pessoa OF tp_pessoa (
 	data_nascimento NOT NULL
 );
 
+CREATE TABLE tb_telefone OF tp_telefone (
+	cpf_pessoa PRIMARY KEY,
+	numero_telefone PRIMARY KEY
+);
+
 CREATE TABLE tb_funcionario OF tp_funcionario ()
 
 CREATE TABLE tb_biologo OF tp_biologo  (
