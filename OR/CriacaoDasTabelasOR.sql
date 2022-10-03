@@ -64,3 +64,9 @@ CREATE TABLE tb_biologo OF tp_biologo  (
 	cpf PRIMARY KEY,
 	especializacao NOT NULL
 );
+
+CREATE TABLE tb_departamento OF tp_departamento (
+	cod_departamento PRIMARY KEY,
+	nome_departamento NOT NULL,
+	quantidade_de_jaulas NOT NULL
+);
