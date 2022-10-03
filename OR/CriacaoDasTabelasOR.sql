@@ -70,3 +70,9 @@ CREATE TABLE tb_departamento OF tp_departamento (
 	nome_departamento NOT NULL,
 	quantidade_de_jaulas NOT NULL
 );
+
+CREATE TABLE tb_compra OF tp_compra (
+	numero_ticket PRIMARY KEY,
+	cpf_visitante PRIMARY KEY,
+	nota_fiscal NOT NULL,
+);
