@@ -54,7 +54,7 @@ CREATE TABLE tb_pessoa OF tp_pessoa (
 );
 
 CREATE TABLE tb_telefone OF tp_telefone (
-	cpf_pessoa PRIMARY KEY,
+	cpf_pessoa WITH ROWID REFERENCES tb_pessoa PRIMARY KEY, -- checar
 	numero_telefone PRIMARY KEY
 );
 
