@@ -31,3 +31,10 @@ INSERT INTO tb_telefone VALUES (tp_telefone('404.404.404-40', '997977979'));
 INSERT INTO tb_telefone VALUES (tp_telefone('505.505.505-55', '997979797'));
 INSERT INTO tb_telefone VALUES (tp_telefone('606.606.606-60', '993336666'));
 INSERT INTO tb_telefone VALUES (tp_telefone('606.606.606-60', '32326464'));
+
+-- Biologo 
+
+INSERT INTO tb_biologo VALUES (tp_biologo('999.999.999-99', 'Mamíferos'));
+INSERT INTO tb_biologo VALUES (tp_biologo('101.101.101-10', 'Répteis'));
+INSERT INTO tb_biologo VALUES (tp_biologo('303.303.303-30', 'Aves'));
+INSERT INTO tb_biologo VALUES (tp_biologo('888.888.888-88', 'Mamíferos'));
