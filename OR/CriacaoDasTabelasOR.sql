@@ -61,7 +61,7 @@ CREATE TABLE tb_telefone OF tp_telefone (
 CREATE TABLE tb_funcionario OF tp_funcionario ()
 
 CREATE TABLE tb_biologo OF tp_biologo  (
-	cpf PRIMARY KEY,
+	cpf_biologo PRIMARY KEY,
 	especializacao NOT NULL
 );
 
@@ -75,4 +75,9 @@ CREATE TABLE tb_compra OF tp_compra (
 	numero_ticket PRIMARY KEY,
 	cpf_visitante PRIMARY KEY,
 	nota_fiscal NOT NULL,
+);
+
+CREATE TABLE tb_zelador OF tp_zelador  (
+	cpf_zelador PRIMARY KEY,
+	numero_de_jaulas_a_limpar NOT NULL
 );
