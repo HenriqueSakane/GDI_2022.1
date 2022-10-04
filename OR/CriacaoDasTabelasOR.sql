@@ -53,15 +53,23 @@ CREATE TABLE tb_pessoa OF tp_pessoa (
 	data_nascimento NOT NULL
 );
 
+-- Endereço
+CREATE TABLE tb_endereco OF tp_endereco (
+	cpf_pessoa SCOPE IS tb_pessoa
+);
+
 CREATE TABLE tb_telefone OF tp_telefone (
 	cpf_pessoa WITH ROWID REFERENCES tb_pessoa PRIMARY KEY, -- checar
 	numero_telefone PRIMARY KEY
 );
 
-CREATE TABLE tb_funcionario OF tp_funcionario ()
+CREATE TABLE tb_funcionario OF tp_funcionario (
+	cargo SCOPE IS tb_cargo,
+	cpf_supervisor SCOPE IS tb_funcionario
+);
 
 CREATE TABLE tb_biologo OF tp_biologo  (
-	cpf_biologo PRIMARY KEY,
+	cpf_biologo SCOPE IS tb_funcionario,
 	especializacao NOT NULL
 );
 
@@ -78,6 +86,6 @@ CREATE TABLE tb_compra OF tp_compra (
 );
 
 CREATE TABLE tb_zelador OF tp_zelador  (
-	cpf_zelador PRIMARY KEY,
+	cpf_zelador SCOPE IS tb_funcionario,
 	numero_de_jaulas_a_limpar NOT NULL
 );
