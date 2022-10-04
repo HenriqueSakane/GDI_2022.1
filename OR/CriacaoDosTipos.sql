@@ -4,10 +4,29 @@
 CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 	cpf VARCHAR2(15),
 	nome VARCHAR(25),
-	data_nascimento DATE
+	data_nascimento DATE,
+	MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2,
+    	MEMBER PROCEDURE detalhesPessoa (P tp_pessoa)
 ) NOT FINAL NOT INSTANTIABLE;
 
+--Retorna Nome da pessoa
+CREATE OR REPLACE TYPE BODY tp_pessoa AS
+MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2 IS
+BEGIN
+RETURN P.nome_completo;
+END;
+END;
 
+--retorna os detalhes da pessoa
+CREATE OR REPLACE TYPE BODY tp_pessoa AS
+MEMBER PROCEDURE exibirDetalhesPedido (P tp_pessoa) IS
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Detalhes da Pessoa:');
+DBMS_OUTPUT.PUT_LINE('CPF:'||P.cpf);
+DBMS_OUTPUT.PUT_LINE('Nome: '||P.nome));
+DBMS_OUTPUT.PUT_LINE('Data de NAscimento: '||to_char(P.data_nascimento));
+END;
+END;
 
 -- Endereço
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
