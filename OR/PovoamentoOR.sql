@@ -52,3 +52,16 @@ INSERT INTO tb_departamento VALUES (tp_departamento('D08', 'Grandes Herbívoros'
 INSERT INTO tb_departamento VALUES (tp_departamento('D09', 'Marsupiais', 3));
 INSERT INTO tb_departamento VALUES (tp_departamento('D10', 'Aves', 8)); 
 INSERT INTO tb_departamento VALUES (tp_departamento('D11', 'Ursos', 3));
+
+-- Compra
+CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
+
+INSERT INTO tb_compra VALUES (1, '111.222.333-44', nota_fiscal.NEXTVAL); 
+INSERT INTO tb_compra VALUES (2, '444.555.666-77', nota_fiscal.NEXTVAL); 
+INSERT INTO tb_compra VALUES (3, '123.456.789-00', nota_fiscal.NEXTVAL); 
+INSERT INTO tb_compra VALUES (4, '248.369.124-22', nota_fiscal.NEXTVAL);
+INSERT INTO tb_compra VALUES (5, '111.111.111-11', nota_fiscal.NEXTVAL);
+INSERT INTO tb_compra VALUES (6, '222.222.222-22', nota_fiscal.NEXTVAL);
+INSERT INTO tb_compra VALUES (7, '444.444.444-44', nota_fiscal.NEXTVAL);
+
+INSERT INTO tb_compra VALUES (8, '555.555.555-55', nota_fiscal.NEXTVAL); 
