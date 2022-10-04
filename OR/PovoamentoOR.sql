@@ -38,3 +38,17 @@ INSERT INTO tb_biologo VALUES (tp_biologo('999.999.999-99', 'Mamíferos'));
 INSERT INTO tb_biologo VALUES (tp_biologo('101.101.101-10', 'Répteis'));
 INSERT INTO tb_biologo VALUES (tp_biologo('303.303.303-30', 'Aves'));
 INSERT INTO tb_biologo VALUES (tp_biologo('888.888.888-88', 'Mamíferos'));
+
+-- Departamento 
+
+INSERT INTO tb_departamento VALUES (tp_departamento('D01', 'Felinos', 4)); 
+INSERT INTO tb_departamento VALUES (tp_departamento('D02', 'Primatas', 4));
+INSERT INTO tb_departamento VALUES (tp_departamento('D03', 'Roedores', 3));
+INSERT INTO tb_departamento VALUES (tp_departamento('D04', 'Serpentes', 5)); 
+INSERT INTO tb_departamento VALUES (tp_departamento('D05', 'Jacarés', 1)); 
+INSERT INTO tb_departamento VALUES (tp_departamento('D06', 'Largatos', 2));
+INSERT INTO tb_departamento VALUES (tp_departamento('D07', 'Tartarugas', 2)); 
+INSERT INTO tb_departamento VALUES (tp_departamento('D08', 'Grandes Herbívoros', 4));
+INSERT INTO tb_departamento VALUES (tp_departamento('D09', 'Marsupiais', 3));
+INSERT INTO tb_departamento VALUES (tp_departamento('D10', 'Aves', 8)); 
+INSERT INTO tb_departamento VALUES (tp_departamento('D11', 'Ursos', 3));
