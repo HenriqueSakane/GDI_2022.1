@@ -7,6 +7,8 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 	data_nascimento DATE
 ) NOT FINAL NOT INSTANTIABLE;
 
+
+
 -- Endereço
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 	cpf_pessoa REF tp_pessoa,
@@ -21,6 +23,8 @@ CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
 	cpf_pessoa REF tp_pessoa,
 	numero_telefone VARCHAR2 (10)
 );
+
+CREATE OR REPLACE TYPE tp_telefones AS VARRAY(5) OF tp_telefone;
 
 
 -- Cargo
