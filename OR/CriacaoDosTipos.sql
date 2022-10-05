@@ -138,7 +138,8 @@ CREATE OR REPLACE TYPE tp_cuida AS OBJECT (
 -- Limpa 
 CREATE OR REPLACE TYPE tp_limpa AS OBJECT (
 	cpf_zelador REF tp_zelador,
-	cod_jaula REF tp_jaula
+	cod_jaula REF tp_jaula,
+	data_limpeza DATE
 );
 
 -- Ticket 
