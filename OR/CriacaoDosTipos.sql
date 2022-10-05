@@ -57,16 +57,16 @@ CREATE OR REPLACE TYPE tp_cargo AS OBJECT (
 
 --Salario anual gerando *12
 CREATE OR REPLACE TYPE BODY tp_cargo IS 
-MEMBER FUNCTION salarioAnual RETURN NUMBER IS 
-BEGIN
-RETURN salario *12;
-END;
+	MEMBER FUNCTION salarioAnual RETURN NUMBER IS 
+	BEGIN
+		RETURN salario *12;
+	END;
 
 --Comparando Salarios
 ORDER MEMBER FUNCTION comparaSalario(X tp_cargo) RETURN INTEGER IS
-BEGIN 
-RETURN SELF.salario - X.salario;
-END;
+	BEGIN 
+		RETURN SELF.salario - X.salario;
+	END;
 END;
 
 
