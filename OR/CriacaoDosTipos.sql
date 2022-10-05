@@ -192,7 +192,7 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
 	cod_promocao NUMBER,
 	desconto NUMBER,
 	data_inicio DATE,
-	data_termino DATE
+	data_termino DATE,
 	MAP MEMBER FUNCTION promocaoTOnumber RETURN NUMBER
 );
 
