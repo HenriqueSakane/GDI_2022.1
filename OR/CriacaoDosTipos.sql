@@ -49,8 +49,26 @@ CREATE OR REPLACE TYPE tp_telefones AS VARRAY(5) OF tp_telefone;
 -- Cargo
 CREATE OR REPLACE TYPE tp_cargo AS OBJECT (
 	cargo_funcionario VARCHAR2 (20),
-	salario NUMBER 
+	salario NUMBER,
+	FINAL MEMBER FUNCTION salarioAnual RETURN NUMBER,
+    	ORDER MEMBER FUNCTION comparaSalario (X tp_cargo) RETURN INTEGER
 );
+
+--Salario anual gerando *12
+CREATE OR REPLACE TYPE BODY tp_cargo IS 
+MEMBER FUNCTION salarioAnual RETURN NUMBER IS 
+BEGIN
+RETURN salario *12;
+END;
+
+--Comparando Salarios
+ORDER MEMBER FUNCTION comparaSalario(X tp_cargo) RETURN INTEGER IS
+BEGIN 
+RETURN SELF.salario - X.salario;
+END;
+END;
+
+
 
 -- Funcionario (herda de pessoa)
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
