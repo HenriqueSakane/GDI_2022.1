@@ -75,6 +75,36 @@ INSERT INTO tb_biologo VALUES
     (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
     'Mamíferos');
     
+-- Atendente
+INSERT INTO tb_atendente VALUES 
+    (tp_atendente
+    (tp_funcionario
+    (tp_pessoa
+    ('777.888.999-99', 'Felipe Muniz', to_date('04/04/1994', 'dd/mm/yy'), tp_endereco('30000-300', 'Rua das Monocotiledoneas', '335', 'Coqueiral'), tp_arr_fones((tp_telefone('998887777'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Atendente'), /* cpf_supervisor REF tp_funcionario */),
+    1);
+INSERT INTO tb_atendente VALUES 
+    (tp_atendente
+    (tp_funcionario
+    (tp_pessoa
+    ('666.666.666-66', 'Bruno Lima', to_date('04/07/1997', 'dd/mm/yy'), tp_endereco('98000-340', 'Avenida Brasil', '12', 'Afogados'), tp_arr_fones((tp_telefone('988885555'), tp_telefone('34444444'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Atendente'), /* cpf_supervisor REF tp_funcionario */),
+    2);
+INSERT INTO tb_atendente VALUES 
+    (tp_atendente
+    (tp_funcionario
+    (tp_pessoa
+    ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy'), tp_endereco('80000-800', 'Rua dos Lanternas', '1901', 'Aflitos'), tp_arr_fones((tp_telefone('996662222'), tp_telefone('987550101'), tp_telefone('34110000'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Atendente'), /* cpf_supervisor REF tp_funcionario */),
+    3);
+INSERT INTO tb_atendente VALUES 
+    (tp_atendente
+    (tp_funcionario
+    (tp_pessoa
+    ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy'), tp_endereco('94835-432', 'Avenida Dr. Hans Chucrute', '128', 'Madalena'), tp_arr_fones((tp_telefone('997777777'), tp_telefone('32323232'), tp_telefone('998988989'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Atendente'), /* cpf_supervisor REF tp_funcionario */),
+    4);
+    
 -- Zelador
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
