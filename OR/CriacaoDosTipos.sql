@@ -196,7 +196,16 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
 	desconto NUMBER,
 	data_inicio DATE,
 	data_termino DATE
+	MAP MEMBER FUNCTION promocaoTOnumber RETURN NUMBER
 );
+
+CREATE OR REPLACE TYPE BODY tp_promocao AS
+MAP MEMBER FUNCTION promocaoTOnumber RETURN INTEGER IS
+p NUMBER := codigo_promocao;
+	BEGIN
+		RETURN p;
+	END;
+END;
 
 
 -- Participa 
