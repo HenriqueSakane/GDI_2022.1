@@ -366,7 +366,381 @@ INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P 
     (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '222.222.222-22')));
 INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 72841),
     (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 8),
-    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '555.555.555-55')));			  
+    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '555.555.555-55')));	
+			      
+-- Pertence 
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An001'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf01'),
+    (to_date('10/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D01'),
+    (to_date('25/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An002'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf02'),
+    (to_date('10/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D01'),
+    (to_date('25/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An003'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf03'),
+    (to_date('10/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D01'),
+    (to_date('25/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An004'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf04'),
+    (to_date('10/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D01'),
+    (to_date('25/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An005'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp01'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An006'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp02'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An007'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp02'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An008'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp03'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An009'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp03'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An010'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp03'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An011'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp04'),
+    (to_date('11/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D02'),
+    (to_date('26/08/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An012'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr01'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An013'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr01'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An014'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr02'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An015'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr03'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An016'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr03'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An017'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr03'),
+    (to_date('12/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D03'),
+    (to_date('27/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An018'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js01'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An019'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js02'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An020'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js03'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An021'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js04'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An022'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js05'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An023'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js06'),
+    (to_date('13/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D04'),
+    (to_date('28/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An024'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'),
+    (to_date('14/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D05'),
+    (to_date('29/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An025'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'),
+    (to_date('14/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D05'),
+    (to_date('29/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An026'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'),
+    (to_date('14/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D05'),
+    (to_date('29/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An027'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'),
+    (to_date('14/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D05'),
+    (to_date('29/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An028'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jl01'),
+    (to_date('15/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D06'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An029'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jl02'),
+    (to_date('15/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D06'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An030'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jl02'),
+    (to_date('15/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D06'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An031'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt01'),
+    (to_date('16/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D07'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An032'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt01'),
+    (to_date('16/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D07'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An033'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt01'),
+    (to_date('16/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D07'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An034'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt02'),
+    (to_date('16/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D07'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An035'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt02'),
+    (to_date('16/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D07'),
+    (to_date('30/11/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An036'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh01'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An037'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh01'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An038'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh02'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An039'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh02'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An040'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh03'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An041'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh04'),
+    (to_date('17/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
+    (to_date('22/10/2022', 'dd/mm/yy'))));]
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An042'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm01'),
+    (to_date('18/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D09'),
+    (to_date('23/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An043'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm02'),
+    (to_date('18/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D09'),
+    (to_date('23/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An044'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm03'),
+    (to_date('18/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D09'),
+    (to_date('23/09/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An045'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja01'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An046'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja02'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An047'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja03'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An048'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja04'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An049'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja05'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An050'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja06'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An051'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja06'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An052'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja06'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An053'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja06'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An054'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An055'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An056'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An057'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An058'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'),
+    (to_date('19/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D10'),
+    (to_date('05/12/2022', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An059'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju01'),
+    (to_date('20/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D11'),
+    (to_date('15/01/2023', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An060'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju01'),
+    (to_date('20/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D11'),
+    (to_date('15/01/2023', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An061'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju02'),
+    (to_date('20/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D11'),
+    (to_date('15/01/2023', 'dd/mm/yy'))));
+INSERT INTO tb_pertence VALUES (tp_pertence(
+    (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An062'),
+    (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju03'),
+    (to_date('20/03/2022', 'dd/mm/yy')),
+    (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D11'),
+    (to_date('15/01/2023', 'dd/mm/yy'))));
 
 -- Compra
 CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
