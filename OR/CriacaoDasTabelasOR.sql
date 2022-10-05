@@ -77,6 +77,9 @@ CREATE TABLE tb_funcionario OF tp_funcionario (
 );
 
 -- DEPENDENTE
+CREATE TABLE tb_dependente OF tp_dependente {
+	cpf_funcionario SCOPE IS tb_funcionario
+}
 
 -- Biólogo 
 CREATE TABLE tb_biologo OF tp_biologo (
