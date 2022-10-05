@@ -115,7 +115,7 @@ CREATE TABLE tb_departamento OF tp_departamento (
 );
 
 -- Animais
-CREATE TABLE tb_animais OF tp_aninmais (
+CREATE TABLE tb_animais OF tp_animais (
 	cod_animal PRIMARY KEY,
 	especie NOT NULL
 );
