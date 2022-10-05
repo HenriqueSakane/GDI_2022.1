@@ -73,8 +73,7 @@ END;
 
 -- Funcionario (herda de pessoa)
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
-	cargo REF tp_cargo,
-	cpf_supervisor REF tp_funcionario
+	cargo REF tp_cargo
 ) NOT FINAL NOT INSTANTIABLE;
 
 -- Dependente 
@@ -88,19 +87,22 @@ CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
 -- Biologo
 -- herda de funcionario 
 CREATE OR REPLACE TYPE tp_biologo UNDER tp_funcionario (
-	especializacao VARCHAR(15)
+	especializacao VARCHAR(15),
+    	cpf_supervisor REF tp_biologo
 );
 
 -- Atendente
 -- herda de funcionario
 CREATE OR REPLACE TYPE tp_atendente UNDER tp_funcionario (
-	guiche NUMBER 
+	guiche NUMBER,
+   	cpf_supervisor REF tp_atendente
 ); 
 
 -- Zelador
 -- herda de funcionario 
 CREATE OR REPLACE TYPE tp_zelador UNDER tp_funcionario (
-	numero_de_jaulas_a_limpar NUMBER 
+	numero_de_jaulas_a_limpar NUMBER,
+    	cpf_supervisor REF tp_zelador
 );
 
 -- Visitante 
