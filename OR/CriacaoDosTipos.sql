@@ -93,6 +93,8 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	cargo REF tp_cargo
 ) NOT FINAL NOT INSTANTIABLE;
 
+ALTER TYPE tp_funcionario ADD ATTRIBUTE (supervisor WITH ROWID REFERENCES tp_funcionario) CASCADE;
+
 -- Dependente 
 CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
 	cpf_funcionario REF tp_funcionario,
