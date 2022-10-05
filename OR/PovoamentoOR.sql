@@ -34,10 +34,41 @@ INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHER
 
 -- Biologo 
 
-INSERT INTO tb_biologo VALUES (tp_biologo('999.999.999-99', 'Mamíferos'));
-INSERT INTO tb_biologo VALUES (tp_biologo('101.101.101-10', 'Répteis'));
-INSERT INTO tb_biologo VALUES (tp_biologo('303.303.303-30', 'Aves'));
-INSERT INTO tb_biologo VALUES (tp_biologo('888.888.888-88', 'Mamíferos'));
+INSERT INTO tb_biologo VALUES 
+    (tp_biologo
+    (tp_funcionario
+    (tp_pessoa
+    ('999.999.999-99', 'Letícia Araujo', to_date('30/10/1995', 'dd/mm/yy'), tp_endereco('87878-380', 'Avenida Pelé', '10', 'Campo Grande'), tp_arr_fones((tp_telefone('991919191')), (tp_telefone('32322323'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
+    'Mamíferos');
+INSERT INTO tb_biologo VALUES 
+    (tp_biologo
+    (tp_funcionario
+    (tp_pessoa
+    ('101.101.101-10', 'Elena Macedo', to_date('15/05/1998', 'dd/mm/yy'), tp_endereco('85745-785', 'Rua Platão', '108', 'Casa Amarela'), tp_arr_fones((tp_telefone('999009900'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
+    'Répteis');
+INSERT INTO tb_biologo VALUES 
+    (tp_biologo
+    (tp_funcionario
+    (tp_pessoa
+    ('303.303.303-30', 'Luana Silva', to_date('29/09/1999', 'dd/mm/yy'), tp_endereco('35398-333', 'Estrada da Glória', '33', 'Prego'), tp_arr_fones((tp_telefone('998989898'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
+    'Aves');
+INSERT INTO tb_biologo VALUES 
+    (tp_biologo
+    (tp_funcionario
+    (tp_pessoa
+    ('303.303.303-30', 'Luana Silva', to_date('29/09/1999', 'dd/mm/yy'), tp_endereco('35398-333', 'Estrada da Glória', '33', 'Prego'), tp_arr_fones((tp_telefone('998989898'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
+    'Aves');
+INSERT INTO tb_biologo VALUES 
+    (tp_biologo
+    (tp_funcionario
+    (tp_pessoa
+    ('888.888.888-88', 'Vanessa Lorrany', to_date('06/11/1966', 'dd/mm/yy'), tp_endereco('44444-100', 'Estrada da Batalha', '300', 'Prazeres'), tp_arr_fones((tp_telefone('991911919'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
+    'Mamíferos');
 
 -- Departamento 
 
