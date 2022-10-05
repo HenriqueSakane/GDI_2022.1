@@ -166,8 +166,7 @@ CREATE OR REPLACE TYPE tp_ticket AS OBJECT (
 	numero_ticket NUMBER,
 	cpf_atendente REF tp_atendente,
 	valor NUMBER,
-	data_ticket DATE,
-	ORDER MEMBER FUNCTION compara_valor 
+	data_ticket DATE
 );
 
 -- Compra 
@@ -175,7 +174,7 @@ CREATE OR REPLACE TYPE tp_compra AS OBJECT (
 	numero_ticket NUMBER,
 	cpf_visitante VARCHAR2(15),
 	nota_fiscal INTEGER,
-	OVERRIDING MEMBER PROCEDURE print_compra
+	MEMBER PROCEDURE print_compra (P tp_compra)
 );
 
 -- OVERRIDING MEMBER PROCEDURE que imprime as informções da compra
