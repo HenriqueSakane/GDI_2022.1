@@ -158,16 +158,16 @@ CREATE TABLE tb_promocao OF tp_promocao (
 
 -- Participa
 CREATE TABLE tb_participa OF tp_participa (
-	cod_promocao WITH ROWID REFERENCES tp_promocao,
-	numero_ticket WITH ROWID REFERENCES tp_ticket,
-	cpf_visitante WITH ROWID REFERENCES tp_visitante
+	cod_promocao WITH ROWID REFERENCES tb_promocao,
+	numero_ticket WITH ROWID REFERENCES tb_ticket,
+	cpf_visitante WITH ROWID REFERENCES tb_visitante
 );
 
 -- Pertence 
 CREATE TABLE tb_pertence OF tp_pertence (
-	animais WITH ROWID REFEENCES tp_animais,
-	jaula WITH ROWID REFERENCES tp_jaulas,
+	animais WITH ROWID REFERENCES tb_animais,
+	jaula WITH ROWID REFERENCES tb_jaulas,
 	data_entrada PRIMARY KEY,
-	departamento WITH ROWID REFERENCES tp_departamento,
+	departamento WITH ROWID REFERENCES tb_departamento,
 	data_saida NOT NULL
 );
