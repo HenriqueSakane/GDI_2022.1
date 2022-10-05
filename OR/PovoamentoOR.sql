@@ -1,6 +1,6 @@
 -- Povoamento OR
 
--- Telefone
+-- Telefone (vai ser removido)
 
 INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHERE f.cpf = '111.222.333-44'), '987776666'));
 INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHERE f.cpf = '444.555.666-77'), '978886666'));
@@ -39,7 +39,6 @@ INSERT INTO tb_cargo VALUES (tp_cargo('Biologo', 3100.00));
 INSERT INTO tb_cargo VALUES (tp_cargo('Zelador', 2100.00));
 
 -- Biologo 
-
 INSERT INTO tb_biologo VALUES 
     (tp_biologo
     (tp_funcionario
@@ -77,7 +76,6 @@ INSERT INTO tb_biologo VALUES
     'Mamíferos');
 
 -- Departamento 
-
 INSERT INTO tb_departamento VALUES (tp_departamento('D01', 'Felinos', 4)); 
 INSERT INTO tb_departamento VALUES (tp_departamento('D02', 'Primatas', 4));
 INSERT INTO tb_departamento VALUES (tp_departamento('D03', 'Roedores', 3));
@@ -89,6 +87,70 @@ INSERT INTO tb_departamento VALUES (tp_departamento('D08', 'Grandes Herbívoros'
 INSERT INTO tb_departamento VALUES (tp_departamento('D09', 'Marsupiais', 3));
 INSERT INTO tb_departamento VALUES (tp_departamento('D10', 'Aves', 8)); 
 INSERT INTO tb_departamento VALUES (tp_departamento('D11', 'Ursos', 3));
+
+-- Animais
+INSERT INTO tb_animais VALUES (tp_animais('An001', 'Leão'));
+INSERT INTO tb_animais VALUES (tp_animais('An002', 'Onça'));
+INSERT INTO tb_animais VALUES (tp_animais('An003', 'Tigre'));
+INSERT INTO tb_animais VALUES (tp_animais('An004', 'Jaguatirica'));
+INSERT INTO tb_animais VALUES (tp_animais('An005', 'Gorila'));
+INSERT INTO tb_animais VALUES (tp_animais('An006', 'Macaco-aranha'));
+INSERT INTO tb_animais VALUES (tp_animais('An007', 'Macaco-aranha'));
+INSERT INTO tb_animais VALUES (tp_animais('An008', 'Macaco-prego'));
+INSERT INTO tb_animais VALUES (tp_animais('An009', 'Macaco-prego'));
+INSERT INTO tb_animais VALUES (tp_animais('An010', 'Macaco-prego'));
+INSERT INTO tb_animais VALUES (tp_animais('An011', 'Orangotango'));
+INSERT INTO tb_animais VALUES (tp_animais('An012', 'Castor'));
+INSERT INTO tb_animais VALUES (tp_animais('An013', 'Castor'));
+INSERT INTO tb_animais VALUES (tp_animais('An014', 'Porco-espinho'));
+INSERT INTO tb_animais VALUES (tp_animais('An015', 'Capivara'));
+INSERT INTO tb_animais VALUES (tp_animais('An016', 'Capivara'));
+INSERT INTO tb_animais VALUES (tp_animais('An017', 'Capivara'));
+INSERT INTO tb_animais VALUES (tp_animais('An018', 'Jibóia'));
+INSERT INTO tb_animais VALUES (tp_animais('An019', 'Jararaca'));
+INSERT INTO tb_animais VALUES (tp_animais('An020', 'Coral'));
+INSERT INTO tb_animais VALUES (tp_animais('An021', 'Píton'));
+INSERT INTO tb_animais VALUES (tp_animais('An022', 'Cascavel'));
+INSERT INTO tb_animais VALUES (tp_animais('An023', 'Sucuri'));
+INSERT INTO tb_animais VALUES (tp_animais('An024', 'Jacaré'));
+INSERT INTO tb_animais VALUES (tp_animais('An025', 'Jacaré'));
+INSERT INTO tb_animais VALUES (tp_animais('An026', 'Jacaré'));
+INSERT INTO tb_animais VALUES (tp_animais('An027', 'Jacaré'));
+INSERT INTO tb_animais VALUES (tp_animais('An028', 'Iguana'));
+INSERT INTO tb_animais VALUES (tp_animais('An029', 'Camaleão'));
+INSERT INTO tb_animais VALUES (tp_animais('An030', 'Camaleão'));
+INSERT INTO tb_animais VALUES (tp_animais('An031', 'Cágado'));
+INSERT INTO tb_animais VALUES (tp_animais('An032', 'Cágado'));
+INSERT INTO tb_animais VALUES (tp_animais('An033', 'Cágado'));
+INSERT INTO tb_animais VALUES (tp_animais('An034', 'Jabuti'));
+INSERT INTO tb_animais VALUES (tp_animais('An035', 'Jabuti'));
+INSERT INTO tb_animais VALUES (tp_animais('An036', 'Elefante'));
+INSERT INTO tb_animais VALUES (tp_animais('An037', 'Elefante'));
+INSERT INTO tb_animais VALUES (tp_animais('An038', 'Girafa'));
+INSERT INTO tb_animais VALUES (tp_animais('An039', 'Girafa'));
+INSERT INTO tb_animais VALUES (tp_animais('An040', 'Rinoceronte'));
+INSERT INTO tb_animais VALUES (tp_animais('An041', 'Hipopótamo'));
+INSERT INTO tb_animais VALUES (tp_animais('An042', 'Canguru'));
+INSERT INTO tb_animais VALUES (tp_animais('An043', 'Timbú'));
+INSERT INTO tb_animais VALUES (tp_animais('An044', 'Diabo da Tasmânia'));
+INSERT INTO tb_animais VALUES (tp_animais('An045', 'Harpia'));
+INSERT INTO tb_animais VALUES (tp_animais('An046', 'Carcará'));
+INSERT INTO tb_animais VALUES (tp_animais('An047', 'Falcão'));
+INSERT INTO tb_animais VALUES (tp_animais('An048', 'Coruja'));
+INSERT INTO tb_animais VALUES (tp_animais('An049', 'Tucano'));
+INSERT INTO tb_animais VALUES (tp_animais('An050', 'Arara'));
+INSERT INTO tb_animais VALUES (tp_animais('An051', 'Arara'));
+INSERT INTO tb_animais VALUES (tp_animais('An052', 'Arara'));
+INSERT INTO tb_animais VALUES (tp_animais('An053', 'Arara'));
+INSERT INTO tb_animais VALUES (tp_animais('An054', 'Avestruz'));
+INSERT INTO tb_animais VALUES (tp_animais('An055', 'Avestruz'));
+INSERT INTO tb_animais VALUES (tp_animais('An056', 'Garça'));
+INSERT INTO tb_animais VALUES (tp_animais('An057', 'Garça'));
+INSERT INTO tb_animais VALUES (tp_animais('An058', 'Garça'));
+INSERT INTO tb_animais VALUES (tp_animais('An059', 'Urso Pardo'));
+INSERT INTO tb_animais VALUES (tp_animais('An060', 'Urso Pardo'));
+INSERT INTO tb_animais VALUES (tp_animais('An061', 'Urso Negro'));
+INSERT INTO tb_animais VALUES (tp_animais('An062', 'Panda'));
 
 -- JAULA
 INSERT INTO tb_jaula VALUES (tp_jaula('Jf01', 1));
