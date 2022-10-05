@@ -349,6 +349,10 @@ INSERT INTO tb_ticket VALUES (tp_ticket(6, (SELECT REF(A) FROM tb_atendente A WH
 INSERT INTO tb_ticket VALUES (tp_ticket(7, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 25.00, to_date('25/03/2022', 'dd/mm/yy'));
 INSERT INTO tb_ticket VALUES (tp_ticket(8, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 37.50, to_date('12/10/2022', 'dd/mm/yy')); 
 
+-- Promocao 
+INSERT INTO tb_promocao VALUES (tp_promocao(48957, 50, to_date('01/05/2022', 'dd/mm/yy'), to_date('15/05/2022', 'dd/mm/yy')));
+INSERT INTO tb_promocao VALUES (tp_promocao(72841, 25, to_date('12/10/2022', 'dd/mm/yy'), to_date('30/10/2022', 'dd/mm/yy')));
+INSERT INTO tb_promocao VALUES (tp_promocao(65037, 20, to_date('01/07/2022', 'dd/mm/yy'), to_date('30/08/2022', 'dd/mm/yy')));
 
 -- Compra
 CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
