@@ -75,6 +75,82 @@ INSERT INTO tb_biologo VALUES
     (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
     'Mamíferos');
 
+INSERT INTO tb_visitante VALUES (tp_visitante('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '10000-100'),
+								 tp_telefone('987776666'), to_date('29/08/2021', 'dd/mm/yy'), '11122233344'));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('444.555.666-77', 'Daniel Victor', to_date('03/03/1993', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '20000-200'),
+								 tp_telefone('978886666'), tp_telefone('32221111'),	to_date('01/04/2019', 'dd/mm/yy'), NULL));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('123.456.789-00', 'Gustavo Gonçalves', to_date('05/05/1995', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '40000-400'),
+								 tp_telefone('994445555'), tp_telefone('34440000'), to_date('12/02/2020', 'dd/mm/yy'), NULL));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('248.369.124-22', 'Igor Domingos', to_date('06/06/1996', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '50000-500'),
+								 tp_telefone('989995555'), to_date('20/01/2022', 'dd/mm/yy'), '24836912422'));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('111.111.111-11', 'Lukas Asael', to_date('07/07/1997', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '60000-600'),
+								 tp_telefone('987773333'), to_date('29/06/2020', 'dd/mm/yy'), '11111111111'));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('222.222.222-22', 'Matheus Marinho', to_date('08/08/1998', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '70000-700'),
+								 tp_telefone('997774444'), to_date('22/07/2022', 'dd/mm/yy'), '22222222222'));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '90000-900'),
+								 tp_telefone('993338888'), to_date('25/03/2021', 'dd/mm/yy'), '44444444444'));
+
+INSERT INTO tb_visitante VALUES (tp_visitante('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '72301-123'),
+								 tp_telefone('981110000'), to_date('12/10/2021', 'dd/mm/yy'), NULL));
+
+-- JAULA
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp02', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp03', 4));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr03', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Js01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js04', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js05', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js06', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jj01', 10));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jl01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jl02', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jt01', 5));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jt02', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh01', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh02', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh03', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm03', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja04', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja05', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja06', 5));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja07', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja08', 4));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Ju01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ju02', 2));
+INSERT INTO tp_jaula VALUES (tp_jaula('Ju03', 2));
+
 -- Departamento 
 INSERT INTO tb_departamento VALUES (tp_departamento('D01', 'Felinos', 4)); 
 INSERT INTO tb_departamento VALUES (tp_departamento('D02', 'Primatas', 4));
@@ -216,57 +292,62 @@ INSERT INTO tb_cuida VALUES (tp_cuida((SELECT REF(a) FROM tb_animais a WHERE a.c
 INSERT INTO tb_cuida VALUES (tp_cuida((SELECT REF(a) FROM tb_animais a WHERE a.cod_animal = 'An061'),(SELECT REF(b) FROM tb_biologo b WHERE b.cpf = '888.888.888-88')));
 INSERT INTO tb_cuida VALUES (tp_cuida((SELECT REF(a) FROM tb_animais a WHERE a.cod_animal = 'An062'),(SELECT REF(b) FROM tb_biologo b WHERE b.cpf = '888.888.888-88')));
 
--- JAULA
-INSERT INTO tb_jaula VALUES (tp_jaula('Jf01', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jf02', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jf03', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jf04', 1));
+-- z1
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = ), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = );
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf01'), to_date('25/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf02'), to_date('25/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf03'), to_date('25/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jf04'), to_date('25/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp01'), to_date('24/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp02'), to_date('24/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp03'), to_date('24/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jp04'), to_date('24/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr01'), to_date('23/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr02'), to_date('23/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jr03'), to_date('23/08/2022', 'dd/mm/yy'));
+--z2
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js01'), to_date('20/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js02'), to_date('20/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js03'), to_date('20/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js04'), to_date('20/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Js05'), to_date('20/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'), to_date('21/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jl01'), to_date('21/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jl02'), to_date('21/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt01'), to_date('22/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jt02'), to_date('22/08/2022', 'dd/mm/yy'));
+--z3
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh01'), to_date('10/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh02'), to_date('10/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh03'), to_date('10/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh04'), to_date('10/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm01'), to_date('11/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm02'), to_date('11/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm03'), to_date('11/08/2022', 'dd/mm/yy'));
+--z4
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja01'), to_date('30/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja02'), to_date('30/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja03'), to_date('30/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja04'), to_date('30/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja05'), to_date('31/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja06'), to_date('31/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja07'), to_date('31/07/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ja08'), to_date('31/07/2022', 'dd/mm/yy'));
+--z3
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju01'), to_date('12/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju02'), to_date('12/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_limpa VALUES (tp_limpa((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'), (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Ju03'), to_date('12/08/2022', 'dd/mm/yy'));
 
-INSERT INTO tb_jaula VALUES (tp_jaula('Jp01', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jp02', 3));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jp03', 4));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jp04', 1));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jr01', 2));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jr02', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jr03', 3));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Js01', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Js02', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Js03', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Js04', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Js05', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Js06', 1));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jj01', 10));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jl01', 2));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jl02', 3));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jt01', 5));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jt02', 3));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jh01', 3));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jh02', 2));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jh03', 2));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jh04', 1));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Jm01', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jm02', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Jm03', 1));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja01', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja02', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja03', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja04', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja05', 1));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja06', 5));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja07', 3));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ja08', 4));
-
-INSERT INTO tb_jaula VALUES (tp_jaula('Ju01', 2));
-INSERT INTO tb_jaula VALUES (tp_jaula('Ju02', 2));
-INSERT INTO tp_jaula VALUES (tp_jaula('Ju03', 2));
+-- TICKET 
+INSERT INTO tb_ticket VALUES (tp_ticket((SELECT REF(A) FROM tb_atendente A WHERE A.cpf = ));
+INSERT INTO tb_ticket VALUES (tp_ticket(1, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'), 20.00, to_date('29/08/2022', 'dd/mm/yy'));
+INSERT INTO tb_ticket VALUES (tp_ticket(2, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'), 50.00, to_date('02/04/2022', 'dd/mm/yy'));
+INSERT INTO tb_ticket VALUES (tp_ticket(3, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '666.666.666-66'), 25.00, to_date('12/05/2022', 'dd/mm/yy')); 
+INSERT INTO tb_ticket VALUES (tp_ticket(4, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '666.666.666-66'), 25.00, to_date('20/01/2022', 'dd/mm/yy'));
+INSERT INTO tb_ticket VALUES (tp_ticket(5, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '333.333.333-33'), 25.00, to_date('29/06/2022', 'dd/mm/yy'));
+INSERT INTO tb_ticket VALUES (tp_ticket(6, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '333.333.333-33'), 20.00, to_date('22/07/2022', 'dd/mm/yy')); 
+INSERT INTO tb_ticket VALUES (tp_ticket(7, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 25.00, to_date('25/03/2022', 'dd/mm/yy'));
+INSERT INTO tb_ticket VALUES (tp_ticket(8, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 37.50, to_date('12/10/2022', 'dd/mm/yy')); 
 
 
 -- Compra
