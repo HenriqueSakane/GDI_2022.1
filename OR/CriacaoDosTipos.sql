@@ -1,36 +1,6 @@
 -- Criação dos tipos
-
--- Pessoa 
-CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
-	cpf VARCHAR2(15),
-	nome VARCHAR(25),
-	data_nascimento DATE,
-	MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2,
-    	MEMBER PROCEDURE detalhesPessoa (P tp_pessoa)
-) NOT FINAL NOT INSTANTIABLE;
-
---Retorna Nome da pessoa
-CREATE OR REPLACE TYPE BODY tp_pessoa AS
-MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2 IS
-BEGIN
-RETURN P.nome_completo;
-END;
-END;
-
---retorna os detalhes da pessoa
-CREATE OR REPLACE TYPE BODY tp_pessoa AS
-MEMBER PROCEDURE exibirDetalhesPedido (P tp_pessoa) IS
-BEGIN
-DBMS_OUTPUT.PUT_LINE('Detalhes da Pessoa:');
-DBMS_OUTPUT.PUT_LINE('CPF:'||P.cpf);
-DBMS_OUTPUT.PUT_LINE('Nome: '||P.nome));
-DBMS_OUTPUT.PUT_LINE('Data de NAscimento: '||to_char(P.data_nascimento));
-END;
-END;
-
 -- Endereço
 CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
-	cpf_pessoa REF tp_pessoa,
 	cep VARCHAR2(9),
 	rua VARCHAR2(30),
 	numero NUMBER,
@@ -39,11 +9,42 @@ CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 
 -- Telefone 
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
-	cpf_pessoa REF tp_pessoa,
-	numero_telefone VARCHAR2 (10)
+	numero_telefone VARCHAR2(10)
 );
 
-CREATE OR REPLACE TYPE tp_telefones AS VARRAY(5) OF tp_telefone;
+-- VARRAY DE TELEFONE
+CREATE OR REPLACE TYPE tp_arr_fones AS VARRAY(5) OF tp_telefone;
+
+
+-- Pessoa 
+CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
+	cpf VARCHAR2(15),
+	nome VARCHAR(25),
+	data_nascimento DATE,
+	endereco tp_endereco,
+	telefones tp_arr_fones,
+	MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2,
+    MEMBER PROCEDURE detalhesPessoa (P tp_pessoa)
+) NOT FINAL NOT INSTANTIABLE;
+
+--Retorna Nome da pessoa
+CREATE OR REPLACE TYPE BODY tp_pessoa AS
+	MEMBER FUNCTION nomePessoa(P tp_pessoa) RETURN VARCHAR2 IS
+	BEGIN
+		RETURN P.nome_completo;
+	END;
+END;
+
+--retorna os detalhes da pessoa
+CREATE OR REPLACE TYPE BODY tp_pessoa AS
+	MEMBER PROCEDURE exibirDetalhesPedido (P tp_pessoa) IS
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE('Detalhes da Pessoa:');
+		DBMS_OUTPUT.PUT_LINE('CPF:'||P.cpf);
+		DBMS_OUTPUT.PUT_LINE('Nome: '||P.nome));
+		DBMS_OUTPUT.PUT_LINE('Data de NAscimento: '||to_char(P.data_nascimento));
+	END;
+END;
 
 
 -- Cargo
