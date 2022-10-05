@@ -74,7 +74,38 @@ INSERT INTO tb_biologo VALUES
     ('888.888.888-88', 'Vanessa Lorrany', to_date('06/11/1966', 'dd/mm/yy'), tp_endereco('44444-100', 'Estrada da Batalha', '300', 'Prazeres'), tp_arr_fones((tp_telefone('991911919'))))), 
     (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Biologo'), /* cpf_supervisor REF tp_funcionario */),
     'Mamíferos');
+    
+-- Zelador
+INSERT INTO tb_zelador VALUES 
+    (tp_zelador
+    (tp_funcionario
+    (tp_pessoa
+    ('404.404.404-40', 'Renata Matos', to_date('17/09/1980', 'dd/mm/yy'), tp_endereco('20081-987', 'Avenida da Paz', '22', 'Várzea'), tp_arr_fones((tp_telefone('997977979'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Zelador'), /* cpf_supervisor REF tp_funcionario */),
+    11);
+INSERT INTO tb_zelador VALUES 
+    (tp_zelador
+    (tp_funcionario
+    (tp_pessoa
+    ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy'), tp_endereco('99999-999', 'Rua Zeca Urubu', '157', 'Casa Forte'), tp_arr_fones((tp_telefone('993336666'), tp_telefone('32326464'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Zelador'), /* cpf_supervisor REF tp_funcionario */),
+    10);
+INSERT INTO tb_zelador VALUES 
+    (tp_zelador
+    (tp_funcionario
+    (tp_pessoa
+    ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy'), tp_endereco('80000-800', 'Rua dos Lanternas', '1901', 'Aflitos'), tp_arr_fones((tp_telefone('996662222'), tp_telefone('987550101'), tp_telefone('34110000'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Zelador'), /* cpf_supervisor REF tp_funcionario */),
+    3);
+INSERT INTO tb_zelador VALUES 
+    (tp_zelador
+    (tp_funcionario
+    (tp_pessoa
+    ('777.777.777-77', 'Gilberto Diniz', to_date('05/12/1979', 'dd/mm/yy'), tp_endereco('85473-450', 'Rua Benfica', '110', 'Derby'), tp_arr_fones((tp_telefone('999990000'))))), 
+    (SELECT REF(f) FROM tb_cargo f WHERE f.cargo_funcionario = 'Zelador'), /* cpf_supervisor REF tp_funcionario */),
+    8);
 
+-- Visitante
 INSERT INTO tb_visitante VALUES (tp_visitante('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '10000-100'),
 								 tp_telefone('987776666'), to_date('29/08/2021', 'dd/mm/yy'), '11122233344'));
 
