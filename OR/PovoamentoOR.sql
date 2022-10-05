@@ -349,6 +349,18 @@ INSERT INTO tb_ticket VALUES (tp_ticket(6, (SELECT REF(A) FROM tb_atendente A WH
 INSERT INTO tb_ticket VALUES (tp_ticket(7, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 25.00, to_date('25/03/2022', 'dd/mm/yy'));
 INSERT INTO tb_ticket VALUES (tp_ticket(8, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 37.50, to_date('12/10/2022', 'dd/mm/yy')); 
 
+-- Compra
+CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
+
+INSERT INTO tb_compra VALUES (tp_compra(1, '111.222.333-44', nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra(2, '444.555.666-77', nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra(3, '123.456.789-00', nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra(4, '248.369.124-22', nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra(5, '111.111.111-11', nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra(6, '222.222.222-22', nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra(7, '444.444.444-44', nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra(8, '555.555.555-55', nota_fiscal.NEXTVAL));			      
+
 -- Promocao 
 INSERT INTO tb_promocao VALUES (tp_promocao(48957, 50, to_date('01/05/2022', 'dd/mm/yy'), to_date('15/05/2022', 'dd/mm/yy')));
 INSERT INTO tb_promocao VALUES (tp_promocao(72841, 25, to_date('12/10/2022', 'dd/mm/yy'), to_date('30/10/2022', 'dd/mm/yy')));
@@ -741,16 +753,3 @@ INSERT INTO tb_pertence VALUES (tp_pertence(
     (to_date('20/03/2022', 'dd/mm/yy')),
     (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D11'),
     (to_date('15/01/2023', 'dd/mm/yy'))));
-
--- Compra
-CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
-
-INSERT INTO tb_compra VALUES (1, '111.222.333-44', nota_fiscal.NEXTVAL); 
-INSERT INTO tb_compra VALUES (2, '444.555.666-77', nota_fiscal.NEXTVAL); 
-INSERT INTO tb_compra VALUES (3, '123.456.789-00', nota_fiscal.NEXTVAL); 
-INSERT INTO tb_compra VALUES (4, '248.369.124-22', nota_fiscal.NEXTVAL);
-INSERT INTO tb_compra VALUES (5, '111.111.111-11', nota_fiscal.NEXTVAL);
-INSERT INTO tb_compra VALUES (6, '222.222.222-22', nota_fiscal.NEXTVAL);
-INSERT INTO tb_compra VALUES (7, '444.444.444-44', nota_fiscal.NEXTVAL);
-
-INSERT INTO tb_compra VALUES (8, '555.555.555-55', nota_fiscal.NEXTVAL); 
