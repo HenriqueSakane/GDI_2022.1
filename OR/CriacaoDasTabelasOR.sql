@@ -129,7 +129,8 @@ CREATE TABLE tb_cuida OF tp_cuida (
 -- Limpa
 CREATE TABLE tb_limpa OF tp_limpa (
 	cod_jaula WITH ROWID REFERENCES tb_jaula,
-	cpf_zelador WITH ROWID REFERENCES tb_zelador
+	cpf_zelador WITH ROWID REFERENCES tb_zelador,
+	data_limpeza NOT NULL
 );
 
 -- Ticket
