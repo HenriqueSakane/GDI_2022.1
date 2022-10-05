@@ -354,6 +354,20 @@ INSERT INTO tb_promocao VALUES (tp_promocao(48957, 50, to_date('01/05/2022', 'dd
 INSERT INTO tb_promocao VALUES (tp_promocao(72841, 25, to_date('12/10/2022', 'dd/mm/yy'), to_date('30/10/2022', 'dd/mm/yy')));
 INSERT INTO tb_promocao VALUES (tp_promocao(65037, 20, to_date('01/07/2022', 'dd/mm/yy'), to_date('30/08/2022', 'dd/mm/yy')));
 
+-- Participa 
+INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 65037),
+    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 1),
+    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '111.222.333-44')));
+INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 48957),
+    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 3),
+    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '123.456.789-00')));
+INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 65037),
+    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 6),
+    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '222.222.222-22')));
+INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 72841),
+    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 8),
+    (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '555.555.555-55')));			  
+
 -- Compra
 CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
 
