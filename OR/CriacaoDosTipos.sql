@@ -7,6 +7,23 @@ CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 	bairro VARCHAR2(20)
 );
 
+CREATE OR REPLACE TYPE BODY tp_endereco AS
+	CONSTRUCTOR FUNCTION tp_endereco(SELF IN OUT NOCOPY tp_endereco, 
+		cep VARCHAR2,
+		rua VARCHAR2,
+		numero NUMBER,
+		bairro VARCHAR2) RETURN SELF AS RESULT IS
+		BEGIN
+
+			SELF.cep := cep;
+			SELF.rua := rua;
+			SELF.numero := numero;
+			SELF.bairro := bairro;
+			RETURN;
+
+		END;
+END;
+
 -- Telefone 
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
 	numero_telefone VARCHAR2(10)
