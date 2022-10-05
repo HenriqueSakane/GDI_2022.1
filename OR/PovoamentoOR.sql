@@ -32,6 +32,12 @@ INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHER
 INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHERE f.cpf = '606.606.606-60'), '993336666'));
 INSERT INTO tb_telefone VALUES (tp_telefone((SELECT REF(f) FROM tb_pessoa f WHERE f.cpf = '606.606.606-60'), '32326464'));
 
+-- Cargo
+
+INSERT INTO tb_cargo VALUES (tp_cargo('Atendente', 2000.00));
+INSERT INTO tb_cargo VALUES (tp_cargo('Biologo', 3100.00));
+INSERT INTO tb_cargo VALUES (tp_cargo('Zelador', 2100.00));
+
 -- Biologo 
 
 INSERT INTO tb_biologo VALUES 
