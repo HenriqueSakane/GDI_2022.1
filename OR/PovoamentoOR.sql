@@ -53,6 +53,59 @@ INSERT INTO tb_departamento VALUES (tp_departamento('D09', 'Marsupiais', 3));
 INSERT INTO tb_departamento VALUES (tp_departamento('D10', 'Aves', 8)); 
 INSERT INTO tb_departamento VALUES (tp_departamento('D11', 'Ursos', 3));
 
+-- JAULA
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jf04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp02', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp03', 4));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jp04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jr03', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Js01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js04', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js05', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Js06', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jj01', 10));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jl01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jl02', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jt01', 5));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jt02', 3));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh01', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh02', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh03', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jh04', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Jm03', 1));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja01', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja02', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja03', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja04', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja05', 1));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja06', 5));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja07', 3));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ja08', 4));
+
+INSERT INTO tb_jaula VALUES (tp_jaula('Ju01', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ju02', 2));
+INSERT INTO tp_jaula VALUES (tp_jaula('Ju03', 2));
+
+
 -- Compra
 CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
 
