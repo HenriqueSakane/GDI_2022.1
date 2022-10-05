@@ -47,15 +47,14 @@ Promoção
 Participa
 Pertence 
 */
-CREATE TABLE tb_pessoa OF tp_pessoa (
-	cpf PRIMARY KEY,
-	nome NOT NULL,
-	data_nascimento NOT NULL
-);
+-- Não vai ter tabela PESSOA
 
 -- Endereço
 CREATE TABLE tb_endereco OF tp_endereco (
-	cpf_pessoa SCOPE IS tb_pessoa
+	cep PRIMARY KEY,
+	rua NOT NULL,
+	numero NOT NULL,
+	bairro NOT NULL
 );
 
 -- Cargo 
@@ -71,15 +70,10 @@ CREATE TABLE tb_telefone OF tp_telefone (
 );
 
 -- funcionario
-CREATE TABLE tb_funcionario OF tp_funcionario (
-	cargo SCOPE IS tb_cargo,
-	cpf_supervisor SCOPE IS tb_funcionario
-);
+-- Não vai ter tabela de FUNCIONARIO
 
 -- DEPENDENTE
-CREATE TABLE tb_dependente OF tp_dependente {
-	cpf_funcionario SCOPE IS tb_funcionario
-}
+-- será uma NESTED TABLE
 
 -- Biólogo 
 CREATE TABLE tb_biologo OF tp_biologo (
