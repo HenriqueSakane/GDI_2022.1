@@ -89,8 +89,16 @@ END;
 
 -- Funcionario (herda de pessoa)
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
-	cargo REF tp_cargo
+	cargo REF tp_cargo,
+	OVERRIDING MEMBER FUNCTION nomePessoa RETURN VARCHAR2 AS nomeFuncionario
 ) NOT FINAL NOT INSTANTIABLE;
+
+--Overriding Member Function de Pessoa
+OVERRIDING MEMBER FUNCTION nomePessoa(f1 tp_funcionario) RETURN VARCHAR2 AS nomeFuncionario IS
+BEGIN
+RETURN f1.nome;
+END;
+END;
 
 -- Dependente 
 CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
