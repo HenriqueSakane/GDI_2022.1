@@ -114,28 +114,28 @@ INSERT INTO tb_zelador VALUES
 
 
 -- Visitante
-INSERT INTO tb_visitante VALUES (tp_visitante('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '10000-100'),
+INSERT INTO tb_visitante VALUES (tp_visitante('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'), tp_endereco('10000-100', 'Rua Anacleto de Souza', '80', 'Casa Forte'),
 								 tp_arr_fones(tp_telefone('987776666')), to_date('29/08/2021', 'dd/mm/yy'), '11122233344'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('444.555.666-77', 'Daniel Victor', to_date('03/03/1993', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '20000-200'),
+INSERT INTO tb_visitante VALUES (tp_visitante('444.555.666-77', 'Daniel Victor', to_date('03/03/1993', 'dd/mm/yy'), tp_endereco('20000-200', 'Avenida dos Engenhos', '56', 'Parnamirim'),
 								 tp_arr_fones(tp_telefone('978886666'), tp_telefone('32221111')),	to_date('01/04/2019', 'dd/mm/yy'), NULL));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('123.456.789-00', 'Gustavo Gonçalves', to_date('05/05/1995', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '40000-400'),
+INSERT INTO tb_visitante VALUES (tp_visitante('123.456.789-00', 'Gustavo Gonçalves', to_date('05/05/1995', 'dd/mm/yy'), tp_endereco('40000-400', 'Avenida do Milho', '28', 'Coqueiral'),
 								 tp_arr_fones(tp_telefone('994445555'), tp_telefone('34440000')), to_date('12/02/2020', 'dd/mm/yy'), NULL));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('248.369.124-22', 'Igor Domingos', to_date('06/06/1996', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '50000-500'),
+INSERT INTO tb_visitante VALUES (tp_visitante('248.369.124-22', 'Igor Domingos', to_date('06/06/1996', 'dd/mm/yy'), tp_endereco('50000-500', 'Rua Dom Casmurro', '720', 'Setubal'),
 								 tp_arr_fones(tp_telefone('989995555'), to_date('20/01/2022', 'dd/mm/yy')), '24836912422'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('111.111.111-11', 'Lukas Asael', to_date('07/07/1997', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '60000-600'),
+INSERT INTO tb_visitante VALUES (tp_visitante('111.111.111-11', 'Lukas Asael', to_date('07/07/1997', 'dd/mm/yy'), tp_endereco('60000-600', 'Rua Machado', '98', 'Boa Viagem'),
 								 tp_arr_fones(tp_telefone('987773333')), to_date('29/06/2020', 'dd/mm/yy'), '11111111111'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('222.222.222-22', 'Matheus Marinho', to_date('08/08/1998', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '70000-700'),
+INSERT INTO tb_visitante VALUES (tp_visitante('222.222.222-22', 'Matheus Marinho', to_date('08/08/1998', 'dd/mm/yy'), tp_endereco('70000-700', 'Avenida Ayrton Senna', '41', 'Piedade'),
 								 tp_arr_fones(tp_telefone('997774444')), to_date('22/07/2022', 'dd/mm/yy'), '22222222222'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '90000-900'),
+INSERT INTO tb_visitante VALUES (tp_visitante('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy'), tp_endereco('90000-900', 'Avenida da Quarta', '1914', 'Arruda'),
 								 tp_arr_fones(tp_telefone('993338888')), to_date('25/03/2021', 'dd/mm/yy'), '44444444444'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'), (SELECT REF(C) FROM tb_endereco C WHERE C.cep = '72301-123'),
+INSERT INTO tb_visitante VALUES (tp_visitante('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'), tp_endereco('Avenida do Leão', '1905', 'Ilha do Retiro'),
 								 tp_arr_fones(tp_telefone('981110000')), to_date('12/10/2021', 'dd/mm/yy'), NULL));
 
 -- JAULA
