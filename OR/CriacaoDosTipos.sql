@@ -78,7 +78,7 @@ CREATE OR REPLACE TYPE BODY tp_cargo IS
 	BEGIN
 		RETURN salario *12;
 	END;
-
+END;
 --Comparando Salarios
 ORDER MEMBER FUNCTION comparaSalario(X tp_cargo) RETURN INTEGER IS
 	BEGIN 
