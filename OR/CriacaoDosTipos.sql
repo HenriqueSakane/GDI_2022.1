@@ -80,13 +80,12 @@ CREATE OR REPLACE TYPE BODY tp_cargo IS
 	END;
 END;
 --Comparando Salarios
+CREATE OR REPLACE TYPE BODY comparaSalario AS 
 ORDER MEMBER FUNCTION comparaSalario(X tp_cargo) RETURN INTEGER IS
-	BEGIN 
-		RETURN SELF.salario - X.salario;
-	END;
+    BEGIN 
+        RETURN X.salario - X.salario;
+    END;
 END;
-
-
 
 -- Funcionario (herda de pessoa)
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
