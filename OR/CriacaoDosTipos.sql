@@ -101,25 +101,34 @@ CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
 	data_nasc DATE
 );
 
+-- NESTED TABLES:
+-- Dependentes de Biólogos 
+CREATE OR REPLACE TYPE tp_nt_dependentes_biologos AS TABLE OF tp_dependente;
+-- Dependentes de Atendentes
+CREATE OR REPLACE TYPE tp_nt_dependentes_atendentes AS TABLE OF tp_dependente;
+-- Dependentes de Zeladores
+CREATE OR REPLACE TYPE tp_nt_dependentes_zeladores AS TABLE OF tp_dependente;
+
+
 -- Biologo
 -- herda de funcionario 
 CREATE OR REPLACE TYPE tp_biologo UNDER tp_funcionario (
 	especializacao VARCHAR(15),
-    	cpf_supervisor REF tp_biologo
+	dependentes_de_biologos tp_nt_dependentes_biologos
 );
 
 -- Atendente
 -- herda de funcionario
 CREATE OR REPLACE TYPE tp_atendente UNDER tp_funcionario (
 	guiche NUMBER,
-   	cpf_supervisor REF tp_atendente
+	dependentes_de_atendentes tp_nt_dependentes_atendentes
 ); 
 
 -- Zelador
 -- herda de funcionario 
 CREATE OR REPLACE TYPE tp_zelador UNDER tp_funcionario (
 	numero_de_jaulas_a_limpar NUMBER,
-    	cpf_supervisor REF tp_zelador
+	dependentes_de_zeladores tp_nt_dependentes_zeladores
 );
 
 -- Visitante 
