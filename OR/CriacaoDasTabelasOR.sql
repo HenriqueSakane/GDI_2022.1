@@ -142,7 +142,7 @@ CREATE TABLE tb_ticket OF tp_ticket (
 CREATE TABLE tb_compra OF tp_compra (
 	numero_ticket WITH ROWID REFERENCES tb_ticket,
 	cpf WITH ROWID REFERENCES tb_visitante,
-	nota_fiscal NOT NULL,
+	nota_fiscal NOT NULL
 );
 /
 
