@@ -183,7 +183,7 @@ CREATE OR REPLACE TYPE tp_ticket AS OBJECT (
 -- Compra 
 CREATE OR REPLACE TYPE tp_compra AS OBJECT (
 	numero_ticket NUMBER,
-	cpf_visitante VARCHAR2(15),
+	cpf_visitante REF tp_visitante,
 	nota_fiscal INTEGER,
 	MEMBER PROCEDURE print_compra (P tp_compra)
 );
