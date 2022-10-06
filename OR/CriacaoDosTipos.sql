@@ -95,9 +95,9 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 
 --Overriding Member Function de Pessoa
 OVERRIDING MEMBER FUNCTION nomePessoa(f1 tp_funcionario) RETURN VARCHAR2 AS nomeFuncionario IS
-BEGIN
-RETURN f1.nome;
-END;
+	BEGIN
+		RETURN f1.nome;
+	END;
 END;
 
 -- Dependente 
@@ -193,12 +193,12 @@ CREATE OR REPLACE TYPE tp_compra AS OBJECT (
 	numero_ticket REF tp_ticket,
 	cpf_visitante REF tp_visitante,
 	nota_fiscal INTEGER,
-	OVERRIDING MEMBER PROCEDURE print_compra
+	MEMBER PROCEDURE print_compra
 );
 
 -- OVERRIDING MEMBER PROCEDURE que imprime as informções da compra
 CREATE OR REPLACE TYPE BODY tp_compra AS 
-OVERRIDING MEMBER PROCEDURE print_compra IS 
+MEMBER PROCEDURE print_compra IS 
 	BEGIN 
 		dbms_out.put_line(numero_ticket),
 		dbms_out.put_line(cpf_visitante),
