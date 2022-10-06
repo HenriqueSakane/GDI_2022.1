@@ -49,13 +49,7 @@ Pertence
 */
 -- Não vai ter tabela PESSOA
 
--- Endereço
-CREATE TABLE tb_endereco OF tp_endereco (
-	cep PRIMARY KEY,
-	rua NOT NULL,
-	numero NOT NULL,
-	bairro NOT NULL
-);
+-- Não vai ter tabela de endereço
 
 -- Cargo 
 CREATE TABLE tb_cargo OF tp_cargo (
@@ -63,11 +57,7 @@ CREATE TABLE tb_cargo OF tp_cargo (
 	salario NOT NULL
 );
 
--- telefone
-CREATE TABLE tb_telefone OF tp_telefone (
-	cpf_pessoa WITH ROWID REFERENCES tb_pessoa PRIMARY KEY, -- checar
-	numero_telefone PRIMARY KEY
-);
+-- Não vai ter tabela de telefone
 
 -- funcionario
 -- Não vai ter tabela de FUNCIONARIO
@@ -79,19 +69,19 @@ CREATE TABLE tb_telefone OF tp_telefone (
 CREATE TABLE tb_biologo OF tp_biologo (
 	cpf PRIMARY KEY,
 	especializacao NOT NULL
-);
+) NESTED TABLE dependentes_de_biologos STORE AS nt_depedentes_biologo;
 
 -- Atendente
 CREATE TABLE tb_atendente OF tp_atendente (
 	cpf PRIMARY KEY,
 	guiche NOT NULL
-);
+) NESTED TABLE dependentes_de_atendentes STORE AS nt_depedentes_atendente;
 
 -- Zelador
 CREATE TABLE tb_zelador OF tp_zelador (
 	cpf PRIMARY KEY,
 	numero_de_jaulas_a_limpar NOT NULL
-);
+) NESTED TABLE dependentes_de_zeladores STORE AS nt_depedentes_zelador;
 
 -- Visitante
 CREATE TABLE tb_visitante OF tp_visitante (
