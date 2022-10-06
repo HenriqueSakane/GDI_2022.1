@@ -1,5 +1,6 @@
 -- Povoamento OR
 
+
 -- Cargo
 
 INSERT INTO tb_cargo VALUES (tp_cargo('Atendente', 2000.00));
@@ -12,7 +13,7 @@ INSERT INTO tb_biologo VALUES
     (tp_biologo
     ('999.999.999-99', 'Letícia Araujo', to_date('30/10/1995', 'dd/mm/yy'), tp_endereco('87878-380', 'Avenida Pelé', '10', 'Campo Grande'), tp_arr_fones((tp_telefone('991919191')), (tp_telefone('32322323'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Biologo'),
-    'Mamíferos', NULL, NULL));
+    'Mamíferos', NULL,NULL));
 
 INSERT INTO tb_biologo VALUES 
     (tp_biologo
@@ -36,37 +37,25 @@ INSERT INTO tb_biologo VALUES
 -- Atendente
 INSERT INTO tb_atendente VALUES 
     (tp_atendente
-    ('777.888.999-99', 
-    'Felipe Muniz', 
-    to_date('04/04/1994', 'dd/mm/yy'), 
-    tp_endereco('30000-300', 'Rua das Monocotiledoneas', '335', 'Coqueiral'), 
-    tp_arr_fones((tp_telefone('998887777'))), 
+    ('777.888.999-99', 'Felipe Muniz', to_date('04/04/1994', 'dd/mm/yy'), tp_endereco('30000-300', 'Rua das Monocotiledoneas', '335', 'Coqueiral'), tp_arr_fones((tp_telefone('998887777'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Atendente'),
-    1, 
-    NULL, 
-    NULL));
+    1, NULL, NULL));
 
 INSERT INTO tb_atendente VALUES 
     (tp_atendente
-    ('666.666.666-66', 
-    'Bruno Lima', 
-    to_date('04/07/1997', 'dd/mm/yy'), 
-    tp_endereco('98000-340', 'Avenida Brasil', '12', 'Afogados'), 
-    tp_arr_fones((tp_telefone('988885555'), tp_telefone('34444444'))), 
+    ('666.666.666-66', 'Bruno Lima', to_date('04/07/1997', 'dd/mm/yy'), tp_endereco('98000-340', 'Avenida Brasil', '12', 'Afogados'), tp_arr_fones((tp_telefone('988885555')), (tp_telefone('34444444'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Atendente'),
-    2, 
-    (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'), 
-    NULL));
+    2, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'), NULL));
 
 INSERT INTO tb_atendente VALUES 
     (tp_atendente
-    ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy'), tp_endereco('80000-800', 'Rua dos Lanternas', '1901', 'Aflitos'), tp_arr_fones((tp_telefone('996662222'), tp_telefone('987550101'), tp_telefone('34110000'))), 
+    ('333.333.333-33', 'João Lucas', to_date('09/09/1999', 'dd/mm/yy'), tp_endereco('80000-800', 'Rua dos Lanternas', '1901', 'Aflitos'), tp_arr_fones((tp_telefone('996662222')), (tp_telefone('987550101')), (tp_telefone('34110000'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Atendente'),
     3, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'), NULL));
 
 INSERT INTO tb_atendente VALUES 
     (tp_atendente
-    ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy'), tp_endereco('94835-432', 'Avenida Dr. Hans Chucrute', '128', 'Madalena'), tp_arr_fones((tp_telefone('997777777'), tp_telefone('32323232'), tp_telefone('998988989'))), 
+    ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy'), tp_endereco('94835-432', 'Avenida Dr. Hans Chucrute', '128', 'Madalena'), tp_arr_fones((tp_telefone('997777777')), (tp_telefone('32323232')), (tp_telefone('998988989'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Atendente'),
     4, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'),
     tp_nt_dependentes_atendentes(tp_dependente((SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 'Nilton Santos', 'filho', to_date('27/10/2013', 'dd/mm/yy')))));
@@ -81,14 +70,14 @@ INSERT INTO tb_zelador VALUES
 
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
-    ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy'), tp_endereco('99999-999', 'Rua Zeca Urubu', '157', 'Casa Forte'), tp_arr_fones((tp_telefone('993336666'), tp_telefone('32326464'))), 
+    ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy'), tp_endereco('99999-999', 'Rua Zeca Urubu', '157', 'Casa Forte'), tp_arr_fones((tp_telefone('993336666')), (tp_telefone('32326464'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     10, (SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'),
     tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), 'Enzo Ferrari', 'filho', to_date('10/01/2007', 'dd/mm/yy')))));
 
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
-    ('505.505.505-55', 'Marta Guerra', to_date('24/01/1952', 'dd/mm/yy'), tp_endereco('19872-008', 'Avenida Luiz Gonzaga', '35', 'Cordeiro'), tp_arr_fones((tp_telefone('996662222'), tp_telefone('987550101'), tp_telefone('34110000'))), 
+    ('505.505.505-55', 'Marta Guerra', to_date('24/01/1952', 'dd/mm/yy'), tp_endereco('19872-008', 'Avenida Luiz Gonzaga', '35', 'Cordeiro'), tp_arr_fones((tp_telefone('996662222')), (tp_telefone('987550101')), (tp_telefone('34110000'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     10, (SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'),
     tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'),  'José Guerra', 'neto', to_date('02/04/2015', 'dd/mm/yy'))))); 
@@ -122,7 +111,7 @@ INSERT INTO tb_visitante VALUES (tp_visitante('222.222.222-22', 'Matheus Marinho
 INSERT INTO tb_visitante VALUES (tp_visitante('444.444.444-44', 'Miguel Ferreira', to_date('10/10/2000', 'dd/mm/yy'), tp_endereco('90000-900', 'Avenida da Quarta', '1914', 'Arruda'),
 								 tp_arr_fones(tp_telefone('993338888')), to_date('25/03/2021', 'dd/mm/yy'), '44444444444'));
 
-INSERT INTO tb_visitante VALUES (tp_visitante('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'), tp_endereco('Avenida do Leão', '1905', 'Ilha do Retiro'),
+INSERT INTO tb_visitante VALUES (tp_visitante('555.555.555-55', 'José Gomes', to_date('03/08/1983', 'dd/mm/yy'), tp_endereco('72301-123','Avenida do Leão', '1905', 'Ilha do Retiro'),
 								 tp_arr_fones(tp_telefone('981110000')), to_date('12/10/2021', 'dd/mm/yy'), NULL));
 
 -- JAULA
@@ -175,7 +164,7 @@ INSERT INTO tb_jaula VALUES (tp_jaula('Ja08', 4));
 
 INSERT INTO tb_jaula VALUES (tp_jaula('Ju01', 2));
 INSERT INTO tb_jaula VALUES (tp_jaula('Ju02', 2));
-INSERT INTO tp_jaula VALUES (tp_jaula('Ju03', 2));
+INSERT INTO tb_jaula VALUES (tp_jaula('Ju03', 2));
 
 -- Departamento 
 
@@ -378,16 +367,18 @@ INSERT INTO tb_ticket VALUES (tp_ticket(7, (SELECT REF(A) FROM tb_atendente A WH
 INSERT INTO tb_ticket VALUES (tp_ticket(8, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 37.50, to_date('12/10/2022', 'dd/mm/yy'))); 
 
 -- Compra
-CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1; -- verificar se essa sequencia esta correta para OR
+/
+CREATE SEQUENCE nota_fiscal INCREMENT BY 1 START WITH 1;
+/
 
-INSERT INTO tb_compra VALUES (tp_compra(1, '111.222.333-44', nota_fiscal.NEXTVAL)); 
-INSERT INTO tb_compra VALUES (tp_compra(2, '444.555.666-77', nota_fiscal.NEXTVAL)); 
-INSERT INTO tb_compra VALUES (tp_compra(3, '123.456.789-00', nota_fiscal.NEXTVAL)); 
-INSERT INTO tb_compra VALUES (tp_compra(4, '248.369.124-22', nota_fiscal.NEXTVAL));
-INSERT INTO tb_compra VALUES (tp_compra(5, '111.111.111-11', nota_fiscal.NEXTVAL));
-INSERT INTO tb_compra VALUES (tp_compra(6, '222.222.222-22', nota_fiscal.NEXTVAL));
-INSERT INTO tb_compra VALUES (tp_compra(7, '444.444.444-44', nota_fiscal.NEXTVAL));
-INSERT INTO tb_compra VALUES (tp_compra(8, '555.555.555-55', nota_fiscal.NEXTVAL));			      
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 1), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '111.222.333-44'), nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 2), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '444.555.666-77'), nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 3), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '123.456.789-00'), nota_fiscal.NEXTVAL)); 
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 4), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '248.369.124-22'), nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 5), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '111.111.111-11'), nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 6), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '222.222.222-22'), nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 7), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '444.444.444-44'), nota_fiscal.NEXTVAL));
+INSERT INTO tb_compra VALUES (tp_compra((SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 8), (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '555.555.555-55'), nota_fiscal.NEXTVAL));			      
 
 -- Promocao 
 INSERT INTO tb_promocao VALUES (tp_promocao(48957, 50, to_date('01/05/2022', 'dd/mm/yy'), to_date('15/05/2022', 'dd/mm/yy')));
@@ -396,16 +387,16 @@ INSERT INTO tb_promocao VALUES (tp_promocao(65037, 20, to_date('01/07/2022', 'dd
 
 -- Participa 
 INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 65037),
-    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 1),
+    (SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 1),
     (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '111.222.333-44')));
 INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 48957),
-    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 3),
+    (SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 3),
     (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '123.456.789-00')));
 INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 65037),
-    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 6),
+    (SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 6),
     (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '222.222.222-22')));
 INSERT INTO tb_participa VALUES (tp_participa((SELECT REF(P) FROM tb_promocao P WHERE P.cod_promocao = 72841),
-    (SELECT REF(T) FROM tb_ticket P WHERE T.numero_ticket = 8),
+    (SELECT REF(T) FROM tb_ticket T WHERE T.numero_ticket = 8),
     (SELECT REF(V) FROM tb_visitante V WHERE V.cpf = '555.555.555-55')));	
 			      
 -- Pertence 
@@ -556,7 +547,7 @@ INSERT INTO tb_pertence VALUES (tp_pertence(
 INSERT INTO tb_pertence VALUES (tp_pertence(
     (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An025'),
     (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jj01'),
-    (to_date('04/05/2022', 'dd/mm/yy')),
+    (to_date('04/04/2022', 'dd/mm/yy')),
     (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D05'),
     (to_date('29/11/2022', 'dd/mm/yy'))));
 INSERT INTO tb_pertence VALUES (tp_pertence(
