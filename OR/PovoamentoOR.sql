@@ -642,7 +642,7 @@ INSERT INTO tb_pertence VALUES (tp_pertence(
     (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jh04'),
     (to_date('17/03/2022', 'dd/mm/yy')),
     (SELECT REF(D) FROM tb_departamento D WHERE D.cod_departamento = 'D08'),
-    (to_date('22/10/2022', 'dd/mm/yy'))));]
+    (to_date('22/10/2022', 'dd/mm/yy'))));
 INSERT INTO tb_pertence VALUES (tp_pertence(
     (SELECT REF(A) FROM tb_animais A WHERE A.cod_animal = 'An042'),
     (SELECT REF(J) FROM tb_jaula J WHERE J.cod_jaula = 'Jm01'),
