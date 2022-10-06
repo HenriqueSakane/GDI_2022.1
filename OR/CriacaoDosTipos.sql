@@ -182,10 +182,10 @@ CREATE OR REPLACE TYPE tp_ticket AS OBJECT (
 
 -- Compra 
 CREATE OR REPLACE TYPE tp_compra AS OBJECT (
-	numero_ticket NUMBER,
+	numero_ticket REF tp_ticket,
 	cpf_visitante REF tp_visitante,
 	nota_fiscal INTEGER,
-	MEMBER PROCEDURE print_compra (P tp_compra)
+	OVERRIDING MEMBER PROCEDURE print_compra
 );
 
 -- OVERRIDING MEMBER PROCEDURE que imprime as informções da compra
