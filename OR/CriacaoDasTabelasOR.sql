@@ -166,7 +166,7 @@ CREATE TABLE tb_participa OF tp_participa (
 -- Pertence 
 CREATE TABLE tb_pertence OF tp_pertence (
 	animais WITH ROWID REFERENCES tb_animais,
-	jaula WITH ROWID REFERENCES tb_jaulas,
+	jaula WITH ROWID REFERENCES tb_jaula,
 	data_entrada PRIMARY KEY,
 	departamento WITH ROWID REFERENCES tb_departamento,
 	data_saida NOT NULL
