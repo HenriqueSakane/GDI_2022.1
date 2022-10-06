@@ -131,7 +131,7 @@ CREATE TABLE tb_ticket OF tp_ticket (
 -- compra
 CREATE TABLE tb_compra OF tp_compra (
 	numero_ticket PRIMARY KEY,
-	cpf_visitante PRIMARY KEY,
+	cpf_visitante WITH ROWID REFERENCES tb_visitante,
 	nota_fiscal NOT NULL,
 );
 
