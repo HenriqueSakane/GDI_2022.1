@@ -32,7 +32,7 @@ INSERT INTO tb_biologo VALUES
     ('888.888.888-88', 'Vanessa Lorrany', to_date('06/11/1966', 'dd/mm/yy'), tp_endereco('44444-100', 'Estrada da Batalha', '300', 'Prazeres'), tp_arr_fones((tp_telefone('991911919'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Biologo'),
     'Mamíferos', (SELECT REF(B) FROM tb_biologo B WHERE B.cpf = '999.999.999-99'), 
-    tp_nt_dependentes_biologos(tp_dependente((SELECT REF(B) FROM tb_biologo B WHERE B.cpf = '888.888.888-88'), 'Laura Lorrany', 'filha', to_date('03/12/2004', 'dd/mm/yy')))));
+    tp_nt_dependentes_biologos(tp_dependente('Laura Lorrany', 'filha', to_date('03/12/2004', 'dd/mm/yy')))));
 
 -- Atendente
 INSERT INTO tb_atendente VALUES 
@@ -58,7 +58,7 @@ INSERT INTO tb_atendente VALUES
     ('202.202.202-20', 'Gabriela Santos', to_date('13/03/1983', 'dd/mm/yy'), tp_endereco('94835-432', 'Avenida Dr. Hans Chucrute', '128', 'Madalena'), tp_arr_fones((tp_telefone('997777777')), (tp_telefone('32323232')), (tp_telefone('998988989'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Atendente'),
     4, (SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '777.888.999-99'),
-    tp_nt_dependentes_atendentes(tp_dependente((SELECT REF(A) FROM tb_atendente A WHERE A.cpf = '202.202.202-20'), 'Nilton Santos', 'filho', to_date('27/10/2013', 'dd/mm/yy')))));
+    tp_nt_dependentes_atendentes(tp_dependente('Nilton Santos', 'filho', to_date('27/10/2013', 'dd/mm/yy')))));
 
 -- Zelador
 INSERT INTO tb_zelador VALUES 
@@ -66,28 +66,28 @@ INSERT INTO tb_zelador VALUES
     ('404.404.404-40', 'Renata Matos', to_date('17/09/1980', 'dd/mm/yy'), tp_endereco('20081-987', 'Avenida da Paz', '22', 'Várzea'), tp_arr_fones((tp_telefone('997977979'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     11, NULL, 
-    tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), 'Alex Matos', 'filho', to_date('13/03/2010', 'dd/mm/yy')))));
+    tp_nt_dependentes_zeladores(tp_dependente('Alex Matos', 'filho', to_date('13/03/2010', 'dd/mm/yy')))));
 
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
     ('606.606.606-60', 'Juliana Ferrari', to_date('01/04/1973', 'dd/mm/yy'), tp_endereco('99999-999', 'Rua Zeca Urubu', '157', 'Casa Forte'), tp_arr_fones((tp_telefone('993336666')), (tp_telefone('32326464'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     10, (SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'),
-    tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60'), 'Enzo Ferrari', 'filho', to_date('10/01/2007', 'dd/mm/yy')))));
+    tp_nt_dependentes_zeladores(tp_dependente('Enzo Ferrari', 'filho', to_date('10/01/2007', 'dd/mm/yy')))));
 
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
     ('505.505.505-55', 'Marta Guerra', to_date('24/01/1952', 'dd/mm/yy'), tp_endereco('19872-008', 'Avenida Luiz Gonzaga', '35', 'Cordeiro'), tp_arr_fones((tp_telefone('996662222')), (tp_telefone('987550101')), (tp_telefone('34110000'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     10, (SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'),
-    tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '505.505.505-55'),  'José Guerra', 'neto', to_date('02/04/2015', 'dd/mm/yy'))))); 
+    tp_nt_dependentes_zeladores(tp_dependente('José Guerra', 'neto', to_date('02/04/2015', 'dd/mm/yy'))))); 
 
 INSERT INTO tb_zelador VALUES 
     (tp_zelador
     ('777.777.777-77', 'Gilberto Diniz', to_date('05/12/1979', 'dd/mm/yy'), tp_endereco('85473-450', 'Rua Benfica', '110', 'Derby'), tp_arr_fones((tp_telefone('999990000'))), 
     (SELECT REF(F) FROM tb_cargo F WHERE F.cargo_funcionario = 'Zelador'),
     8, (SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '404.404.404-40'), 
-    tp_nt_dependentes_zeladores(tp_dependente((SELECT REF(Z) FROM tb_zelador Z WHERE Z.cpf = '777.777.777-77'),  'Julia Diniz', 'filha', to_date('20/08/2011', 'dd/mm/yy')))));
+    tp_nt_dependentes_zeladores(tp_dependente('Julia Diniz', 'filha', to_date('20/08/2011', 'dd/mm/yy')))));
 
 -- Visitante
 INSERT INTO tb_visitante VALUES (tp_visitante('111.222.333-44', 'Henrique Sakane', to_date('02/02/2000', 'dd/mm/yy'), tp_endereco('10000-100', 'Rua Anacleto de Souza', '80', 'Casa Forte'),
