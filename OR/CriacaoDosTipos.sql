@@ -106,7 +106,6 @@ END;
 /
 -- Dependente 
 CREATE OR REPLACE TYPE tp_dependente AS OBJECT (
-	cpf_funcionario REF tp_funcionario,
 	nome_dependente VARCHAR2(20),
 	grau_parentesco VARCHAR(10),
 	data_nasc DATE
