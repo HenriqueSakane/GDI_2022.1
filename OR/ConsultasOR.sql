@@ -8,7 +8,8 @@
 	CONSULTA À NESTED TABLE
 
 */
--- CONSULTAS "COMUNS":
+
+-- ---------//---------  CONSULTAS "COMUNS" ----------//-----------
 
 -- PEGAR ALGUNS DADOS DE TODOS OS VISITANTES:
 
@@ -25,19 +26,23 @@ SELECT nome as Nome, cpf as CPF, data_nascimento as Data_de_Nascimento, especial
 FROM tb_biologo
 WHERE especializacao = 'Mamíferos';
 
--- SELECT REF 
+-- -----------//------------- SELECT REF ------------------//-------------
 
--- SELECT DEREF:
+
+-- -----------//----------- SELECT DEREF----------------//---------------
+
 -- SELECIONAR OS ANIMAIS QUE FAZEM PARTE DO DEPARTAMENTO DE FELINOS E AS SUAS RESPECTIVAS JAULAS:
 SELECT DEREF(P.animais).especie AS Animal, DEREF(P.jaula).cod_jaula AS Código_da_Jaula
 FROM tb_pertence P
 WHERE DEREF(P.departamento).nome_departamento = 'Felinos';
 
--- CONSULTA À VARRAY
+
+-- ----------//--------- CONSULTA À VARRAY -------------//--------------
+
 -- PEGAR OS NÚMEROS DE TELEFONE DE TODOS OS ATENDENTES
 SELECT nome, cpf, T.* FROM tb_atendente A, TABLE(A.telefones) T;
 
--- CONSULTA À NESTED TABLE:
+-- ---------//-------- CONSULTA À NESTED TABLE ----------//---------------
 
 -- SELECIONANDO DEPENDENTE DE UM BIÓLOGO:
 SELECT * FROM TABLE (SELECT B.dependentes_de_biologos FROM tb_biologo B WHERE B.cpf = '888.888.888-88');
@@ -48,5 +53,5 @@ SELECT * FROM TABLE (SELECT A.dependentes_de_atendentes FROM tb_atendente A WHER
 -- SELECIONANDO DEPENDENTE DE UM ZELADOR:
 SELECT * FROM TABLE (SELECT Z.dependentes_de_zeladores FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60');
 
--- CONSULTAS COM AS FUNÇÕES:
+-- ---------//--------- CONSULTAS COM AS FUNÇÕES --------------//------------
 
