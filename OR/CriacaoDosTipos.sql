@@ -245,5 +245,5 @@ CREATE OR REPLACE TYPE tp_pertence AS OBJECT (
 	data_saida DATE
 );
 /
---Modificando o Funcionario
-ALTER TYPE tp_funcionario ADD ATTRIBUTE data_de_contratacao DATE CASCADE;
+	--Modificando o Funcionario
+ -- ALTER TYPE tp_funcionario ADD ATTRIBUTE data_de_contratacao DATE CASCADE;
