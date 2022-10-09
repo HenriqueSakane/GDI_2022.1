@@ -205,9 +205,9 @@ CREATE OR REPLACE TYPE tp_compra AS OBJECT (
 CREATE OR REPLACE TYPE BODY tp_compra AS 
 MEMBER PROCEDURE print_compra IS 
 	BEGIN 
-		dbms_out.put_line(numero_ticket),
-		dbms_out.put_line(cpf_visitante),
-		dbms_out.put_line(nota_fiscal)
+		dbms_out.put_line(numero_ticket);
+		dbms_out.put_line(cpf_visitante);
+		dbms_out.put_line(nota_fiscal);
 	END;
 END;
 /
