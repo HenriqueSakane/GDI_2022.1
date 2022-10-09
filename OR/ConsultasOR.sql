@@ -36,6 +36,10 @@ SELECT DEREF(P.animais).especie AS Animal, DEREF(P.jaula).cod_jaula AS Código_d
 FROM tb_pertence P
 WHERE DEREF(P.departamento).nome_departamento = 'Felinos';
 
+-- CONTAR A QUANTIDADE DE TICKETS VENDIDOS DE ACORDO COM O VALOR
+SELECT valor, COUNT(*) FROM tb_ticket
+GROUP BY (valor);
+
 	-- SELECIONAR O NOME DO BIOLOGO QUE CUIDA DE ARARAS E QUANTAS ARARAS ESTÁ SOB SEU CUIDADO
 SELECT DEREF(C.cpf_biologo).nome AS Biologo,
     COUNT(*)
