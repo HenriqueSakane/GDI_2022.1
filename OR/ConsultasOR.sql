@@ -47,3 +47,6 @@ SELECT * FROM TABLE (SELECT A.dependentes_de_atendentes FROM tb_atendente A WHER
 
 -- SELECIONANDO DEPENDENTE DE UM ZELADOR:
 SELECT * FROM TABLE (SELECT Z.dependentes_de_zeladores FROM tb_zelador Z WHERE Z.cpf = '606.606.606-60');
+
+-- CONSULTAS COM AS FUNÇÕES:
+
