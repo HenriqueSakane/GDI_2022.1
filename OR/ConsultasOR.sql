@@ -31,17 +31,11 @@ WHERE especializacao = 'Mamíferos';
 
 -- -----------//----------- SELECT DEREF----------------//---------------
 
-<<<<<<< HEAD
--- SELECT DEREF:
 	-- SELECIONAR OS ANIMAIS QUE FAZEM PARTE DO DEPARTAMENTO DE FELINOS E AS SUAS RESPECTIVAS JAULAS:
-=======
--- SELECIONAR OS ANIMAIS QUE FAZEM PARTE DO DEPARTAMENTO DE FELINOS E AS SUAS RESPECTIVAS JAULAS:
->>>>>>> 3872e3a4d9898fb4b80dedf7bd9e5869f1e7a9db
 SELECT DEREF(P.animais).especie AS Animal, DEREF(P.jaula).cod_jaula AS Código_da_Jaula
 FROM tb_pertence P
 WHERE DEREF(P.departamento).nome_departamento = 'Felinos';
 
-<<<<<<< HEAD
 	-- SELECIONAR O NOME DO BIOLOGO QUE CUIDA DE ARARAS E QUANTAS ARARAS ESTÁ SOB SEU CUIDADO
 SELECT DEREF(C.cpf_biologo).nome AS Biologo,
     COUNT(*)
@@ -56,15 +50,9 @@ SELECT DISTINCT DEREF(DEREF(C.cpf_biologo).cpf_supervisor).nome AS Supervisor,
 FROM tb_cuida C
 WHERE DEREF(C.cod_animal).especie = 'Jacaré';
 
-
--- CONSULTA À VARRAY
-	-- PEGAR OS NÚMEROS DE TELEFONE DE TODOS OS ATENDENTES
-=======
-
 -- ----------//--------- CONSULTA À VARRAY -------------//--------------
 
--- PEGAR OS NÚMEROS DE TELEFONE DE TODOS OS ATENDENTES
->>>>>>> 3872e3a4d9898fb4b80dedf7bd9e5869f1e7a9db
+	-- PEGAR OS NÚMEROS DE TELEFONE DE TODOS OS ATENDENTES
 SELECT nome, cpf, T.* FROM tb_atendente A, TABLE(A.telefones) T;
 
 -- ---------//-------- CONSULTA À NESTED TABLE ----------//---------------
