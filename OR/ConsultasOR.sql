@@ -8,13 +8,34 @@
 	CONSULTA À NESTED TABLE
 
 */
+-- CONSULTAS "COMUNS":
+
+-- PEGAR ALGUNS DADOS DE TODOS OS VISITANTES:
+
+SELECT nome as Nome, cpf as CPF, data_nascimento as Data_de_Nascimento, V.endereco.bairro as Bairro, V.endereco.rua as Rua, V.endereco.numero as Número
+FROM tb_visitante V;  
+
+-- PEGAR OS DADOS DE VISITANTES QUE POSSUEM CARTEIRA DE ESTUDANTE:
+SELECT nome as Nome, cpf as CPF, data_nascimento as Data_de_Nascimento, carteira_de_estudante as Carteira_de_Estudante, V.endereco.bairro as Bairro, V.endereco.rua as Rua, V.endereco.numero as Número 
+FROM tb_visitante V
+WHERE carteira_de_estudante IS NOT NULL;
+
+-- PEGAR OS DADOS DOS BIÓLOGOS ESPECIALIZADOS EM MAMÍFEROS:
+SELECT nome as Nome, cpf as CPF, data_nascimento as Data_de_Nascimento, especializacao as Especialização 
+FROM tb_biologo
+WHERE especializacao = 'Mamíferos';
 
 -- SELECT REF 
 
--- SELECT DEREF
+-- SELECT DEREF:
+-- SELECIONAR OS ANIMAIS QUE FAZEM PARTE DO DEPARTAMENTO DE FELINOS E AS SUAS RESPECTIVAS JAULAS:
+SELECT DEREF(P.animais).especie AS Animal, DEREF(P.jaula).cod_jaula AS Código_da_Jaula
+FROM tb_pertence P
+WHERE DEREF(P.departamento).nome_departamento = 'Felinos';
 
 -- CONSULTA À VARRAY
-
+-- PEGAR OS NÚMEROS DE TELEFONE DE TODOS OS ATENDENTES
+SELECT nome, cpf, T.* FROM tb_atendente A, TABLE(A.telefones) T;
 
 -- CONSULTA À NESTED TABLE:
 
