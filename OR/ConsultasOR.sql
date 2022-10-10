@@ -72,3 +72,18 @@ SELECT * FROM TABLE (SELECT Z.dependentes_de_zeladores FROM tb_zelador Z WHERE Z
 
 -- ---------//--------- CONSULTAS COM AS FUNÇÕES --------------//------------
 
+
+-- OVERRIDING MEMBER PROCEDURE detalhesPessoa 
+DECLARE
+    biologo tp_pessoa;
+BEGIN
+    SELECT VALUE(B) INTO biologo FROM tb_biologo B WHERE B.cpf = '888.888.888-88';
+    biologo.detalhesPessoa();
+END;
+
+-- MAP MEMBER FUNCTION salarioAnual
+SELECT C.salarioAnual() FROM tb_cargo C WHERE C.cargo_funcionario = 'Biologo';
+
+-- MEMBER FUNCTION promocaoInfo
+SELECT P.promocaoInfo() FROM tb_promocao P WHERE P.cod_promocao = 48957;
+
