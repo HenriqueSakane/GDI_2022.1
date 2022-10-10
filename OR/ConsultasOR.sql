@@ -72,6 +72,8 @@ SELECT * FROM TABLE (SELECT Z.dependentes_de_zeladores FROM tb_zelador Z WHERE Z
 
 -- ---------//--------- CONSULTAS COM AS FUNÇÕES --------------//------------
 
+-- FINAL MEMBER FUNCTION numeroTelefones
+SELECT B.numeroTelefones() FROM tb_biologo B WHERE B.cpf = '888.888.888-88'; 
 
 -- OVERRIDING MEMBER PROCEDURE detalhesPessoa 
 DECLARE
