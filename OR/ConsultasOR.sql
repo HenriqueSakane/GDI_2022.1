@@ -77,6 +77,13 @@ SELECT B.numeroTelefones() AS Número_de_telefones_do_biologo FROM tb_biologo B 
 
 SELECT A.numeroTelefones() AS Número_de_telefones_do_atendente FROM tb_atendente A WHERE A.cpf = '202.202.202-20'; 
 
+-- MEMBER PROCEDURE detalhesPessoa
+DECLARE
+    visitante tp_visitante;
+BEGIN
+    SELECT VALUE(A) INTO visitante FROM tb_visitante A WHERE A.cpf = '123.456.789-00';
+    visitante.detalhesPessoa();
+END;
 
 -- OVERRIDING MEMBER PROCEDURE detalhesPessoa 
 DECLARE
