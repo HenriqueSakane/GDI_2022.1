@@ -92,3 +92,13 @@ SELECT C.salarioAnual() FROM tb_cargo C WHERE C.cargo_funcionario = 'Biologo';
 -- MEMBER FUNCTION promocaoInfo
 SELECT P.promocaoInfo() FROM tb_promocao P WHERE P.cod_promocao = 48957;
 
+-- ORDER MEMBER FUNCTION comparaDependente
+DECLARE
+    dep1 tp_dependente;
+    dep2 tp_dependente;
+BEGIN
+    dep1 := tp_dependente('Joaquim Bezerra', 'Filho', to_date('01/05/2004', 'dd/mm/yy'));
+    dep2 := tp_dependente('Fernanda Santana', 'Filha', to_date('26/06/2005', 'dd/mm/yy'));
+    DBMS_OUTPUT.PUT_LINE(dep2.comparaDependente(dep1));
+END;
+
