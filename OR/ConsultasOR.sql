@@ -26,8 +26,6 @@ SELECT nome as Nome, cpf as CPF, data_nascimento as Data_de_Nascimento, especial
 FROM tb_biologo
 WHERE especializacao = 'Mamíferos';
 
--- -----------//------------- SELECT REF ------------------//-------------
-
 
 -- -----------//----------- SELECT DEREF----------------//---------------
 
@@ -81,7 +79,7 @@ SELECT A.numeroTelefones() AS Número_de_telefones_do_atendente FROM tb_atendent
 DECLARE
     visitante tp_visitante;
 BEGIN
-    SELECT VALUE(A) INTO visitante FROM tb_visitante A WHERE A.cpf = '123.456.789-00';
+    SELECT VALUE(V) INTO visitante FROM tb_visitante V WHERE V.cpf = '123.456.789-00';
     visitante.detalhesPessoa();
 END;
 
