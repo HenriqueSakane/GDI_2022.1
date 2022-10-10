@@ -107,6 +107,7 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(dep2.comparaDependente(dep1));
 END;
 
+-------------- SELECT (REF) ---------------
 INSERT INTO tb_biologo VALUES 
     (tp_biologo
     ('456.956.565-56', 'Luana Vieira', to_date('03/08/1995', 'dd/mm/yy'), tp_endereco('52060-380', 'Avenida Stone', '890', 'Tamarineira'), tp_arr_fones((tp_telefone('991934345')), (tp_telefone('32324533'))), 
