@@ -1,4 +1,4 @@
-db.Pessoa.insertMany([
+db.pessoa.insertMany([
     {
         _id: 1,
         nome : "Andre Victor",
