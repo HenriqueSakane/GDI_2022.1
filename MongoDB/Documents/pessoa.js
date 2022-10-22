@@ -21,33 +21,33 @@ db.pessoa.insertMany([
     },
     {
         _id: 3,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
+        nome : "Samuel",
+        cpf : "111.222.333-98",
+        email : "SSmuelC@gmail.com.br",
+        telefone : 81987541923,
         sexo : "M",
         endereco_principal: 0,
-        enderecos: [2]
+        enderecos: [3]
     },
     {
         _id: 4,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
-        sexo : "M",
+        nome : "Fernando Lima",
+        cpf : "222.333.444-90",
+        email : "FLThor@gmail.com.br",
+        telefone : 81986541890,
+        sexo : "F",
         endereco_principal: 0,
-        enderecos: [2]
+        enderecos: [4]
     },
     {
         _id: 5,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
-        sexo : "M",
+        nome : "Fernanda",
+        cpf : "555.444.333-22",
+        email : "Fernanda0205@gmail.com.br",
+        telefone : 8173458888,
+        sexo : "F",
         endereco_principal: 0,
-        enderecos: [2]
+        enderecos: [5]
     },
     {
         _id: 6,
@@ -101,6 +101,6 @@ db.pessoa.insertMany([
     },
 ])
 
-db.visitantes.update({nome: "Leticia Torres"}, {$set: {nome: "Letycia Torres"}})
-db.visitantes.update({cpf: "555.444.333-22"}, {$set: {email: "nandoC@gmail.com.br"}})
-db.visitantes.update({nome: "Fernando Chaves"}, {$set: {sexo: "M"}})
+db.pessoa.update({nome: "Samuel"}, {$set: {nome: "Samuel Chaves"}})
+db.pessoa.update({cpf: "555.444.333-22"}, {$set: {email: "nandaC@gmail.com.br"}})
+db.pessoa.update({nome: "Fernando Lima"}, {$set: {sexo: "M"}})
