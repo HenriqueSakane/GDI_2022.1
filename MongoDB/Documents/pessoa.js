@@ -51,11 +51,11 @@ db.pessoa.insertMany([
     },
     {
         _id: 6,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
-        sexo : "M",
+        nome : "Luana Lima",
+        cpf : "999.111.222-78",
+        email : "LuanaVS@gmail.com.br",
+        telefone : 8197734562,
+        sexo : "F",
         endereco_principal: 0,
         enderecos: [2]
     },
