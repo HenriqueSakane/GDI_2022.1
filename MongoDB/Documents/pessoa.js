@@ -56,7 +56,7 @@ db.pessoa.insertMany([
         email : "LuanaVS@gmail.com.br",
         telefone : 8197734562,
         sexo : "F",
-        endereco_principal: 0,
+        endereco_principal: 1,
         enderecos: [2,6]
     },
     {
@@ -71,33 +71,33 @@ db.pessoa.insertMany([
     },
     {
         _id: 8,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
+        nome : "Felipe Oliveira",
+        cpf : "340.111.222-29",
+        email : "FelipeDvcO@gmail.com.br",
+        telefone : 81988010267,
         sexo : "M",
-        endereco_principal: 0,
-        enderecos: [2]
+        endereco_principal: 1,
+        enderecos: [1,8]
     },
     {
         _id: 9,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
+        nome : "Manuel pedro",
+        cpf : "233.122.899-90",
+        email : "Mpedro23@gmail.com.br",
+        telefone : 81923232323,
         sexo : "M",
         endereco_principal: 0,
-        enderecos: [2]
+        enderecos: [7]
     },
     {
         _id: 10,
-        nome : "Henrique sakane",
-        cpf : "706.124.236-92",
-        email : "henriqueS@gmail.com.br",
-        telefone : 8177778888,
+        nome : "Matheus Vilaça",
+        cpf : "555.111.999-87",
+        email : "Matheus23Vila@gmail.com.br",
+        telefone : 81988885555,
         sexo : "M",
         endereco_principal: 0,
-        enderecos: [2]
+        enderecos: [4]
     },
 ])
 
