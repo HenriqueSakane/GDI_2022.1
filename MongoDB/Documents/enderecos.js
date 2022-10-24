@@ -5,8 +5,8 @@ db.enderecos.insertMany([
         cep : "52060-105",
         logradouro : "Rua 105",
         bairro : "Bairro Abreu",
-        cidade : "Recife",
-        estado : "PE",
+        cidade : "João Pessoa",
+        estado : "PB",
         numero: 2,
         complemento: "apt 3",
         referencia: ""
@@ -27,8 +27,8 @@ db.enderecos.insertMany([
         cep : "45345-345",
         logradouro : "Rua Augusto",
         bairro : "Boa viagem",
-        cidade : "Recife",
-        estado : "PE",
+        cidade : "São paulo",
+        estado : "SP",
         numero: 10,
         complemento: "",
         referencia: "em frente ao posto"
