@@ -31,3 +31,47 @@ db.pessoa.find({
 
 // muda o nome da banco cliente para "fregues"
 db.cliente.renameCollection("Fregues");
+
+// Listar informações dos endereços de PE ordenados por numero ascendente
+db.enderecos.aggregate([
+    { $match: { estado: "PE"} },
+    { $sort: { numero: 1 } },
+    { $project:  { _id: 0, cep : 1, logradouro : 1, bairro : 1, cidade : 1, estado : 1, numero: 1, complemento: 1, referencia: 1}},
+  ]).pretty();
+
+// Listar _id e Total de clientes
+db.cliente.aggregate([
+    {
+        $lookup: {
+            from: "cliente",
+            localField: "cliente",
+            foreignField: "_id",
+            as: "clientes_info",
+        }
+    },
+    {
+        $unwind: "$clientes_info",
+    },
+    {
+        $group: {
+            _id: "$clientes_info.nome",
+            total_clientes: { $count: {} },
+        },
+    },
+    {
+        $project: {
+            _id: 0,
+            nome: "$_id",
+            total_tickets: 1,
+        },
+    },
+]).pretty();
+
+// Encontre os enderecos que pertence a pessoa de id 6
+db.enderecos.find({ pessoa: { $exists: true, $all: [6] } }).pretty();
+
+// Listar CPF, nome, email da pessoa de CPF "706.124.236-92"
+db.pessoa.findOne({ cpf: "706.124.236-92" }, { _id: 0, nome: 1, cpf: 1, email: 1})
+
+// Pegar os três funcionarios de maior salario
+db.funcionario.find().sort({ valor: -1 }).limit(3);
