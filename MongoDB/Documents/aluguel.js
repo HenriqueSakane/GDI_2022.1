@@ -87,7 +87,11 @@ db.aluguel.remove({ _id: 10  })
 db.aluguel.update(
     {   produtos: [6]   },
     {
-        $set: { produtos: [6, 7] }    
+        $push: {
+            produtos: {
+                $each: [5, 7]
+            }
+        }
     },
     {   multi: true     }
 )
