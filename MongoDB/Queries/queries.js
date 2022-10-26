@@ -120,3 +120,6 @@ db.aluguel.aggregate([
         }
     }
 ])
+
+// Pesquisa de text com $search
+db.pessoa.find({ "$text" : { "$search" : "manuel" } } )
