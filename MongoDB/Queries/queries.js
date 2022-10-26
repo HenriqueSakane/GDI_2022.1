@@ -155,3 +155,40 @@ db.funcionario.find({
    dataContratacao: new Date("2022-09-05"),
    salario: 2350.00   
  });
+
+
+//agrupa os jogos por desenvolvedora e conta quantos jogos de cada desenvolvedora tem cadastrado
+ db.jogo.aggregate([
+    { $group : { _id : '$desenvolvedora', totaljogos : { $sum : 1 } } }
+  ]).pretty()
+
+//lista os filmes em ordem alfabetica
+db.filme.aggregate([{ $sort : { titulo : 1, _id: 1 } }])
+
+//indica os jogos que possuem como uma das plataformas o PlayStation 5
+db.jogo.aggregate([
+    {
+        $project: {
+            plataformas: {
+               $filter: {
+                  input: "$plataformas",
+                  as: "plataforma",
+                  cond: {  $eq : ["$$plataforma","PlayStation 5"]  } 
+               }
+            }
+         }
+    }
+])
+
+//lista os filmes que possuem o mesmo ano de lancamento com algum jogo
+db.filme.aggregate( [
+    {
+      $lookup:
+        {
+          from: "jogo",
+          localField: "anoLancamento",
+          foreignField: "anoLancamento",
+          as: "Datas_lancamento_parecidos"
+        }
+   }
+ ] )
