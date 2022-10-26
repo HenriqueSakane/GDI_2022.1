@@ -40,36 +40,36 @@ db.enderecos.aggregate([
     { $project:  { _id: 0, cep : 1, logradouro : 1, bairro : 1, cidade : 1, estado : 1, numero: 1, complemento: 1, referencia: 1}},
   ]).pretty();
 
-// Listar _id e Total de clientes
-db.cliente.aggregate([
+// Listar CEP e numero total de enderecos
+db.pessoa.aggregate([
     {
         $lookup: {
-            from: "cliente",
-            localField: "cliente",
+            from: "enderecos",
+            localField: "enderecos",
             foreignField: "_id",
-            as: "clientes_info",
+            as: "enderecos_info",
         }
     },
     {
-        $unwind: "$clientes_info",
+        $unwind: "$enderecos_info",
     },
     {
         $group: {
-            _id: "$clientes_info.nome",
-            total_clientes: { $count: {} },
+            _id: "$enderecos_info.cep",
+            total_enderecos: { $count: {} },
         },
     },
     {
         $project: {
             _id: 0,
-            nome: "$_id",
-            total_tickets: 1,
+            cep: "$_id",
+            total_enderecos: 1,
         },
     },
 ]).pretty();
 
 // Encontre os enderecos que pertence a pessoa de id 6
-db.enderecos.find({ pessoa: { $exists: true, $all: [6] } }).pretty();
+db.pessoa.find({ enderecos: { $exists: true, $all: [6] } }).pretty();
 
 // Listar CPF, nome, email da pessoa de CPF "706.124.236-92"
 db.pessoa.findOne({ cpf: "706.124.236-92" }, { _id: 0, nome: 1, cpf: 1, email: 1})
