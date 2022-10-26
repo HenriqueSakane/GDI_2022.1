@@ -107,3 +107,15 @@ db.aluguel.aggregate([
         }
     }
 ]).pretty()
+
+//
+db.aluguel.aggregate([
+    {
+        $project: {
+            id_cliente: 1,
+            participaPromocao: {
+                $cond: {  $if: { $gte: ["$data_de_aluguel", Date("2022-10-22")]}, then: true, else: false}
+            }
+        }
+    }
+])
