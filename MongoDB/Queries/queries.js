@@ -89,4 +89,21 @@ db.aluguel.aggregate([
             count: { $sum: 1 }
         }
     }
-])
+]).pretty()
+
+// Função que computa se aquele aluguel merece um desconto, caso tenha valor superior a R$30,00
+db.aluguel.aggregate([
+    {
+        $addFields: {
+            deserveDiscount: {
+                $function: {
+                    body: function(preco){
+                        return preco >= 30.00
+                    },
+                    args: ["$preco"],
+                    lang: "js"
+                }
+            }
+        }
+    }
+]).pretty()
