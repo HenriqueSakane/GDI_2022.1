@@ -156,6 +156,12 @@ db.funcionario.find({
    salario: 2350.00   
  });
 
+// Adiciona uma plataforma a mais para o jogo God of War
+db.jogo.updateOne(
+    {_id: 9}, 
+    {$addToSet: {plataformas: "PC"} } 
+);
+
 
 //agrupa os jogos por desenvolvedora e conta quantos jogos de cada desenvolvedora tem cadastrado
  db.jogo.aggregate([
