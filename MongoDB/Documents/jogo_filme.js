@@ -29,3 +29,5 @@ db.filme.insertMany([
 { titulo: "Akira", anoLancamento: 1982, midia: "Fita Cassete", diretor: "Katsuhiro Otomo" }, 
 { titulo:"Joker", anoLancamento: 2019, midia: "Blu Ray", diretor:"Todd Phillips"}])
 
+db.filme.updateOne({titulo: "Akira"},{$set:{midia: "Dvd"}})
+db.jogo.deleteOne({titulo:"Resident Evil 1"})
