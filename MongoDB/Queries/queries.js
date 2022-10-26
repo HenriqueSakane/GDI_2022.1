@@ -122,6 +122,10 @@ db.aluguel.aggregate([
     }
 ])
 
+// Pesquisa de text com $search
+db.pessoa.find({ "$text" : { "$search" : "manuel" } } )
+
+
 // MAX 
 // Encontra o salário máximo para cada cargo
 db.funcionario.aggregate([
@@ -136,5 +140,18 @@ db.funcionario.aggregate([
 // Atualizar o salario do funcionario com o cargo de "gerente"
 db.funcionario.update({ cargo: "Gerente" }, { $set: { salario:  2600.00} });
 
-// Pesquisa de text com $search
-db.pessoa.find({ "$text" : { "$search" : "manuel" } } )
+// Retorna os funcionários com o cargo de "vendedor"
+db.funcionario.find({
+    $where: function() {
+        return ((this.cargo) == "Vendedor")
+    }
+});
+
+// SAVE
+// novos dados para o vendedor André Victor
+ db.funcionario.save({
+   pessoa: 1, 
+   cargo: "Vendedor Chefe",
+   dataContratacao: new Date("2022-09-05"),
+   salario: 2350.00   
+ });
