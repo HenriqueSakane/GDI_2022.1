@@ -69,7 +69,7 @@ db.pessoa.aggregate([
 ]).pretty();
 
 // Encontre os enderecos que pertence a pessoa de id 6
-db.enderecos.find({ pessoa: { $exists: true, $all: [6] } }).pretty();
+db.pessoa.find({ enderecos: { $exists: true, $all: [6] } }).pretty();
 
 // Listar CPF, nome, email da pessoa de CPF "706.124.236-92"
 db.pessoa.findOne({ cpf: "706.124.236-92" }, { _id: 0, nome: 1, cpf: 1, email: 1})
