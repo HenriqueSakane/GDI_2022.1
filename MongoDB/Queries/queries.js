@@ -108,7 +108,8 @@ db.aluguel.aggregate([
     }
 ]).pretty()
 
-//
+// Retorna os alugueis com id do aluguel, id_cliente
+// e participaPromocao que guarda true caso o aluguel seja do dia 22 em diante
 db.aluguel.aggregate([
     {
         $project: {
