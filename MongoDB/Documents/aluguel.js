@@ -7,7 +7,8 @@ db.aluguel.insertMany([
         produtos_id: [10],
         data_de_aluguel: '22-10-2022',
         data_de_devolucao: '25-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 20.00
     },
     {
         _id: 2,
@@ -15,7 +16,8 @@ db.aluguel.insertMany([
         produtos_id: [5],
         data_de_aluguel: '20-10-2022',
         data_de_devolucao: '22-10-2022',
-        devolvido: true
+        devolvido: true,
+        preco: 18.00
     },
     {
         _id: 3,
@@ -23,7 +25,8 @@ db.aluguel.insertMany([
         produtos_id: [8, 4],
         data_de_aluguel: '18-10-2022',
         data_de_devolucao: '22-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 35.00
     },
     {
         _id: 4,
@@ -31,7 +34,8 @@ db.aluguel.insertMany([
         produtos_id: [3, 7, 2],
         data_de_aluguel: '15-10-2022',
         data_de_devolucao: '18-10-2022',
-        devolvido: true
+        devolvido: true,
+        preco: 48.00
     },
     {
         _id: 6,
@@ -39,7 +43,8 @@ db.aluguel.insertMany([
         produtos_id: [1],
         data_de_aluguel: '20-10-2022',
         data_de_devolucao: '25-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 15.00
     },
     // Alugueis a serem atualizados
     {
@@ -48,7 +53,8 @@ db.aluguel.insertMany([
         produtos_id: [6],
         data_de_aluguel: '24-10-2022',
         data_de_devolucao: '26-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 19.00
     },
     {
         _id: 8,
@@ -56,7 +62,8 @@ db.aluguel.insertMany([
         produtos_id: [6],
         data_de_aluguel: '21-10-2022',
         data_de_devolucao: '22-10-2022',
-        devolvido: true
+        devolvido: true,
+        preco: 17.00
     },
     {
         _id: 9,
@@ -64,7 +71,8 @@ db.aluguel.insertMany([
         produtos_id: [2, 3],
         data_de_aluguel: '25-10-2022',
         data_de_devolucao: '27-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 33.00
     },
     // Aluguel a ser removido
     {
@@ -73,7 +81,8 @@ db.aluguel.insertMany([
         produtos_id: [1],
         data_de_aluguel: '22-10-2022',
         data_de_devolucao: '26-10-2022',
-        devolvido: false
+        devolvido: false,
+        preco: 15.00
     }
 
 ])

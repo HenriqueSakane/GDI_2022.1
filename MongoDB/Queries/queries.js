@@ -75,3 +75,18 @@ db.pessoa.findOne({ cpf: "706.124.236-92" }, { _id: 0, nome: 1, cpf: 1, email: 1
 
 // Pegar os três funcionarios de maior salario
 db.funcionario.find().sort({ valor: -1 }).limit(3);
+
+// Alugueis com 2 ou 3 produtos, agrupados pela situação de entrega (devolvido ou não) e calculando seus preços medios 
+db.aluguel.aggregate([
+    {
+        $match: {   $or: [ {id_produtos: {  $size: 2  }}, {id_produtos: {  $size: 3  }} ]   }
+    },
+
+    {
+        $group: {   
+            _id: "$devolvido",
+            precoMedio: { $avg: "$preco" },
+            count: { $sum: 1 }
+        }
+    }
+])
