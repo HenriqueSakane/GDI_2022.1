@@ -10,17 +10,20 @@ db.funcionario.find({ salario: { $gte: 2000 }  }).pretty();
 db.funcionario.aggregate([{ $group: {_id:"$cargo", MediaSalarial: {$avg:"$salario"}} }]);
 
 // Mapreduce não funciona no mongodb atlas atualmente, não testei se funciona.
-// aumenta o salario dos funcionarios em 10%
-var map = function () {
-    emit(this.salario);
-};
-var reduce = function (salario) {
-    novoSalario = (salario)+salario*0.1
-    return novoSalario;
-};
+// cria um banco chamado pessoa_mapreduce que contem a média das idades das pessoas, agrupadas pelo sexo
+db.pessoa.mapReduce(
+    function(){
+        emit(this.sexo, this.idade);
+    },
+    function(key, values) {
+        return Array.avg( values )
+    },
+    {
+        'out': 'pessoa_mapreduce'
+    }
+)
 
-db.funcionario.mapReduce(map, reduce, { out: "NovoSalario:" });
-
+db.pessoa_mapreduce().find()
 // Encontra todas as pessoas do sexo Feminino
 db.pessoa.createIndex({sexo: "text"})
 
