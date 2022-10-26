@@ -40,30 +40,30 @@ db.enderecos.aggregate([
     { $project:  { _id: 0, cep : 1, logradouro : 1, bairro : 1, cidade : 1, estado : 1, numero: 1, complemento: 1, referencia: 1}},
   ]).pretty();
 
-// Listar _id e Total de clientes
-db.cliente.aggregate([
+// Listar CEP e numero total de enderecos
+db.pessoa.aggregate([
     {
         $lookup: {
-            from: "cliente",
-            localField: "cliente",
+            from: "enderecos",
+            localField: "enderecos",
             foreignField: "_id",
-            as: "clientes_info",
+            as: "enderecos_info",
         }
     },
     {
-        $unwind: "$clientes_info",
+        $unwind: "$enderecos_info",
     },
     {
         $group: {
-            _id: "$clientes_info.nome",
-            total_clientes: { $count: {} },
+            _id: "$enderecos_info.cep",
+            total_enderecos: { $count: {} },
         },
     },
     {
         $project: {
             _id: 0,
-            nome: "$_id",
-            total_tickets: 1,
+            cep: "$_id",
+            total_enderecos: 1,
         },
     },
 ]).pretty();
