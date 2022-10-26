@@ -1,3 +1,4 @@
+// use('locadora')
 
 // encontra as pessoas registradas antes do dia 1 de outubro de 2022
 db.cliente.find({ dataRegistro: { $lt: new Date('2022-10-01') } }).pretty();
@@ -120,6 +121,20 @@ db.aluguel.aggregate([
         }
     }
 ])
+
+// MAX 
+// Encontra o salário máximo para cada cargo
+db.funcionario.aggregate([
+    {
+        $group: {
+            _id: "$cargo", MaxSalario:{$max: "$salario"}
+        }
+    }
+]);
+
+//SET
+// Atualizar o salario do funcionario com o cargo de "gerente"
+db.funcionario.update({ cargo: "Gerente" }, { $set: { salario:  2600.00} });
 
 // Pesquisa de text com $search
 db.pessoa.find({ "$text" : { "$search" : "manuel" } } )
