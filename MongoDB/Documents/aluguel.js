@@ -113,10 +113,10 @@ db.aluguel.remove({ _id: 10  })
 // Atualização de documento
 
 db.aluguel.update(
-    {   produtos: [6]   },
+    {   jogos_id: [6]   },
     {
         $push: {
-            produtos: {
+            jogos_id: {
                 $each: [5, 7]
             }
         }
@@ -124,10 +124,10 @@ db.aluguel.update(
     {   multi: true     }
 )
 
-db.aluguel.update( {data_de_devolucao: Date("2022-10-27")}, {$set: {data_de_devolucao: new Date("2022-10-28")}} )
+db.aluguel.update( {data_de_devolucao: ISODate("2022-10-27")}, {$set: {data_de_devolucao: new Date("2022-10-28")}} )
 
 db.aluguel.update(
-    {   data_de_aluguel: new Date("2022-10-20")   },
+    {   data_de_aluguel: ISODate("2022-10-20")   },
     {
         $set: {
             data_de_aluguel: new Date("2022-10-21"),
