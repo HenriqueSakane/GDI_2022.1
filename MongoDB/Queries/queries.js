@@ -126,6 +126,8 @@ db.aluguel.aggregate([
 ])
 
 // Pesquisa de text com $search
+db.pessoa.createIndex({nome: "text"})
+
 db.pessoa.find({ "$text" : { "$search" : "manuel" } } )
 
 
@@ -201,3 +203,4 @@ db.filme.aggregate( [
         }
    }
  ] )
+
