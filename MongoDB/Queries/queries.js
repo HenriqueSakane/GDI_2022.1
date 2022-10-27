@@ -9,7 +9,6 @@ db.funcionario.find({ salario: { $gte: 2000 }  }).pretty();
 // função que encontra a media de salario dos funcionarios, agrupados pelo cargo
 db.funcionario.aggregate([{ $group: {_id:"$cargo", MediaSalarial: {$avg:"$salario"}} }]);
 
-// Mapreduce não funciona no mongodb atlas atualmente, não testei se funciona.
 // cria um banco chamado pessoa_mapreduce que contem a média das idades das pessoas, agrupadas pelo sexo
 db.pessoa.mapReduce(
     function(){
