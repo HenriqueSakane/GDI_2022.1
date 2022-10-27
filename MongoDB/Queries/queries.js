@@ -33,9 +33,6 @@ db.pessoa.find({
     },
 }).pretty();
 
-// muda o nome da banco cliente para "fregues"
-db.cliente.renameCollection("Fregues");
-
 // Listar informações dos endereços de PE ordenados por numero ascendente
 db.enderecos.aggregate([
     { $match: { estado: "PE"} },
@@ -203,3 +200,5 @@ db.filme.aggregate( [
    }
  ] )
 
+// muda o nome da banco cliente para "fregues"
+db.cliente.renameCollection("Fregues");
